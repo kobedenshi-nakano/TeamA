@@ -25,6 +25,7 @@ header {
 h1{
     color: #000000;
 	text-align: center;
+	text-decoration: none;
 }
 /* フッター */
 footer {}
