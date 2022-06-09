@@ -10,7 +10,7 @@ if($_REQUEST["search"]){
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title>SQLツクール</title>
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/createbun.css">
 </head>
 <body>
@@ -23,10 +23,10 @@ if($_REQUEST["search"]){
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
-				<li><a href="<? require_once("update.php")?>">update</a></li>
-				<li><a href="<?=require_once("select.php")?>">select</a></li>
-				<li><a href="<?=require_once("delete.php")?>">delete</a></li>
-				<li><a href="<?=require_once("insert.php")?>">insert</a></li>
+				<li><a href="<? php require('mainfile/update.php');?>">update</a></li>
+				<li><a href="<? php require('mainfile/select.php');?>">select</a></li>
+				<li><a href="<? php require('mainfile/delete.php');?>">delete</a></li>
+				<li><a href="<? php require('mainfile/insert.php');?>">insert</a></li>
 			</ul>
 		</div>
 
