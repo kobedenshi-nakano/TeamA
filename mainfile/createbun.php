@@ -47,7 +47,6 @@ if($_REQUEST["search"]){
 				?>
 				</ul>
 		</div>
-    </form>
 	</div>
 </div>
 
