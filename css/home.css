@@ -67,11 +67,6 @@ footer {}
 }
 
 /* 1コラム目 */
-.column1 h1 {
-	margin: 0 0 20px 0;
-	font-size: 1.4rem;
-	color: #7bae34;
-}
 .subnav {
 	margin: 0;
 	padding: 0;
@@ -88,15 +83,7 @@ footer {}
 }
 .subnav li a:hover,
 .subnav li a.current {
-	color: #7bae34;
-}
-@media screen and (min-width: 768px) {
-	.column1 h1 {
-		font-size: 2rem;
-	}
-	.subnav li {
-		padding: 20px;
-	}
+	color: #ffa500;
 }
 
 /* 2コラム目 */
