@@ -16,7 +16,7 @@ if($_REQUEST["search"]){
 <body>
 <header>
 	<div class="header-container">
-		<a href="#"><h1>タイトル</h1></a>
+		<a href="createbun.php"><h1>タイトル</h1></a>
 	</div>
 </header>
 <div class="main-contents">
