@@ -1,11 +1,17 @@
 <!DOCTYPE html>
+<?
+if($_REQUEST["search"]){
+//submitされた検索条件を使いDBに問い合わせる処理
+}
+?>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title>SQLツクール</title>
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/createbun.css">
 </head>
 <body>
 <header>
@@ -16,12 +22,11 @@
 <div class="main-contents">
 	<div class="main-contents-container">
 		<div class="column1">
-			<!--<h1>About</h1>-->
 			<ul class="subnav">
-				<li><a href="#">update</a></li>
-				<li><a href="#">select</a></li>
-				<li><a href="#">delete</a></li>
-				<li><a href="#">insert</a></li>
+				<li><a href="update.php">update</a></li>
+				<li><a href="select.php">select</a></li>
+				<li><a href="delete.php">delete</a></li>
+				<li><a href="insert.php">insert</a></li>
 			</ul>
 		</div>
 		<div class="column2">
@@ -42,8 +47,6 @@
 					</li>-->
 				</ul>
 			</div>
-		</div>
-		
 	</div>
 </div>
 <footer>
