@@ -112,8 +112,8 @@ footer {}
 .news-contents li {
 	overflow: hidden;
 	margin: 0 0 10px 0;
-	padding: 10px;
-	border: 1px solid #dadada;
+	padding: auto;
+	border: none;
 }
 
 .news-contents li p {
