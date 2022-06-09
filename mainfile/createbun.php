@@ -16,17 +16,17 @@ if($_REQUEST["search"]){
 <body>
 <header>
 	<div class="header-container">
-		<a href="createbun.php"><h1>タイトル</h1></a>
+		<a href="<?php require('createbun.php'); ?>"><h1>タイトル</h1></a>
 	</div>
 </header>
 <div class="main-contents">
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
-				<li><a href="<? php require('./mainfile/update.php');?>">update</a></li>
-				<li><a href="<? php require('./mainfile/select.php');?>">select</a></li>
-				<li><a href="<? php require('./mainfile/delete.php');?>">delete</a></li>
-				<li><a href="<? php require('./mainfile/insert.php');?>">insert</a></li>
+				<li><a href="<? php require('update.php');?>">update</a></li>
+				<li><a href="<? php require('select.php');?>">select</a></li>
+				<li><a href="<? php require('delete.php');?>">delete</a></li>
+				<li><a href="<? php require('insert.php');?>">insert</a></li>
 			</ul>
 		</div>
 
