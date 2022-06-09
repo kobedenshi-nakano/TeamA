@@ -23,7 +23,7 @@ if($_REQUEST["search"]){
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
-				<li><a href="<?=require_once("update.php")?>">update</a></li>
+				<li><a href="<? require_once("update.php")?>">update</a></li>
 				<li><a href="<?=require_once("select.php")?>">select</a></li>
 				<li><a href="<?=require_once("delete.php")?>">delete</a></li>
 				<li><a href="<?=require_once("insert.php")?>">insert</a></li>
