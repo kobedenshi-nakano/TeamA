@@ -23,18 +23,20 @@ if($_REQUEST["search"]){
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
-				<li><a href="#">update</a></li>
-				<li><a href="#">select</a></li>
-				<li><a href="#">delete</a></li>
-				<li><a href="#">insert</a></li>
+				<li><a href="<?=require_once("update.php")?>">update</a></li>
+				<li><a href="<?=require_once("select.php")?>">select</a></li>
+				<li><a href="<?=require_once("delete.php")?>">delete</a></li>
+				<li><a href="<?=require_once("insert.php")?>">insert</a></li>
 			</ul>
 		</div>
 
 		<div class="column2">
 				<ul class="news-contents">
 			<form method="post" action="">
+
 				<input type="text" name="keyword" value="<?=$keyword?>"/>
-				<input type="submit" name="search" value="検索" />
+				<input type="submit" name="search" value="生成" />
+				
 			</form>
 				<?
 					if($_REQUEST["search"]){
