@@ -67,10 +67,10 @@ footer {}
 	text-decoration: none;
 	color: #000000;
 }
-.subnav li a.current,
+/*.subnav li a.current,
 .subnav li a:hover {
 	color: #ffa500;
-}
+}*/
 
 /* 2コラム目 */
 .news-contents {
