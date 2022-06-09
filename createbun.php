@@ -19,7 +19,7 @@
 			<!--<h1>About</h1>-->
 			<ul class="subnav">
 				<li><a href="#">update</a></li>
-				<li><a href="#">drop</a></li>
+				<li><a href="#">select</a></li>
 				<li><a href="#">delete</a></li>
 				<li><a href="#">insert</a></li>
 			</ul>
