@@ -6,6 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <title>SQLツクール</title>
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="../css/createbun.css">
 </head>
 <body>
 <header>
