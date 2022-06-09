@@ -10,8 +10,8 @@ if($_REQUEST["search"]){
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title>SQLツクール</title>
-<link rel="stylesheet" href="css/home.css">
-<link rel="stylesheet" href="css/createbun.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/createbun.css">
 </head>
 <body>
 <header>
