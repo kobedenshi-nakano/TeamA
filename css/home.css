@@ -68,7 +68,7 @@ footer {}
 	color: #000000;
 }
 .subnav li a.current,
-.subnav li a.hover {
+.subnav li a:hover {
 	color: #ffa500;
 }
 
