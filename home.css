@@ -24,48 +24,7 @@ header {
 }
 h1{
     color: #000000;
-}
-@media screen and (min-width: 768px) {
-	h1{
-        color: #000000;
-    }
-}
-
-/* ナビゲーション */
-nav {
-	font-size: 0.78rem;
-	background: #000000;
-}
-@media screen and (min-width: 768px) {
-	nav {
-		font-size: 1rem;
-	}
-}
-.nav-container {
-	padding: 0 20px 0 20px;
-}
-.globalnav {
-	display: flex;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.globalnav li {
-	flex: 0 0 20%;	
-}
-.globalnav li a {
-	display: block;
-	padding: 10px 0;
-	border-bottom: 8px solid #ffffff;
-	text-decoration: none;
 	text-align: center;
-	line-height: 100%;
-	color: #ffffff;
-}
-.globalnav li a:hover,
-.globalnav li a.current {
-	border-bottom: 8px solid #7bae34;
-	color: #7bae34;
 }
 /* フッター */
 footer {}
