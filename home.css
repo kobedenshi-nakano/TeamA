@@ -18,6 +18,7 @@ body {
 /* ヘッダー */
 header {
 	background: gainsboro;
+	text-decoration: none;
 }
 .header-container {
 	padding: 30px 20px 10px 20px;
