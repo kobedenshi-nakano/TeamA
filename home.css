@@ -3,11 +3,7 @@
 html {
 	font-size: 16px;
 }
-@media screen and (min-width: 768px) {
-	html {
-		font-size: 14px;
-	}
-}
+
 html * {
 	box-sizing: border-box;
 }
@@ -26,7 +22,6 @@ header {
 h1{
     color: #000000;
 	text-align: center;
-	text-decoration: none;
 }
 /* フッター */
 footer {}
