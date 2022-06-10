@@ -28,12 +28,15 @@
 		<div class="column2">
 				<ul class="news-contents">
 			<form method="post" action="">
-
-				
 				<br><br>
             <!--項目表示-->
 			    <nav>
-					<div class="nav-container">
+				<div class="nav-container">
+
+				 <div class="table">
+					<p>テーブル名</p>&nbsp;&nbsp;&nbsp;
+					<input type="text" name="test" size="10" maxlength="10">
+				 </div>
 						<ul class="globalnav">
 							<li><p>列名</p></li>
 							<li><p>別名</p></li>
