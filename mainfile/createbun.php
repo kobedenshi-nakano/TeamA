@@ -34,8 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<ul class="news-contents">
 			<form method="post" action="">
 
-				<input type="text" name="keyword" value="<?=$keyword?>"/>
-				<input type="submit" name="search" value="生成" />
+				
 				<br><br>
             <!--項目表示-->
 			    <nav>
