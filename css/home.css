@@ -91,7 +91,7 @@ nav {
 	list-style: none;
 }
 .globalnav li {
-	flex: 0 0 20%;	
+	flex: 0 0 100px;	
 }
 .globalnav li p {
 	display: block;
