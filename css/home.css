@@ -65,11 +65,11 @@ footer {}
 .subnav li {
 	padding: 10px;
 	border-bottom: 1px dashed #dadada;
+	text-align: center;
 }
 .subnav li a {
 	text-decoration: none;
 	color: #000000;
-	text-align: center;
 }
 /*.subnav li a.current,*/
 .subnav li a:hover {
