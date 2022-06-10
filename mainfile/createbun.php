@@ -46,6 +46,9 @@ if($_REQUEST["search"]){
 							<li><p>列の型名</p></li>
 							<li><p>NULLについて</p></li>
 							<li><p>初期値</p></li>
+							<li><p>重複</p></li>
+							<li><p>主キー</p></li>
+							<li><p>外部キー制約</p></li>
 						</ul>
 					</div>
                 </nav>
