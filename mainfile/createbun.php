@@ -37,7 +37,19 @@ if($_REQUEST["search"]){
 				<input type="text" name="keyword" value="<?=$keyword?>"/>
 				<input type="submit" name="search" value="生成" />
 				<br><br>
-				
+            <!--項目表示-->
+			    <nav>
+					<div class="nav-container">
+						<ul class="globalnav">
+							<li><p>列名</p></li>
+							<li><p>別名</p></li>
+							<li><p>列の型名</p></li>
+							<li><p>NULLについて</p></li>
+							<li><p>初期値</p></li>
+						</ul>
+					</div>
+                </nav>
+
 			</form>
 				<?
 					if($_REQUEST["search"]){
