@@ -61,7 +61,7 @@ footer {}
 	padding: 0;
 	list-style: none;
 	border-top: 1px dashed #dadada;
-	
+	display: inline-block;
 }
 .subnav li {
 	padding: 10px;
