@@ -47,7 +47,7 @@ footer {}
 .column1 {
 	margin: 0 20px 0 20px;
 	padding: 30px 0 30px 0;
-	flex: 0 0 240px;
+	flex: 0 0 140px;
 }
 .column2 {
 	margin: 0 20px 0 20px;
@@ -61,7 +61,6 @@ footer {}
 	padding: 0;
 	list-style: none;
 	border-top: 1px dashed #dadada;
-	width:200px;
 }
 .subnav li {
 	padding: 10px;
