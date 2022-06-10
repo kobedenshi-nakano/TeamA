@@ -36,6 +36,7 @@ if($_REQUEST["search"]){
 
 				<input type="text" name="keyword" value="<?=$keyword?>"/>
 				<input type="submit" name="search" value="生成" />
+				<br><br>
 				
 			</form>
 				<?
