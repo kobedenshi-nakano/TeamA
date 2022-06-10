@@ -44,7 +44,15 @@
 							<li><p>主キー</p></li>
 							<li><p>外部キー制約</p></li>
 						</ul>
-						<input type="text" name="test">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="text" name="test" size="10" maxlength="10">
+						<input type="submit" value="生成">
 					</div>
                 </nav>
 			</form>
