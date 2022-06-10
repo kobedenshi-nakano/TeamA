@@ -66,6 +66,7 @@ footer {}
 .subnav li {
 	padding: 10px;
 	border-bottom: 1px dashed #dadada;
+	width: 100px;
 }
 .subnav li a {
 	text-decoration: none;
