@@ -61,16 +61,16 @@ footer {}
 	padding: 0;
 	list-style: none;
 	border-top: 1px dashed #dadada;
-	width: 100px;
+	
 }
 .subnav li {
 	padding: 10px;
 	border-bottom: 1px dashed #dadada;
-	width: 100px;
 }
 .subnav li a {
 	text-decoration: none;
 	color: #000000;
+    width: 200px;
 }
 /*.subnav li a.current,*/
 .subnav li a:hover {
