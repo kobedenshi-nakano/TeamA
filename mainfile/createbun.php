@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo $_POST['test'];
-}
-?>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -52,10 +47,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						<input type="text" name="test">
 					</div>
                 </nav>
-
 			</form>
-				
-				</ul>
+			<div class="kekka-container">
+				<p>出力結果</p>
+		        <li>
+				<!--出力結果-->
+				<?php
+					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   						 echo $_POST['test'];
+						}
+				?>
+
+				</li>
+		    </div>
+		
+
+		   </ul>
 		</div>
 	</div>
 </div>
