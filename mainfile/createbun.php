@@ -50,17 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 							<li><p>主キー</p></li>
 							<li><p>外部キー制約</p></li>
 						</ul>
+						<input type="text" name="test">
 					</div>
                 </nav>
 
 			</form>
-				<?
-					if($_REQUEST["search"]){
-				?>
-					<!--検索結果を表示する-->
-				<?
-					}
-				?>
+				
 				</ul>
 		</div>
 	</div>
