@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<?
-if($_REQUEST["search"]){
-//submitされた検索条件を使いDBに問い合わせる処理
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo $_POST['test'];
 }
 ?>
 <html lang="ja">
