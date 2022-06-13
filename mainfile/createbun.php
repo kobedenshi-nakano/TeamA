@@ -27,12 +27,13 @@
 
 		<div class="column2">
 				<ul class="news-contents">
+				<!--未入力チェック-->
+				
 			<form method="post" action="">
 				<br><br>
             <!--項目表示-->
 			    <nav>
 				<div class="nav-container">
-
 				 <div class="table">
 					<p>テーブル名</p>&nbsp;&nbsp;&nbsp;
 					<input type="text" name="test" size="10" maxlength="10">
@@ -47,26 +48,75 @@
 							<li><p>主キー</p></li>
 							<li><p>外部キー制約</p></li>
 						</ul>
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="text" name="test" size="10" maxlength="10">
-						<input type="submit" value="生成">
+						<input type="text" name="main-name" size="10" maxlength="10"> 
+						<input type="text" name="another-name" size="10" maxlength="10">
+						<select name='Type' >
+							<option value=' 未入力(型)'>--</option>
+							<option value=' INTRGER'>INTEGER(数値)</option>
+							<option value=' VARCHAR(10)'>VARCHAR(文章10文字)</option>
+							<option value=' VARCHAR(100)'>VARCHAR(文章100文字)</option>
+							<option value=' DATE'>DATE(日付)</option>
+						</select>
+						<select name='yes-no-null' >
+							<option value=' 未入力(null)'>--</option>
+							<option value=' NOT NULL'>NOT NULL</option>
+							<option value=' NULL'>NULL</option>
+						</select>
+						<input type="text" name="start" >
+						<select name='重複'>
+							<option value=' 未入力(重複)'>--</option>
+							<option value=' UNIQUE'>重複あってもいい</option>
+							<option value=''>重複なし</option>
+						</select>
+						<select name='main-key' >
+							<option value=' 未入力(主キー)'>--</option>
+							<option value=' PRIMARY KEY'>Yes</option>
+							<option value=''>No</option>
+						</select>
+						<select name='forign-key'>
+							<option value=' 未入力(外部キー)'>--</option>
+							<option value=' REFERENCES'>Yes</option>
+							<option value=''>No</option>
+						</select>
+						<br><input type="submit" value="生成">
 					</div>
                 </nav>
 			</form>
+
 			<div class="kekka-container">
 				<p>出力結果</p>
 		        <li>
 				<!--出力結果-->
 				<?php
 					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   						 echo $_POST['test'];
+
+						if ($_POST['main-name'] == '') {
+							echo 'テーブルが入力されていません。';
 						}
+							
+						else{
+							echo $_POST['main-name']; //列名
+							echo ' ';
+						}
+
+						echo $_POST['another-name']; //別名
+
+						if ($_POST['Type'] == '') {
+							echo '列の型名が入力されていません。';
+						}		
+						else{
+							echo $_POST['Type']; //列の型名
+							echo ' ';
+							
+						}
+                            
+						 echo $_POST['yes-no-null']; //Null
+						 echo $_POST['start']; //初期値
+						 echo $_POST['重複']; //重複
+						 echo $_POST['main-key']; //主キー
+						 echo $_POST['forign-key']; //外部キー規約
+						
+					}
 				?>
 
 				</li>
