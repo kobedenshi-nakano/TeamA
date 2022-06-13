@@ -24,11 +24,8 @@
 				<li><a href="insert.php">insert</a></li>
 			</ul>
 		</div>
-
 		<div class="column2">
 				<ul class="news-contents">
-				<!--未入力チェック-->
-				
 			<form method="post" action="">
 				<br><br>
             <!--項目表示-->
@@ -89,16 +86,16 @@
 				<!--出力結果-->
 				<?php
 					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-						if ($_POST['main-name'] == '') {
-							echo 'テーブルが入力されていません。';
+						$error = array();
+						if (empty($_POST['test'])) {
+							$error[] = "テーブル名は必ず入力してください。";
+							return $error;
 						}
-							
 						else{
-							echo $_POST['main-name']; //列名
+							echo $_POST['test']; //テーブル名
 							echo ' ';
 						}
-
+						echo $_POST['main-name']; //列名
 						echo $_POST['another-name']; //別名
 
 						if ($_POST['Type'] == '') {
@@ -117,16 +114,22 @@
 						 echo $_POST['forign-key']; //外部キー規約
 						
 					}
+					
 				?>
 
 				</li>
 		    </div>
-		
-
 		   </ul>
 		</div>
 	</div>
 </div>
+				<div class="error_list">
+				<?php if(isset($error)): ?>
+					<?php foreach( $error as $value ): ?>
+					<li><?php echo $value;  ?></li>
+					<?php endforeach; ?>
+					<?php endif; ?>
+				</div>
 
 <footer>
 	<div class="footer-container">
