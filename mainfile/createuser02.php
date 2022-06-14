@@ -67,7 +67,7 @@
 				<div class="nav-container">
                 <ul class="globalnav">
                     <form method="post" action="">
-							<li><p>ホスト名:</p></li>
+							<li><p>ホスト名:aaaaaa</p></li>
 							<li><input type="text" name="hostname" size="10" maxlength="10"></li>
 							<li><p>ユーザー名:</p></li>
 						    <li><input type="text" name="username" size="10" maxlength="10"></li>
