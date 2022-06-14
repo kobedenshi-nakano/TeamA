@@ -56,7 +56,7 @@
                     <input type="submit" value="権限ありverへ">
                 </form>
 			  <nav>
-              <?php if(isset($error)):?>
+              <?php if(!empty($error)):?>
                 <ul class="error_list">
                       <?php  foreach($error as $value){
                             echo $value;

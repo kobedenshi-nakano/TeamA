@@ -6,42 +6,44 @@
 							$error[] = "テーブル名は必ず入力してください";
 						}
 						else{
-							$date[] = "create ".$_POST['test']." {"; //テーブル名
+							$date[] = "create ".$_POST['test']." ("; //テーブル名
 							
 						}
 						$date[] = "<br />    " ;
-						if ($_POST['main-name'] = ' 未入力(型)') {
-							$error[] = "列名は必ず入力してください";
+						if (empty($_POST['main-name'])) {
+							$error[] = "列名を入力してください";
 						}
 						else{
 							$date[] = $_POST['main-name']; //列名
 						
 						}
-						if (empty($_POST['another-name'])) {
-							$error[] = "別名は必ず入力してください";
+						if (empty($_POST['sub-name'])) {
+							$date[] = "";
 						}
 						else{
-							$date[] = " as ".$_POST['another-name']; //列名
+							$date[] = " as ".$_POST['sub-name']; //列名
 							
 						}
 
-						if (empty($_POST['Type'])) {
-							echo '列の型名が入力されていません。';
+						if ($_POST['Type'] == ' 未入力(型)') {
+							$error[] = "列の型を選択してください。";
 						}		
 						else{
 							$date[] = $_POST['Type']; //列の型名
 							
 							
 						}
-                        if ($_POST['yes-no-null'] = ' 未入力(null)') {
-							$error[] = "Nullは必ず入力してください";
+                        if ($_POST['yes-no-null'] == ' 未入力(null)') {
+							$error[] = "Null値への対応を決めてください";
 						}
 						else{
 							$date[] = $_POST['yes-no-null']; //Null値
 						
 						}
-						
-						if (is_numeric($_POST['start']) == 1) { //数字か文字列かを識別する関数
+						if (empty($_POST['start'])) {
+							$date[] = "";
+						}
+						else if (is_numeric($_POST['start']) == 1) { //数字か文字列かを識別する関数
 							$date[] = " default ".$_POST['start']; //初期値
 						}
 						else {
@@ -49,27 +51,27 @@
 						}
 							
 						
-						if ($_POST['重複'] = ' 未入力(重複)') {
-							$error[] = "重複は必ず入力してください";
+						if ($_POST['重複'] == ' 未入力(重複)') {
+							$error[] = "重複への処理を入力してください";
 						}
 						else{
 							$date[] = $_POST['重複']; //重複
 							
 						}
-						if ($_POST['main-key'] = ' 未入力(主キー)') {
-							$error[] = "主キーは必ず入力してください";
+						if ($_POST['main-key'] == ' 未入力(主キー)') {
+							$error[] = "主キーの有無を決めてください";
 						}
 						else{
 							$date[] = $_POST['main-key']; //主キー
 							
 						}
-						if ($_POST['forign-key']=' 未入力(外部キー)') {
-							$error[] = "外部キーは必ず入力してください";
+						if ($_POST['forign-key'] == ' 未入力(外部キー)') {
+							$error[] = "外部キーの有無を決めてください";
 						}
 						else{
 							$date[] = $_POST['forign-key']; //外部キー規約
 						}
-						$date[] = "<br /> } ;" ;
+						$date[] = "<br /> ) ;" ;
 						
 					}
 ?>
@@ -129,7 +131,7 @@
 							<li><p>外部キー制約</p></li>
 						</ul>
 						<input type="text" name="main-name" size="10" maxlength="10"> 
-						<input type="text" name="another-name" size="10" maxlength="10">
+						<input type="text" name="sub-name" size="10" maxlength="10">
 						<select name='Type' >
 							<option value=' 未入力(型)'>--</option>
 							<option value=' INTRGER'>INTEGER(数値)</option>
@@ -145,18 +147,18 @@
 						<input type="text" name="start" >
 						<select name='重複'>
 							<option value=' 未入力(重複)'>--</option>
-							<option value=' UNIQUE'>重複あってもいい</option>
-							<option value='重複なし'>重複なし</option>
+							<option value=''>重複あってもいい</option>
+							<option value=' UNIQUE'>重複なし</option>
 						</select>
 						<select name='main-key' >
 							<option value=' 未入力(主キー)'>--</option>
 							<option value=' PRIMARY KEY'>Yes</option>
-							<option value='No'>No</option>
+							<option value=''>No</option>
 						</select>
 						<select name='forign-key'>
 							<option value=' 未入力(外部キー)'>--</option>
 							<option value=' REFERENCES'>Yes</option>
-							<option value='Nos'>No</option>
+							<option value=''>No</option>
 						</select>
 						<br><input type="submit" value="生成">
 					</div>

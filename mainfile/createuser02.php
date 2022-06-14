@@ -56,7 +56,7 @@
                     <input type="submit" value="権限なしverへ">
                 </form>
 			  <nav>
-              <?php if(isset($error)):?>
+              <?php if(!empty($error)):?>
                 <ul class="error_list">
                       <?php  foreach($error as $value){
                             echo $value;
@@ -67,12 +67,14 @@
 				<div class="nav-container">
                 <ul class="globalnav">
                     <form method="post" action="">
-							<li><p>ホスト名:aaaaaa</p></li>
+							<li><p>ホスト名:</p></li>
 							<li><input type="text" name="hostname" size="10" maxlength="10"></li>
 							<li><p>ユーザー名:</p></li>
 						    <li><input type="text" name="username" size="10" maxlength="10"></li>
 							<li><p>パスワード:</p></li>
 							<li><input type="text" name="password" size="10" maxlength="10"></li>
+                            <li><p>権限のジャンル選択:</p></li>
+							<li><input type="text" name="kengen" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成"></li>
 						
                     </form>
