@@ -1,3 +1,11 @@
+<?php
+					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+						$error = array();
+						if (empty($_POST['test'])) {
+							$error[] = "テーブル名は必ず入力してください。";
+						}
+					}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
