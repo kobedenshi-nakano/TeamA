@@ -6,7 +6,7 @@
 							$error[] = "テーブル名は必ず入力してください";
 						}
 						else{
-							$date[] = "create ".$_POST['test']." ("; //テーブル名
+							$date[] = "create table ".$_POST['test']." ("; //テーブル名
 							
 						}
 						$date[] = "<br />    " ;
