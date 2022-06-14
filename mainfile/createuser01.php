@@ -1,3 +1,27 @@
+<?php
+    if($_SERVER['REQUEST_METHOD']==='POST'){
+        $naiyou=array();
+        $error=array();
+        if(empty($_POST['username'])){
+            $error[]="ユーザー名を入力してください。";
+        }else{
+            $naiyou[]="create user '".$_POST['username']."'@";
+        }
+        $naiyou[]= "<br />    ";
+        if(empty($_POST['hostname'])){
+            $error[]="ホスト名を入力してください。";
+        }else{
+            $naiyou[]="'".$_POST['hostname']."'";
+        }
+        $naiyou[]= "<br />    ";
+        if(empty($_POST['password'])){
+            $error[]="パスワードを入力してください。";
+        }else{
+            $naiyou[]="identified by '".$_POST['password']."'";
+        }
+        $naiyou[]= "<br />    ";
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -22,28 +46,42 @@
 				<li><a href="select.php">select</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
+                <li><a href="createuser01.php">createuser</a></li>
 			</ul>
 		</div>
 		<div class="column2">
 		    <ul class="news-contents">
 			
                 <!--項目表示-->
-			    <nav>
+                <!--権限ありver-->
+			  <nav>
 				<div class="nav-container">
 				 
+                <ul class="globalnav">
+                    <form method="post" action="">
+							<li><p>ホスト名:</p></li>
+							<li><input type="text" name="hostname" size="10" maxlength="10"></li>
+							<li><p>ユーザー名:</p></li>
+						    <li><input type="text" name="username" size="10" maxlength="10"></li>
+							<li><p>パスワード:</p></li>
+							<li><input type="text" name="password" size="10" maxlength="10"></li>
+                            <li><input type="submit" value="生成"></li>
 						
-						<input type="text" name="main-name" size="10" maxlength="10"> 
-						<input type="text" name="another-name" size="10" maxlength="10">
-	
-
+                    </form>
+                </ul>
 			    <div class="kekka-container">
 				    <p>出力結果</p>
 		            <li>
 				    <!--出力結果-->
+                    <?php if(isset($naiyou)):?>
+                    <?php foreach( $naiyou as $value ): ?>
+				    <?php echo $value; ?>
+				    <?php echo ' '; ?>
+				    <?php endforeach; ?>
+				    <?php endif; ?>
 					</li>
-		        </div>
-
-		    </ul>
+                </div>
+		   </ul>
 		</div>
 	</div>
 </div>
