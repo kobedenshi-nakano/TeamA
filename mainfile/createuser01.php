@@ -7,19 +7,19 @@
         }else{
             $naiyou[]="create user '".$_POST['username']."'@";
         }
-        $naiyou[]= "<br />    ";
+        
         if(empty($_POST['hostname'])){
             $error[]="ホスト名を入力してください。";
         }else{
             $naiyou[]="'".$_POST['hostname']."'";
         }
-        $naiyou[]= "<br />    ";
+       
         if(empty($_POST['password'])){
             $error[]="パスワードを入力してください。";
         }else{
             $naiyou[]="identified by '".$_POST['password']."'";
         }
-        $naiyou[]= "<br />    ";
+        
     }
 ?>
 <!DOCTYPE html>
@@ -55,8 +55,15 @@
                 <!--項目表示-->
                 <!--権限ありver-->
 			  <nav>
+              <?php if(isset($error)):?>
+                <ul class="error_list">
+                      <?php  foreach($error as $value){
+                            echo $value;
+                            echo '<br>';
+                        }?>
+                </ul>
+                    <?php endif; ?>
 				<div class="nav-container">
-				 
                 <ul class="globalnav">
                     <form method="post" action="">
 							<li><p>ホスト名:</p></li>
@@ -73,12 +80,20 @@
 				    <p>出力結果</p>
 		            <li>
 				    <!--出力結果-->
-                    <?php if(isset($naiyou)):?>
+                    <?php /*if(isset($naiyou)):?>
                     <?php foreach( $naiyou as $value ): ?>
 				    <?php echo $value; ?>
 				    <?php echo ' '; ?>
 				    <?php endforeach; ?>
-				    <?php endif; ?>
+				    <?php endif; */
+                    if(isset($naiyou)){
+                        foreach($naiyou as $value){
+                            echo $value;
+                            echo '';
+                        }
+                    }
+                    
+                    ?>
 					</li>
                 </div>
 		   </ul>
