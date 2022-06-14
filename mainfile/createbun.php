@@ -106,7 +106,7 @@
 				<br><br>
             <!--項目表示-->
 			    <nav>
-				<?php if( !empty($error) ): ?>
+				<?php if(!empty($error)): ?>
 				<ul class="error_list">
 				<?php foreach( $error as $value ): ?>
 				<li><?php echo $value; ?></li>
