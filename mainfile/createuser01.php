@@ -53,7 +53,7 @@
 		    <ul class="news-contents">
                 <!--権限ありver-->
                 <form action="createuser02.php" method="POST">
-                    <input Type="radio" name="">権限ありver<br>
+                    <input type="submit" value="権限ありverへ">
                 </form>
 			  <nav>
               <?php if(isset($error)):?>

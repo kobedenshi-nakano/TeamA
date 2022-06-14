@@ -52,8 +52,8 @@
 		<div class="column2">
 		    <ul class="news-contents">
                 <!--権限ありver-->
-                <form action="createuser02.php" method="POST">
-                    <input Type="radio" name="">権限ありver<br>
+                <form action="createuser01.php" method="POST">
+                    <input type="submit" value="権限なしverへ">
                 </form>
 			  <nav>
               <?php if(isset($error)):?>
