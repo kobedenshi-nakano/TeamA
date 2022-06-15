@@ -74,7 +74,13 @@
 							<li><p>パスワード:</p></li>
 							<li><input type="text" name="password" size="10" maxlength="10"></li>
                             <li><p>権限のジャンル選択:</p></li>
-							<li><input type="text" name="kengen" size="10" maxlength="10"></li>
+							<li><select name='kengen' >
+							<option value=' '>--</option>
+							<option value=' '></option>
+							<option value=' '></option>
+							<option value=' '></option>
+							<option value=' '></option>
+						</select></li>
                             <li><input type="submit" value="生成"></li>
 						
                     </form>
