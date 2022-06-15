@@ -134,10 +134,14 @@
 						<input type="text" name="sub-name" size="10" maxlength="10">
 						<select name='Type' >
 							<option value=' 未入力(型)'>--</option>
-							<option value=' INTRGER'>INTEGER(数値)</option>
-							<option value=' VARCHAR(10)'>VARCHAR(文字列10文字)</option>
-							<option value=' VARCHAR(100)'>VARCHAR(文字列100文字)</option>
+							<option value=' INTRGER'>INTEGER(整数値)</option>
+							<option value=' DECIMAL'>DECIMAL(小数)</option>
+							<option value=' CHAR'>DATE(固定長 文字列)</option>
+							<option value=' VARCHAR(10)'>VARCHAR(可変長 文字列10文字)</option>
+							<option value=' VARCHAR(100)'>VARCHAR(可変長 文字列100文字)</option>
+							<option value=' DATETIME'>DATETIME(日付と時間)</option>
 							<option value=' DATE'>DATE(日付)</option>
+							<option value=' TIME'>TIME(時間)</option>
 						</select>
 						<select name='yes-no-null' >
 							<option value=' 未入力(null)'>--</option>
