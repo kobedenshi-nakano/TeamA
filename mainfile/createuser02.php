@@ -20,10 +20,22 @@
             $naiyou[]="identified by '".$_POST['password']."'";
         }
         
-        if(empty($_POST['kengen'])){
+        if(isset($_POST['kekka'])){
             $error[]="権限を選択してください。";
         }else{
-            $naiyou[]="identified by '".$_POST['kengen']."'";
+            $naiyou[]=$_POST['kekka'];
+        }
+
+        if(empty($_POST['database'])){
+            $error[]="適用対象のパスワードを入力してください。";
+        }else{
+            $naiyou[]="identified by '".$_POST['database']."'";
+        }
+
+        if(empty($_POST['table'])){
+            $error[]="適用対象のテーブルを入力してください。";
+        }else{
+            $naiyou[]="identified by '".$_POST['table']."'";
         }
     }
 ?>
@@ -54,32 +66,33 @@
 							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
-                            <li>権限のジャンル選択:<select name='kengen' >
-							<option value=' 未入力'>--</option>
-							<option value=' '>ALL</option>
-							<option value=' '>ALTER</option>
-							<option value=' '>ALTER ROUTINE</option>
-							<option value=' '>CREATE</option>
-                            <option value=' '>CREATE TABLESPACE</option>
-							<option value=' '>CREATE TEMPORARY TABLES</option>
-							<option value=' '>CREATE USER</option>
-							<option value=' '>CREATE VIEW</option>
-                            <option value=' '>DELETE </option>
-							<option value=' '>DROP</option>
-							<option value=' '>EVENT</option>
-							<option value=' '>EXECUTE</option>
-                            <option value=' '>GRANT OPTION</option>
-							<option value=' '>INDEX</option>
-                            <option value=' '>INSERT </option>
-							<option value=' '>LOOK TABLES</option>
-							<option value=' '>PROCESS</option>
-							<option value=' '>RELOAD</option>
-                            <option value=' '>SELECT</option>
-							<option value=' '>SHOW DATABASES</option>
-                            <option value=' '>SHUTDOWN</option>
-							<option value=' '>TRIGGER</option>
-							<option value=' '>UPDATE</option>
-							<option value=' '>USAGE</option>
+                            <li>権限のジャンル選択:
+                            <select name='kekka'>
+							<option value=' NONO'>--</option>
+							<option value=' all'>ALL</option>
+							<option value=' alter'>ALTER</option>
+							<option value=' alter-routine'>ALTER ROUTINE</option>
+							<option value=' create'>CREATE</option>
+                            <option value=' create-tablespace'>CREATE TABLESPACE</option>
+							<option value=' create-temporary-tables'>CREATE TEMPORARY TABLES</option>
+							<option value=' create-user'>CREATE USER</option>
+							<option value=' create-view'>CREATE VIEW</option>
+                            <option value=' delete'>DELETE </option>
+							<option value=' drop'>DROP</option>
+							<option value=' event'>EVENT</option>
+							<option value=' execute'>EXECUTE</option>
+                            <option value=' grant-option'>GRANT OPTION</option>
+							<option value=' index'>INDEX</option>
+                            <option value=' insert'>INSERT </option>
+							<option value=' look-tables'>LOOK TABLES</option>
+							<option value=' process'>PROCESS</option>
+							<option value=' reload'>RELOAD</option>
+                            <option value=' select'>SELECT</option>
+							<option value=' show-databases'>SHOW DATABASES</option>
+                            <option value=' shoutdown'>SHUTDOWN</option>
+							<option value=' trigger'>TRIGGER</option>
+							<option value=' update'>UPDATE</option>
+							<option value=' usage'>USAGE</option>
 						    </select></li>
                             <li>適用対象のデータベース:<input type="text" name="database" size="10" maxlength="10"></li>
 							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
