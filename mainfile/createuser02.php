@@ -76,12 +76,34 @@
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
                             <li>権限のジャンル選択:<select name='kengen' >
-							<option value=' '>--</option>
-							<option value=' '></option>
-							<option value=' '></option>
-							<option value=' '></option>
-							<option value=' '></option>
-						</select></li>
+							<option value=' 未入力'>--</option>
+							<option value=' '>ALL</option>
+							<option value=' '>ALTER</option>
+							<option value=' '>ALTER ROUTINE</option>
+							<option value=' '>CREATE</option>
+                            <option value=' '>CREATE TABLESPACE</option>
+							<option value=' '>CREATE TEMPORARY TABLES</option>
+							<option value=' '>CREATE USER</option>
+							<option value=' '>CREATE VIEW</option>
+                            <option value=' '>DELETE </option>
+							<option value=' '>DROP</option>
+							<option value=' '>EVENT</option>
+							<option value=' '>EXECUTE</option>
+                            <option value=' '>GRANT OPTION</option>
+							<option value=' '>INDEX</option>
+                            <option value=' '>INSERT </option>
+							<option value=' '>LOOK TABLES</option>
+							<option value=' '>PROCESS</option>
+							<option value=' '>RELOAD</option>
+                            <option value=' '>SELECT</option>
+							<option value=' '>SHOW DATABASES</option>
+                            <option value=' '>SHUTDOWN</option>
+							<option value=' '>TRIGGER</option>
+							<option value=' '>UPDATE</option>
+							<option value=' '>USAGE</option>
+						    </select></li>
+                            <li>適用対象のデータベース:<input type="text" name="database" size="10" maxlength="10"></li>
+							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成"></li>
 						
                     </form>
