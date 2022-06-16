@@ -1,0 +1,13 @@
+/* フッター */
+footer {}
+.footer-container {
+	padding: 20px;
+	border-radius: 0 0 10px 10px;
+	background: gainsboro;	
+}
+.copyright {
+	margin: 0;
+	text-align: center;
+	font-size: 0.8rem;
+	color: #000000;
+}
