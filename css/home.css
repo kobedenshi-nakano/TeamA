@@ -83,23 +83,7 @@ nav {
 .nav-container {
 	padding: 0 20px 0 20px;
 }
-.globalnav {
-	display: flex;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.globalnav li {
-	flex: 0 0 100px;	
-}
-.globalnav li p {
-	display: block;
-	padding: 10px 0;
-	text-decoration: none;
-	text-align: center;
-	line-height: 100%;
-	color: #000000;
-}
+
 
 .news-contents {
 	margin: 0;

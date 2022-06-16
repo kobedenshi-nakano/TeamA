@@ -120,19 +120,18 @@
 					<p>テーブル名</p>&nbsp;&nbsp;&nbsp;
 					<input type="text" name="test" size="10" maxlength="10">
 				 </div>
-						<ul class="globalnav">
+					<ul class="globalnav">
+						<div class="1">
 							<li><p>列名</p></li>
+							<input type="text" name="main-name" size="10" maxlength="10"> 
+						</div>
+						<div class="2">
 							<li><p>別名</p></li>
+							<input type="text" name="sub-name" size="10" maxlength="10">
+						</div>
+						<div class="3">
 							<li><p>列の型名</p></li>
-							<li><p>NULLについて</p></li>
-							<li><p>初期値</p></li>
-							<li><p>重複</p></li>
-							<li><p>主キー</p></li>
-							<li><p>外部キー制約</p></li>
-						</ul>
-						<input type="text" name="main-name" size="10" maxlength="10"> 
-						<input type="text" name="sub-name" size="10" maxlength="10">
-						<select name='Type' >
+							<select name='Type' >
 							<option value=' 未入力(型)'>--</option>
 							<option value=' INTRGER'>INTEGER(整数値)</option>
 							<option value=' DECIMAL'>DECIMAL(小数)</option>
@@ -143,27 +142,45 @@
 							<option value=' DATE'>DATE(日付)</option>
 							<option value=' TIME'>TIME(時間)</option>
 						</select>
-						<select name='yes-no-null' >
+						</div>
+						<div class="4">
+							<li><p>NULLについて</p></li>
+							<select name='yes-no-null' >
 							<option value=' 未入力(null)'>--</option>
 							<option value=' NOT NULL'>NOT NULL</option>
 							<option value=' NULL'>NULL</option>
-						</select>
-						<input type="text" name="start" >
-						<select name='重複'>
+							</select>
+						</div>
+						<div class="5">
+							<li><p>初期値</p></li>
+							<input type="text" name="start" >
+				        </div>
+						<div class="6">
+							<li><p>重複</p></li>
+							<select name='重複'>
 							<option value=' 未入力(重複)'>--</option>
 							<option value=''>重複あってもいい</option>
 							<option value=' UNIQUE'>重複なし</option>
-						</select>
-						<select name='main-key' >
+						    </select>
+				        </div>
+                        <div class="7">
+							<li><p>主キー</p></li>
+							<select name='main-key' >
 							<option value=' 未入力(主キー)'>--</option>
 							<option value=' PRIMARY KEY'>Yes</option>
 							<option value=''>No</option>
-						</select>
-						<select name='forign-key'>
+						    </select>
+				        </div>
+						<div class="8">	
+							<li><p>外部キー制約</p></li>
+							<select name='forign-key'>
 							<option value=' 未入力(外部キー)'>--</option>
 							<option value=' REFERENCES'>Yes</option>
 							<option value=''>No</option>
 						</select>
+				        </div>
+					</ul>
+						
 						<br><input type="submit" value="生成">
 					</div>
                 </nav>

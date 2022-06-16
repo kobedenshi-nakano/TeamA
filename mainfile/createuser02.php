@@ -20,6 +20,11 @@
             $naiyou[]="identified by '".$_POST['password']."'";
         }
         
+        if(empty($_POST['kengen'])){
+            $error[]="権限を選択してください。";
+        }else{
+            $naiyou[]="identified by '".$_POST['kengen']."'";
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -54,7 +59,7 @@
                 <!--権限ありver-->
                 <form action="createuser01.php" method="POST">
                     <input type="submit" value="権限なしverへ">
-                </form>
+                </form><br>
 			  <nav>
               <?php if(!empty($error)):?>
                 <ul class="error_list">
