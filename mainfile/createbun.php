@@ -80,7 +80,7 @@
 	  require_once __DIR__ .'./subnav.php';
 ?>
 
-
+<link rel="stylesheet" href="../css/home.css">
 		<div class="column2">
 				<ul class="news-contents">
 			<form method="post" action="">
