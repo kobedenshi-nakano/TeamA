@@ -1,79 +1,12 @@
 @charset "utf-8";
 
-/*html {
-	font-size: 16px;
-}
-
-html * {
-	box-sizing: border-box;
-}
-body {
-	margin: 0;
-	font-family: sans-serif;
-}*/
-/* ヘッダー 
-header {
-	background: gainsboro;
-}
-header a{
-	text-decoration: none;
-}
-.header-container {
-	padding: 30px 20px 10px 20px;
-}
-h1{
-    color: #000000;
-	text-align: center;
-}*/
-/* フッター 
-footer {}
-.footer-container {
-	padding: 20px;
-	border-radius: 0 0 10px 10px;
-	background: gainsboro;	
-}
-.copyright {
-	margin: 0;
-	text-align: center;
-	font-size: 0.8rem;
-	color: #000000;
-}*/
-/* メインコンテンツレイアウト部分 */
-.main-contents-container {
-	padding: 0 0 40px 0;
-	background: #ffffff;
-	display: flex;
-}
-.column1 {
-	margin: 0 20px 0 20px;
-	padding: 30px 0 30px 0;
-	flex: 0 0 140px;
-}
 .column2 {
 	margin: 0 20px 0 20px;
 	padding: 30px 0 30px 0;
 	flex: 1 1 auto;
 }
 
-/* 1コラム目 */
-.subnav {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	border-top: 1px dashed #dadada;
-}
-.subnav li {
-	padding: 10px;
-	border-bottom: 1px dashed #dadada;
-}
-.subnav li a {
-	text-decoration: none;
-	color: #000000;
-}
-/*.subnav li a.current,*/
-.subnav li a:hover {
-	color: #ffa500;
-}
+
 
 /* 2コラム目 */
 
