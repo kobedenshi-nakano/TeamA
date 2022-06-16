@@ -99,7 +99,7 @@
 				<li><a href="select.php">select</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
-				<li><a href="createuser01.php">creteuser</a></li>
+				<li><a href="createuser01.php">createuser</a></li>
 			</ul>
 		</div>
 		<div class="column2">

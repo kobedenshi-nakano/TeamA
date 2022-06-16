@@ -27,13 +27,39 @@ if($_REQUEST["search"]){
 				<li><a href="select.php">select</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
+				<li><a href="createuser01.php">createuser</a></li>
 			</ul>
 		</div>
 		<div class="column2">
-				<ul class="news-contents">
-				
+		
+			<ul class="news-contents">
+					
+		<form method="post" action="">
+
+			<ul class="globalnav">
+					
+
+
+			</ul>
+						
+
+						<input type="submit" value="生成">
+		</form>
+
+			<div class="kekka-container">
+				<p>出力結果</p>
+		        <li>
+				<!--出力結果-->
+				<?php
+					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   						 echo $_POST['test'];
+						}
+				?>
+
+				</li>
+		    </div>
 				</ul>
-		</div>
+			</div>
 	</div>
 </div>
 
