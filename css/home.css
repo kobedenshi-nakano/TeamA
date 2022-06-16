@@ -113,6 +113,24 @@ nav {
 	list-style: none;
 	border: 5px solid #dadada;
 }
+.globalnav {
+	display: flex;
+	justify-content:space-around;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.globalnav li {
+	flex: 0 0 100px;	
+}
+.globalnav li p {
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	text-align: center;
+	line-height: 100%;
+	color: #000000;
+}
 
 /*テーブル名やデータベース名*/
 .table{

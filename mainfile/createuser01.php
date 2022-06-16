@@ -30,7 +30,7 @@
 <meta name="format-detection" content="telephone=no">
 <title>SQLツクール</title>
 <link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/createbun.css">
+<link rel="stylesheet" href="../css/createuser.css">
 </head>
 <body>
 <header>
@@ -65,7 +65,7 @@
                 </ul>
                     <?php endif; ?>
 				<div class="nav-container">
-                <ul class="globalnav">
+                <ul class="fromnav">
                     <form method="post" action="">
 							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
