@@ -1,4 +1,4 @@
-<?php
+<?
 if($_REQUEST["search"]){
 //submitされた検索条件を使いDBに問い合わせる処理
 }
