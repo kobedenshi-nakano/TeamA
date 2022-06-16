@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-html {
+/*html {
 	font-size: 16px;
 }
 
@@ -10,8 +10,8 @@ html * {
 body {
 	margin: 0;
 	font-family: sans-serif;
-}
-/* ヘッダー */
+}*/
+/* ヘッダー 
 header {
 	background: gainsboro;
 }
@@ -24,8 +24,8 @@ header a{
 h1{
     color: #000000;
 	text-align: center;
-}
-/* フッター */
+}*/
+/* フッター 
 footer {}
 .footer-container {
 	padding: 20px;
@@ -37,7 +37,7 @@ footer {}
 	text-align: center;
 	font-size: 0.8rem;
 	color: #000000;
-}
+}*/
 /* メインコンテンツレイアウト部分 */
 .main-contents-container {
 	padding: 0 0 40px 0;
