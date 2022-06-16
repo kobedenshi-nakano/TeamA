@@ -67,14 +67,10 @@
 				<div class="nav-container">
                 <ul class="globalnav">
                     <form method="post" action="">
-							<li><p>ホスト名:</p></li>
-							<li><input type="text" name="hostname" size="10" maxlength="10"></li>
-							<li><p>ユーザー名:</p></li>
-						    <li><input type="text" name="username" size="10" maxlength="10"></li>
-							<li><p>パスワード:</p></li>
-							<li><input type="text" name="password" size="10" maxlength="10"></li>
-                            <li><p>権限のジャンル選択:</p></li>
-							<li><select name='kengen' >
+							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>
+							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
+							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
+                            <li>権限のジャンル選択:<select name='kengen' >
 							<option value=' '>--</option>
 							<option value=' '></option>
 							<option value=' '></option>
