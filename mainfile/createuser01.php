@@ -54,7 +54,7 @@
                 <!--権限ありver-->
                 <form action="createuser02.php" method="POST">
                     <input type="submit" value="権限ありverへ">
-                </form>
+                </form><br>
 			  <nav>
               <?php if(!empty($error)):?>
                 <ul class="error_list">
@@ -67,12 +67,9 @@
 				<div class="nav-container">
                 <ul class="globalnav">
                     <form method="post" action="">
-							<li><p>ホスト名:</p></li>
-							<li><input type="text" name="hostname" size="10" maxlength="10"></li>
-							<li><p>ユーザー名:</p></li>
-						    <li><input type="text" name="username" size="10" maxlength="10"></li>
-							<li><p>パスワード:</p></li>
-							<li><input type="text" name="password" size="10" maxlength="10"></li>
+							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>
+							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
+							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成"></li>
 						
                     </form>
