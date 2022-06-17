@@ -21,9 +21,9 @@
         }
         
         if(isset($_POST['kekka'])){
-            $error[]="権限を選択してください。";
-        }else{
             $naiyou[]=$_POST['kekka'];
+        }else{
+            $error[]="権限を選択してください。";
         }
 
         if(empty($_POST['database'])){
