@@ -2,10 +2,28 @@
     if($_SERVER['REQUEST_METHOD']==='POST'){
         $naiyou=array();
         $error=array();
+        if(isset($_POST['kekka'])){
+            $naiyou[]="GRANT".$_POST['kekka']." ON ";
+        }else{
+            $error[]="権限を選択してください。";
+        }
+
+        if(empty($_POST['database'])){
+            $error[]="適用対象のデータベースを入力してください。";
+        }else{
+            $naiyou[]=$_POST['database'].".";
+        }
+
+        if(empty($_POST['table'])){
+            $error[]="適用対象のテーブルを入力してください。";
+        }else{
+            $naiyou[]=$_POST['table']." TO ";
+        }
+
         if(empty($_POST['username'])){
             $error[]="ユーザー名を入力してください。";
         }else{
-            $naiyou[]="create user '".$_POST['username']."'@";
+            $naiyou[]="'".$_POST['username']."'@";
         }
         
         if(empty($_POST['hostname'])){
@@ -17,26 +35,9 @@
         if(empty($_POST['password'])){
             $error[]="パスワードを入力してください。";
         }else{
-            $naiyou[]="identified by '".$_POST['password']."'";
+            $naiyou[]="identified by '".$_POST['password']."';<br /> FLUSH PRIVILEGES;";
         }
         
-        if(isset($_POST['kekka'])){
-            $naiyou[]=$_POST['kekka'];
-        }else{
-            $error[]="権限を選択してください。";
-        }
-
-        if(empty($_POST['database'])){
-            $error[]="適用対象のパスワードを入力してください。";
-        }else{
-            $naiyou[]="identified by '".$_POST['database']."'";
-        }
-
-        if(empty($_POST['table'])){
-            $error[]="適用対象のテーブルを入力してください。";
-        }else{
-            $naiyou[]="identified by '".$_POST['table']."'";
-        }
     }
 ?>
 <?php

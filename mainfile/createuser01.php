@@ -17,7 +17,7 @@
         if(empty($_POST['password'])){
             $error[]="パスワードを入力してください。";
         }else{
-            $naiyou[]="identified by '".$_POST['password']."'";
+            $naiyou[]="identified by '".$_POST['password']."';";
         }
         
     }
