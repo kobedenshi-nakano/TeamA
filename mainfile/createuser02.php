@@ -45,10 +45,11 @@
 	  require_once __DIR__ .'./subnav.php';
 ?>
 <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/createuser.css">
 
 		<div class="column2">
 		    <ul class="news-contents">
-                <!--権限ありver-->
+                
                 <form action="createuser01.php" method="POST">
                     <input type="submit" value="権限なしverへ">
                 </form><br>
@@ -68,10 +69,10 @@
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
                             <li>権限のジャンル選択:
-                            <select name='kekka'>
+                            <select class="form-control" id="kekka" onchange="viewChange();" name='kekka'>
 							<option value=' NONO'>--</option>
-							<option value=' all'>ALL</option>
-							<option value=' alter'>ALTER</option>
+							<option id="ALL" value=' all'>ALL</option>
+							<option id="alter" value=' alter'>ALTER</option>
 							<option value=' alter-routine'>ALTER ROUTINE</option>
 							<option value=' create'>CREATE</option>
                             <option value=' create-tablespace'>CREATE TABLESPACE</option>
@@ -100,6 +101,44 @@
                             <li><input type="submit" value="生成"></li>
 						
                     </form>
+                    
+                    <div id="hukidashi-waku">
+                        <div class="col-auto my-5">
+                        <div id="Box1" class="my-5">
+                            <p>one</p>
+                        </div>
+                        <div id="Box2" class="my-5" style="display:none;">  // ここ
+                            <p>two</p>
+                        </div>
+                        <div id="Box3" class="my-5" style="display:none;">  // ここ
+                            <p>three</p>
+                        </div>
+                    </div>
+                        <script>
+                            function viewChange(){
+                            if(document.getElementById('sample')){
+                            id = document.getElementById('sample').value;
+                            if(id == 'select1'){
+                            document.getElementById('Box1').style.display = "";
+                            document.getElementById('Box2').style.display = "none";
+                            document.getElementById('Box3').style.display = "none";
+                            }else if(id == 'select2'){
+                            document.getElementById('Box1').style.display = "none";
+                            document.getElementById('Box2').style.display = "";
+                            document.getElementById('Box3').style.display = "none";
+                            }
+                            else if(id == 'select3'){
+                            document.getElementById('Box1').style.display = "none";
+                            document.getElementById('Box2').style.display = "none";
+                            document.getElementById('Box3').style.display = "";
+                                }
+                            } 
+
+                            window.onload = viewChange;
+                        }
+                        </script>
+                        
+                    </div>
                 </ul>
 			    <div class="kekka-container">
 				    <p>出力結果</p>
