@@ -1,5 +1,5 @@
 <?php
-   if($_SERVER['REQUSET_METHOD']=== 'POST'){
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
        $naiyou=array();
 	   $error=array();
 	   if(empty($_POST['table'])){
@@ -7,10 +7,17 @@
 	   }else{
            $naiyou[]="update ".$_POST['table'];
 	   }
+
 	   if(empty($_POST['colatai'])){
-           $error[]="更新する値が入力されていません。";
+           $error[]="更新する列が入力されていません。";
 	   }else{
            $naiyou[]=" set ".$_POST['colatai'];
+	   }
+
+	   if(empty($_POST['colatai2'])){
+		$error[]="更新する列の値が入力されていません。";
+	   }else{
+		$naiyou[]=" =".$_POST['colatai2'];
 	   }
    }
 ?>
@@ -19,29 +26,44 @@
 	  require_once __DIR__ .'./subnav.php';
 ?>
 <link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/createuser.css">
 
 		<div class="column2">
-			<ul class="news-contents">		
+			<ul class="news-contents">
+				<?php if(!empty($error)):?>
+			    <ul class="error_list">
+                     <?php
+					     foreach($error as $value){
+							echo $value;
+							echo '<br>';
+						 }
+					 ?>
+				</ul>
+				<?php endif; ?>
+				
 		    <form method="post" action="">
-			    <ul class="globalnav">
-				    <li><input type="text" name="table" size="10" maxlength="10">テーブル名</li>
-			        <li><input type="text" name="colatai" size="10" maxlength="10">カラムの値</li>
-			        <li><input type="text" name="where" size="10" maxlength="10">where句の指定</li>
-					<li><input type="text" name="order" size="10" maxlength="10">order by句の指定<li>
-					<li><input type="text" name="limit"  size="10" maxlength="10">limit句</li>	
-			    </ul>
-						
-
+			    <ul class="formnav">
+				    <li>テーブル名:<input type="text" name="table" size="10" maxlength="10"></li>
+			        <li>更新したい列:<input type="text" name="colatai" size="10" maxlength="10"></li>
+					<li>更新したい列の値:<input type="text" name="colatai2" size="10" maxlength="10"></li>
+			        <li>where句の指定:<input type="text" name="where" size="10" maxlength="10"></li>
+					<li>order by句の指定:<input type="text" name="order" size="10" maxlength="10"><li>
+					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10"></li>	
+			    
 				<input type="submit" value="生成">
 		    </form>
-
+			</ul>
 			<div class="kekka-container">
 				<p>出力結果</p>
 		        <li>
 				<!--出力結果-->
 				<?php
-					
+					if(isset($naiyou)){
+                       foreach($naiyou as $value){
+						    echo $value;
+							echo '';
+					   }
+					}
 				?>
 
 				</li>

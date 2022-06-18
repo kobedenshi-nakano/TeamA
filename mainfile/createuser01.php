@@ -35,7 +35,7 @@
                 <form action="createuser02.php" method="POST">
                     <input type="submit" value="権限ありverへ">
                 </form><br>
-			  <nav>
+			
               <?php if(!empty($error)):?>
                 <ul class="error_list">
                       <?php  foreach($error as $value){
@@ -44,7 +44,7 @@
                         }?>
                 </ul>
                     <?php endif; ?>
-				<div class="nav-container">
+				
                 <ul class="fromnav">
                     <form method="post" action="">
 							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>

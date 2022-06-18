@@ -16,6 +16,9 @@
 	line-height: 100%;
 	color: #000000;
 }
+#hukidashi-waku {
+	display: flex;
+}
 .hukidashi-waku {
 	position: relative;
 }

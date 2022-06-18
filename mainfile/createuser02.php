@@ -53,7 +53,7 @@
                 <form action="createuser01.php" method="POST">
                     <input type="submit" value="権限なしverへ">
                 </form><br>
-			  <nav>
+			
               <?php if(!empty($error)):?>
                 <ul class="error_list">
                       <?php  foreach($error as $value){
@@ -62,7 +62,7 @@
                         }?>
                 </ul>
                     <?php endif; ?>
-				<div class="nav-container">
+				
                 <ul class="formnav">
                     <form method="post" action="">
 							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>
@@ -95,7 +95,7 @@
 							<option value=' trigger'>TRIGGER</option>
 							<option value=' update'>UPDATE</option>
 							<option value=' usage'>USAGE</option>
-                            </select>></li>
+                            </select></li>
                             <li>適用対象のデータベース:<input type="text" name="database" size="10" maxlength="10"></li>
 							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成"></li>
