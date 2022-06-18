@@ -69,10 +69,10 @@
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
                             <li>権限のジャンル選択:
-                            <select class="form-control" id="kekka" onchange="viewChange();" name='kekka'>
+                            <select class="form-control" onchange="viewChange();" id="kekka" name='kekka'><!--class="form-control" onchange="viewChange();" id="kekka" 削除-->
 							<option value=' NONO'>--</option>
-							<option id="ALL" value=' all'>ALL</option>
-							<option id="alter" value=' alter'>ALTER</option>
+							<option id="ALL" value=' all'>ALL</option><!--id="ALL"-->
+							<option id="alter" value=' alter'>ALTER</option><!--id="alter"-->
 							<option value=' alter-routine'>ALTER ROUTINE</option>
 							<option value=' create'>CREATE</option>
                             <option value=' create-tablespace'>CREATE TABLESPACE</option>
@@ -95,7 +95,7 @@
 							<option value=' trigger'>TRIGGER</option>
 							<option value=' update'>UPDATE</option>
 							<option value=' usage'>USAGE</option>
-						    </select></li>
+                            </select>></li>
                             <li>適用対象のデータベース:<input type="text" name="database" size="10" maxlength="10"></li>
 							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成"></li>
@@ -142,6 +142,9 @@
                 </ul>
 			    <div class="kekka-container">
 				    <p>出力結果</p>
+                    <!--<div class="hukidashi-waku">まうすにのせる
+                        <span class="hukidashi">吹き出し</span>
+                    </div>-->
 		            <li>
 				    <!--出力結果-->
                     <?php /*if(isset($naiyou)):?>
