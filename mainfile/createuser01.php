@@ -33,7 +33,7 @@
 		    <ul class="news-contents">
                 <!--権限ありver-->
                 <form action="createuser02.php" method="POST">
-                    <input type="submit" value="権限ありverへ">
+                    <input type="submit" value="権限ありverへ" name="kirikae1">
                 </form><br>
 			
               <?php if(!empty($error)):?>

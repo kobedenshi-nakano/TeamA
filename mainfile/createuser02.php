@@ -51,7 +51,7 @@
 		    <ul class="news-contents">
                 
                 <form action="createuser01.php" method="POST">
-                    <input type="submit" value="権限なしverへ">
+                    <input type="submit" value="権限なしverへ" name="kirikae2">
                 </form><br>
 			
               <?php if(!empty($error)):?>
