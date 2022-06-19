@@ -17,7 +17,7 @@
 	   if(empty($_POST['colatai2'])){
 		$error[]="更新する列の値が入力されていません。";
 	   }else{
-		$naiyou[]=" =".$_POST['colatai2'];
+		$naiyou[]=" = ".$_POST['colatai2'];
 	   }
    }
 ?>
