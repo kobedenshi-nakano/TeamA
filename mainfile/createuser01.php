@@ -1,7 +1,16 @@
 <?php
     if($_SERVER['REQUEST_METHOD']==='POST'){
+        $button=array();
+        if(isset($_POST['kirikae1'])){
+            $button[]="";
+        }
+    }
+?>
+<?php
+    if($_SERVER['REQUEST_METHOD']==='POST'){
         $naiyou=array();
         $error=array();
+
         if(empty($_POST['username'])){
             $error[]="ユーザー名を入力してください。";
         }else{

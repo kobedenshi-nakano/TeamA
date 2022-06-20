@@ -1,10 +1,23 @@
+<?php/*
+    if($_SERVER['REQUEST_METHOD']==='POST'){
+        $button=array();
+        if(isset($_POST['kirikae2'])){
+            $button[]="";
+        }
+    }*/
+?>
 <?php
     if($_SERVER['REQUEST_METHOD']==='POST'){
         $naiyou=array();
         $error=array();
+        $button=array();
+
         if(isset($_POST['kekka'])){
             $naiyou[]="GRANT".$_POST['kekka']." ON ";
-        }else{
+        }else if(isset($_POST['kirikae2'])){
+            $button[]="";
+        }
+        else{
             $error[]="権限を選択してください。";
         }
 
@@ -69,10 +82,10 @@
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
                             <li>権限のジャンル選択:
-                            <select class="form-control" onchange="viewChange();" id="kekka" name='kekka'><!--class="form-control" onchange="viewChange();" id="kekka" 削除-->
-							<option value=' NONO' >title</option>
-							<option id="ALL" value=' all' title="ふきだし">ALL</option><!--id="ALL"-->
-							<option id="alter" value=' alter'>ALTER</option><!--id="alter"-->
+                            <select name='kekka'>
+							<option value=' NONO' >----</option>
+							<option value=' all' title="ふきだし">ALL</option>
+							<option value=' alter'>ALTER</option>
 							<option value=' alter-routine'>ALTER ROUTINE</option>
 							<option value=' create'>CREATE</option>
                             <option value=' create-tablespace'>CREATE TABLESPACE</option>
