@@ -16,30 +16,4 @@
 	line-height: 100%;
 	color: #000000;
 }
-#hukidashi-waku {
-	display: flex;
-}
-.hukidashi-waku {
-	position: relative;
-}
-.hukidashi-waku:hover .hukidashi{
-	display: inline;
-}
-.hukidashi{
-    position: absolute;
-	display: none;
-	padding: 2px;
-	background-color: rgba(red, green, blue, alpha);
-	width: 180px;
-	right: -1%;
-	font-size: 30px;
-}
-.hukidashi:after{
-	border-right: 12px solid rgba(red, green, blue, alpha);
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	left:-12px;
-	top:5%;
-	content:"";
-	position: absolute;
-}
+

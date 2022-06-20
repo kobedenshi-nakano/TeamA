@@ -70,8 +70,8 @@
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
                             <li>権限のジャンル選択:
                             <select class="form-control" onchange="viewChange();" id="kekka" name='kekka'><!--class="form-control" onchange="viewChange();" id="kekka" 削除-->
-							<option value=' NONO'>--</option>
-							<option id="ALL" value=' all'>ALL</option><!--id="ALL"-->
+							<option value=' NONO' >title</option>
+							<option id="ALL" value=' all' title="ふきだし">ALL</option><!--id="ALL"-->
 							<option id="alter" value=' alter'>ALTER</option><!--id="alter"-->
 							<option value=' alter-routine'>ALTER ROUTINE</option>
 							<option value=' create'>CREATE</option>
@@ -100,51 +100,11 @@
 							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成"></li>
 						
-                    </form>
-                    
-                    <div id="hukidashi-waku">
-                        <div class="col-auto my-5">
-                        <div id="Box1" class="my-5">
-                            <p>one</p>
-                        </div>
-                        <div id="Box2" class="my-5" style="display:none;">  // ここ
-                            <p>two</p>
-                        </div>
-                        <div id="Box3" class="my-5" style="display:none;">  // ここ
-                            <p>three</p>
-                        </div>
-                    </div>
-                        <script>
-                            function viewChange(){
-                            if(document.getElementById('sample')){
-                            id = document.getElementById('sample').value;
-                            if(id == 'select1'){
-                            document.getElementById('Box1').style.display = "";
-                            document.getElementById('Box2').style.display = "none";
-                            document.getElementById('Box3').style.display = "none";
-                            }else if(id == 'select2'){
-                            document.getElementById('Box1').style.display = "none";
-                            document.getElementById('Box2').style.display = "";
-                            document.getElementById('Box3').style.display = "none";
-                            }
-                            else if(id == 'select3'){
-                            document.getElementById('Box1').style.display = "none";
-                            document.getElementById('Box2').style.display = "none";
-                            document.getElementById('Box3').style.display = "";
-                                }
-                            } 
-
-                            window.onload = viewChange;
-                        }
-                        </script>
-                        
-                    </div>
+                    </form> 
                 </ul>
 			    <div class="kekka-container">
 				    <p>出力結果</p>
-                    <!--<div class="hukidashi-waku">まうすにのせる
-                        <span class="hukidashi">吹き出し</span>
-                    </div>-->
+                
 		            <li>
 				    <!--出力結果-->
                     <?php /*if(isset($naiyou)):?>
