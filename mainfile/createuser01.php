@@ -35,7 +35,6 @@
 
 		<div class="column2">
 		    <ul class="news-contents">
-                <!--権限ありver-->
                 <form action="createuser02.php" method="POST">
                     <input type="submit" value="権限ありverへ" name="kirikae1">
                 </form><br>
@@ -60,13 +59,7 @@
 			    <div class="kekka-container">
 				    <p>出力結果</p>
 		            <li>
-				    <!--出力結果-->
-                    <?php /*if(isset($naiyou)):?>
-                    <?php foreach( $naiyou as $value ): ?>
-				    <?php echo $value; ?>
-				    <?php echo ' '; ?>
-				    <?php endforeach; ?>
-				    <?php endif; */
+                    <?php 
                     if(isset($naiyou)){
                         foreach($naiyou as $value){
                             echo $value;
