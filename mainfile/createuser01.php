@@ -1,16 +1,9 @@
 <?php
     if($_SERVER['REQUEST_METHOD']==='POST'){
-        $button=array();
-        if(isset($_POST['kirikae1'])){
-            $button[]="";
-        }
-    }
-?>
-<?php
-    if($_SERVER['REQUEST_METHOD']==='POST'){
         $naiyou=array();
         $error=array();
-
+        $button=array();
+        if(isset($_POST['seisei2'])){
         if(empty($_POST['username'])){
             $error[]="ユーザー名を入力してください。";
         }else{
@@ -28,8 +21,10 @@
         }else{
             $naiyou[]="identified by '".$_POST['password']."';";
         }
-        
+    }else if(isset($_POST['kirikae1'])){
+        $button[]="";
     }
+}
 ?>
 <?php
       require_once __DIR__ .'./header.php';
@@ -59,7 +54,7 @@
 							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
-                            <li><input type="submit" value="生成"></li>
+                            <li><input type="submit" value="生成" name="seisei2"></li>
 						
                     </form>
                 </ul>

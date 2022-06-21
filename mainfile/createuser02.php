@@ -11,47 +11,47 @@
         $naiyou=array();
         $error=array();
         $button=array();
-
-        if(isset($_POST['kekka'])){
-            $naiyou[]="GRANT".$_POST['kekka']." ON ";
-        }else if(isset($_POST['kirikae2'])){
-            $button[]="";
-        }
-        else{
-            $error[]="権限を選択してください。";
-        }
-
-        if(empty($_POST['database'])){
-            $error[]="適用対象のデータベースを入力してください。";
-        }else{
-            $naiyou[]=$_POST['database'].".";
-        }
-
-        if(empty($_POST['table'])){
-            $error[]="適用対象のテーブルを入力してください。";
-        }else{
-            $naiyou[]=$_POST['table']." TO ";
-        }
-
-        if(empty($_POST['username'])){
-            $error[]="ユーザー名を入力してください。";
-        }else{
-            $naiyou[]="'".$_POST['username']."'@";
-        }
         
-        if(empty($_POST['hostname'])){
-            $error[]="ホスト名を入力してください。";
-        }else{
-            $naiyou[]="'".$_POST['hostname']."'";
-        }
+        if(isset($_POST['seisei'])){
+            if(isset($_POST['kekka'])){
+                $naiyou[]="GRANT".$_POST['kekka']." ON ";
+            }else{
+                $error[]="権限を選択してください。";
+            }
+
+            if(empty($_POST['database'])){
+                $error[]="適用対象のデータベースを入力してください。";
+            }else{
+                $naiyou[]=$_POST['database'].".";
+            }
+
+            if(empty($_POST['table'])){
+                $error[]="適用対象のテーブルを入力してください。";
+            }else{
+                $naiyou[]=$_POST['table']." TO ";
+            }
+
+            if(empty($_POST['username'])){
+                $error[]="ユーザー名を入力してください。";
+            }else{
+                $naiyou[]="'".$_POST['username']."'@";
+            }
+        
+            if(empty($_POST['hostname'])){
+                $error[]="ホスト名を入力してください。";
+            }else{
+                $naiyou[]="'".$_POST['hostname']."'";
+            }
        
-        if(empty($_POST['password'])){
-            $error[]="パスワードを入力してください。";
-        }else{
-            $naiyou[]="identified by '".$_POST['password']."';<br /> FLUSH PRIVILEGES;";
-        }
-        
+            if(empty($_POST['password'])){
+                $error[]="パスワードを入力してください。";
+            }else{
+                $naiyou[]="identified by '".$_POST['password']."';<br /> FLUSH PRIVILEGES;";
+            }
+    }else if(isset($_POST['kirikae2'])){
+            $button[]="";
     }
+}
 ?>
 <?php
       require_once __DIR__ .'./header.php';
@@ -111,7 +111,7 @@
                             </select></li>
                             <li>適用対象のデータベース:<input type="text" name="database" size="10" maxlength="10"></li>
 							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
-                            <li><input type="submit" value="生成"></li>
+                            <li><input type="submit" value="生成" name="seisei"></li>
 						
                     </form> 
                 </ul>
