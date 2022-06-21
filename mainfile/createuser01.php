@@ -55,7 +55,6 @@
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
 							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成" name="seisei2"></li>
-						
                     </form>
                 </ul>
 			    <div class="kekka-container">

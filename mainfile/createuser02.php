@@ -1,11 +1,3 @@
-<?php/*
-    if($_SERVER['REQUEST_METHOD']==='POST'){
-        $button=array();
-        if(isset($_POST['kirikae2'])){
-            $button[]="";
-        }
-    }*/
-?>
 <?php
     if($_SERVER['REQUEST_METHOD']==='POST'){
         $naiyou=array();
@@ -112,27 +104,18 @@
                             <li>適用対象のデータベース:<input type="text" name="database" size="10" maxlength="10"></li>
 							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
                             <li><input type="submit" value="生成" name="seisei"></li>
-						
                     </form> 
                 </ul>
 			    <div class="kekka-container">
 				    <p>出力結果</p>
-                
 		            <li>
-				    <!--出力結果-->
-                    <?php /*if(isset($naiyou)):?>
-                    <?php foreach( $naiyou as $value ): ?>
-				    <?php echo $value; ?>
-				    <?php echo ' '; ?>
-				    <?php endforeach; ?>
-				    <?php endif; */
-                    if(isset($naiyou)){
-                        foreach($naiyou as $value){
-                            echo $value;
-                            echo '';
+                    <?php
+                        if(isset($naiyou)){
+                            foreach($naiyou as $value){
+                                echo $value;
+                                echo '';
+                            }
                         }
-                    }
-                    
                     ?>
 					</li>
                 </div>
