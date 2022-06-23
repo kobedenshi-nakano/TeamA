@@ -17,9 +17,7 @@
                 $naiyou[]=$_POST['database'].".";
             }
 
-            if(empty($_POST['table'])){
-                $error[]="適用対象のテーブルを入力してください。";
-            }else{
+            if(!empty($_POST['table'])){
                 $naiyou[]=$_POST['table']." TO ";
             }
 
@@ -72,7 +70,7 @@
                     <form method="post" action="">
 							<li>ホスト名:<input type="text" name="hostname" size="10" maxlength="10"></li>
 							<li>ユーザー名:<input type="text" name="username" size="10" maxlength="10"></li>
-							<li>パスワード:<input type="text" name="password" size="10" maxlength="10"></li>
+							<li>パスワード:<input type="text" name="password" size="10" maxlength="20"></li>
                             <li>権限のジャンル選択:
                             <select name='kekka'>
 							<option value=' NONO' >--</option>
