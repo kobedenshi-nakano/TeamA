@@ -55,7 +55,7 @@
 							$error[] = "重複への処理を入力してください";
 						}
 						else{
-							$date[] = $_POST['重複']; //重複
+							$date[] = $_POST['重複']; //重複なしと主キーアリの場合は表示できないようにする
 							
 						}
 						if ($_POST['main-key'] == ' 未入力(主キー)') {
@@ -112,7 +112,7 @@
 							<li><p>列の型名</p></li>
 							<select name='Type' >
 							<option value=' 未入力(型)'>--</option>
-							<option value=' INTRGER'>INTEGER(整数値)</option>
+							<option value=' INTEGER'>INTEGER(整数値)</option>
 							<option value=' DECIMAL'>DECIMAL(小数)</option>
 							<option value=' CHAR'>DATE(固定長 文字列)</option>
 							<option value=' VARCHAR(10)'>VARCHAR(可変長 文字列10文字)</option>
