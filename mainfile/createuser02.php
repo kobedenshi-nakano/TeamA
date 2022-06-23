@@ -78,16 +78,16 @@
 							<option value=' NONO' >--</option>
 							<option value=' all' title="GRANT OPTION（権限の付与）以外の全てを許可する">ALL</option>
 							<option value=' alter'title="ALTER TABLE（テーブルの変更）の使用を許可する">ALTER</option>
-							<option value=' alter-routine'title="ストアドルーチンの変更・削除を許可する">ALTER ROUTINE</option>
+							<option value=' alter-routine'title="ストアドルーチン(プロシージャ or 関数)の変更・削除を許可する">ALTER ROUTINE</option>
 							<option value=' create'title="データベースとテーブルの作成を許可する">CREATE</option>
-                            <option value=' create-tablespace'title="ストアドルーチンの作成を許可する">CREATE TABLESPACE</option>
+                            <option value=' create-tablespace'title="ストアドルーチン(プロシージャ or 関数)の作成を許可する">CREATE TABLESPACE</option>
 							<option value=' create-temporary-tables'title="テーブルスペースとログファイルグループの作成を許可する">CREATE TEMPORARY TABLES</option>
 							<option value=' create-user'title="一時テーブル作成の使用を許可する">CREATE USER</option>
 							<option value=' create-view'title="	ユーザの作成・変更・削除を許可する">CREATE VIEW</option>
                             <option value=' delete'title="ビューの作成や変更を許可する">DELETE </option>
 							<option value=' drop'title="DELETE文の使用を許可する">DROP</option>
 							<option value=' event'title="DROP文の使用を許可する">EVENT</option>
-							<option value=' execute'title="ストアドルーチンの実行を許可する">EXECUTE</option>
+							<option value=' execute'title="ストアドルーチン(プロシージャ or 関数)の実行を許可する">EXECUTE</option>
                             <option value=' grant-option'title="権限の付与を許可する">GRANT OPTION</option>
 							<option value=' index'title="インデックスの作成と削除を許可する">INDEX</option>
                             <option value=' insert'title="INSERT文の使用を許可する">INSERT </option>
