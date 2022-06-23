@@ -7,7 +7,7 @@
 				<li><a href="select.php">select</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
-				<li><a href="createuser01.php">createuser</a></li>
+				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php">create table</a></li>
 			</ul>
 		</div>
