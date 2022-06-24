@@ -5,6 +5,7 @@
         $button=array();
         
         if(isset($_POST['seisei'])){
+            
             if(isset($_POST['kekka'])){
                 $naiyou[]="GRANT".$_POST['kekka']." ON ";
             }else{
@@ -17,7 +18,9 @@
                 $naiyou[]=$_POST['database'].".";
             }
 
-            if(!empty($_POST['table'])){
+            if(empty($_POST['table'])){
+                $naiyou[]=$_POST['table']." * ";
+            }else{
                 $naiyou[]=$_POST['table']." TO ";
             }
 
@@ -32,20 +35,22 @@
             }else{
                 $naiyou[]="'".$_POST['hostname']."'";
             }
-       
+        
             if(empty($_POST['password'])){
                 $error[]="パスワードを入力してください。";
             }else{
                 $naiyou[]="identified by '".$_POST['password']."';<br /> FLUSH PRIVILEGES;";
             }
-    }else if(isset($_POST['kirikae2'])){
+
+    }else if(isset($_POST['kirikae2']))
+    {
             $button[]="";
     }
 }
 ?>
 <?php
-      require_once __DIR__ .'./header.php';
-	  require_once __DIR__ .'./subnav.php';
+    require_once __DIR__ .'./header.php';
+	require_once __DIR__ .'./subnav.php';
 ?>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/createuser.css">
@@ -57,9 +62,9 @@
                     <input type="submit" value="権限なしverへ" name="kirikae2">
                 </form><br>
 			
-              <?php if(!empty($error)):?>
+            <?php if(!empty($error)):?>
                 <ul class="error_list">
-                      <?php  foreach($error as $value){
+                    <?php  foreach($error as $value){
                             echo $value;
                             echo '<br>';
                         }?>
@@ -117,8 +122,8 @@
                     ?>
 					</li>
                 </div>
-		   </ul>
+		</ul>
 		</div>
 <?php
-      require_once __DIR__ .'./footer.php';
+    require_once __DIR__ .'./footer.php';
 ?>
