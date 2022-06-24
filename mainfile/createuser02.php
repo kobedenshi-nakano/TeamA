@@ -12,10 +12,12 @@
                 $error[]="権限を選択してください。";
             }
 
-            if(empty($_POST['database'])){
+            if(empty($_POST['database']) && $_POST['kekka'(tag)]!='global'){
                 $error[]="適用対象のデータベースを入力してください。";
+            }else if($_POST['kekka']['tag']=='global'){
+                $naiyou[]="*.";
             }else{
-                $naiyou[]=$_POST['database'].".";
+                $naiyou[]=$_POST['database']."."; 
             }
 
             //*の後にtoを追加することもある
@@ -85,25 +87,34 @@
 							<option value=' alter'title="ALTER TABLE（テーブルの変更）の使用を許可する">ALTER</option>
 							<option value=' alter routine'title="ストアドルーチン(プロシージャ or 関数)の変更・削除を許可する">ALTER ROUTINE</option>
 							<option value=' create'title="データベースとテーブルの作成を許可する">CREATE</option>
-                            <option value=' create tablespace'title="ストアドルーチン(プロシージャ or 関数)の作成を許可する">CREATE TABLESPACE</option>
+                            <option tag="global" value=' create role' title="ロール作成を有効にします。">CREATE ROLE</option>
+                            <option tag="global" value=' create tablespace'title="ストアドルーチン(プロシージャ or 関数)の作成を許可する">CREATE TABLESPACE</option>
                             <!--テーブルを指定してはいけない-->
 							<option value=' create temporary tables'title="テーブルスペースとログファイルグループの作成を許可する">CREATE TEMPORARY TABLES</option>
-							<option value=' create user'title="一時テーブル作成の使用を許可する">CREATE USER</option>
-							<option value=' create view'title="	ユーザの作成・変更・削除を許可する">CREATE VIEW</option>
-                            <option value=' delete'title="ビューの作成や変更を許可する">DELETE </option>
-							<option value=' drop'title="DELETE文の使用を許可する">DROP</option>
-							<option value=' event'title="DROP文の使用を許可する">EVENT</option>
-							<option value=' execute'title="ストアドルーチン(プロシージャ or 関数)の実行を許可する">EXECUTE</option>
+							<option tag="global" value=' create user'title="一時テーブル作成の使用を許可する">CREATE USER</option>
+							<option value=' create view' title="	ユーザの作成・変更・削除を許可する">CREATE VIEW</option>
+                            <option value=' delete' title="ビューの作成や変更を許可する">DELETE </option>
+							<option value=' drop' title="DELETE文の使用を許可する">DROP</option>
+                            <option tag="global" value=' drop role' title="ロールの削除を有効にする">DROP role</option>
+							<option value=' event' title="イベントスケジューラでのイベントの使用を有効にします。">EVENT</option>
+							<option value=' execute' title="ストアドルーチン(プロシージャ or 関数)の実行を許可する">EXECUTE</option>
+                            <option tag="global" value=' file' title="ユーザーがサーバーにファイルを読み取らせたり書き込ませたりできるようにします">FILE</option>
                             <option value=' grant option'title="権限の付与を許可する">GRANT OPTION</option>
-							<option value=' index'title="インデックスの作成と削除を許可する">INDEX</option>
-                            <option value=' insert'title="INSERT文の使用を許可する">INSERT </option>
-							<option value=' look tables'title="SELECT権限を持つテーブルのロックを許可する">LOOK TABLES</option>
-							<option value=' process'title="プロセスリストの表示を許可する">PROCESS</option>
-							<option value=' reload'title=" 	FLUSHの使用を許可する">RELOAD</option>
+							<option value=' index' title="インデックスの作成と削除を許可する">INDEX</option>
+                            <option value=' insert' title="INSERT文の使用を許可する">INSERT </option>
+							<option value=' look tables' title="SELECT権限を持つテーブルのロックを許可する">LOOK TABLES</option>
+							<option tag="global" value=' process' title="プロセスリストの表示を許可する">PROCESS</option>
+                            <option value=' proxy' title="ユーザーのプロキシ設定を有効にします。">PROXY</option>
+                            <option value=' references' title="外部キーの作成を有効にします。">REFERENCES</option>
+                            <option tag="global" value=' reload'title="FLUSHの使用を許可する">RELOAD</option>
+                            <option tag="global" value=' replication client' title="ユーザーがソースサーバーまたはレプリカサーバーの場所を尋ねることができるようにします。">REPLICATION CLIENT</option>
+                            <option value=' replication slave' title="ユーザーのプロキシ設定を有効にします。">REPLICATION SLAVE</option>
                             <option value=' select'title="SELECT文の使用を許可する">SELECT</option>
-							<option value=' show databases'title="SHOW DATABASEで全データベースの表示を許可する">SHOW DATABASES</option>
-                            <option value=' shoutdown'title="mysqladmin shutdownの使用を許可する">SHUTDOWN</option>
-							<option value=' trigger'title="トリガの作成・削除を許可する">TRIGGER</option>
+							<option tag="global" value=' show databases'title="SHOW DATABASEで全データベースの表示を許可する">SHOW DATABASES</option>
+                            <option value=' show view'title="SHOW CREATE VIEW の使用を有効にします。">SHOW VIEW</option>
+                            <option tag="global" value=' shoutdown'title="mysqladmin shutdownの使用を許可する">SHUTDOWN</option>
+							<option tag="global" value=' super'title="CHANGE REPLICATION SOURCE TO, CHANGE MASTER TO, KILL, PURGE BINARY LOGS, SET GLOBAL や mysqladmin debug コマンドなどの他の管理操作の使用を有効にします。">SUPER</option>
+                            <option value=' trigger'title="トリガの作成・削除を許可する">TRIGGER</option>
 							<option value=' update'title="UPDATE文の使用を許可する">UPDATE</option>
 							<option value=' usage'title="「権限なし」を設定する">USAGE</option>
                             </select></li>
