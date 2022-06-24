@@ -20,7 +20,7 @@
 
             //*の後にtoを追加することもある
             if(empty($_POST['table'])){
-                $naiyou[]=$_POST['table']." * ";
+                $naiyou[]=$_POST['table']." * . TO";
             }else{
                 $naiyou[]=$_POST['table']." TO ";
             }
@@ -38,11 +38,11 @@
             }
         
             //identified からいらない場合がある
-            if(empty($_POST['password'])){
+            /*if(empty($_POST['password'])){
                 $error[]="パスワードを入力してください。";
             }else{
                 $naiyou[]="identified by '".$_POST['password']."';<br /> FLUSH PRIVILEGES;";
-            }
+            }*/
 
     }else if(isset($_POST['kirikae2']))
     {
