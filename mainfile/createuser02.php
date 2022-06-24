@@ -5,7 +5,7 @@
         $button=array();
         
         if(isset($_POST['seisei'])){
-            
+
             if(isset($_POST['kekka'])){
                 $naiyou[]="GRANT".$_POST['kekka']." ON ";
             }else{
@@ -18,6 +18,7 @@
                 $naiyou[]=$_POST['database'].".";
             }
 
+            //*の後にtoを追加することもある
             if(empty($_POST['table'])){
                 $naiyou[]=$_POST['table']." * ";
             }else{
@@ -36,6 +37,7 @@
                 $naiyou[]="'".$_POST['hostname']."'";
             }
         
+            //identified からいらない場合がある
             if(empty($_POST['password'])){
                 $error[]="パスワードを入力してください。";
             }else{
