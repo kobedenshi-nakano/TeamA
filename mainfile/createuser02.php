@@ -5,21 +5,34 @@
         $button=array();
         
         if(isset($_POST['seisei'])){
-        /*明日if文を2つに分ける
-        if($_POST['kekka']=="NONO" && $_POST['global']=="none"){
+        /*明日if文を2つに分ける*/
+        if($_POST['kekka']===" NONO"){
+            if($_POST['global']==="none"){
                 $error[]="権限を選択してください。";
-         if(isset($_POST['global'])&& $_POST['global']!="none" ){
-                $naiyou[]="GRANT".$_POST['global']." ON ";
-            }
-        else{
-                $naiyou[]="GRANT".$_POST['kekka']." ON ";
             }
         }
-        */
+        if(!($_POST['kekka']===" NONO")){
+            if(!($_POST['global']==="none")){
+                $error[]="両方の権限を選択しないでください。";
+            }
+        }
+        if(!($_POST['kekka']===" NONO")){
+                $naiyou[]="GRANT".$_POST['kekka']." ON ";
+        }
+        if(!($_POST['global']==="none")){
+            $naiyou[]="GRANT".$_POST['global']." ON ";
+        }
+        
+        
             if(empty($_POST['database'])){
-                $error[]="適用対象のデータベースを入力してください。";
-                //$error[]="適用対象のデータベースを入力してください。";
-            }else if(isset($_POST['global'])&& $_POST['global']!="none" ){
+                if($_POST['global']==="none"){
+                    if($_POST['kekka']===" NONO")
+                    $error[]="適用対象のデータベースを入力してください。";
+                }
+              
+                $naiyou[]="*.";
+                
+            }else if(isset($_POST['global'])&& !($_POST['global']==="none" )){
                 $naiyou[]="*.";
             }else{
                 $naiyou[]=$_POST['database']."."; 
@@ -27,8 +40,8 @@
 
             //*の後にtoを追加することもある
             if(empty($_POST['table'])){
-                $naiyou[]=$_POST['table']." *  TO ";
-            }else if(isset($_POST['global'])&& $_POST['global']!="none" ){
+                $naiyou[]=$_POST['table']."*  TO ";
+            }else if(isset($_POST['global'])&& !($_POST['global']==="none" )){
                 $naiyou[]="*  TO ";
             }
             else{
@@ -54,6 +67,7 @@
                 $naiyou[]="identified by '".$_POST['password']."';<br /> FLUSH PRIVILEGES;";
             }
 
+           
     }else if(isset($_POST['kirikae2']))
     {
             $button[]="";
@@ -141,12 +155,14 @@
 				    <p>出力結果</p>
 		            <li>
                     <?php
+                    if(empty($error)){
                         if(isset($naiyou)){
                             foreach($naiyou as $value){
                                 echo $value;
                                 echo '';
                             }
                         }
+                    }
                     ?>
 					</li>
                 </div>
