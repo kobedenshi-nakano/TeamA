@@ -1,3 +1,4 @@
+
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
        $naiyou=array();
@@ -57,11 +58,38 @@
 				    <li>テーブル名:<input type="text" name="table" size="10" maxlength="10"></li>
 			        <li>更新する列:<input type="text" name="colatai" size="10" maxlength="10"></li>
 					<li>更新する列の値:<input type="text" name="colatai2" size="10" maxlength="10"></li>
+
+				
+					<input type="button" value="行を追加" id="coladd" onclick="coladd()">
+        
+					<table id="table" border="1">
+   					 <tr>
+        				<td>
+            				SAMPLE FOR TABLE-ROWADD
+       					 </td>
+        				<td>
+           					 SAMPLE FOR TABLE-ROWDELETE
+        				</td>
+    				 </tr>
+					</table>
+
 			        <li>where句の指定:<input type="text" name="where" size="10" maxlength="20"></li>
 					<li>order by句の指定:<input type="text" name="order" size="10" maxlength="20"><li>
 					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10"></li>	
 			        <li><input type="submit" value="生成"></li>
 		        </form>
+				<!--<input type="button" value="行を追加" id="coladd" onclick="coladd()">
+        
+					<table id="table" border="1">
+   					 <tr>
+        				<td>
+            				SAMPLE FOR TABLE-ROWADD
+       					 </td>
+        				<td>
+           					 SAMPLE FOR TABLE-ROWDELETE
+        				</td>
+    				 </tr>
+					</table>-->
 			</ul>
 			<div class="kekka-container">
 				<p>出力結果</p>
