@@ -12,7 +12,7 @@
 							
 						}
 
-						$date[] = "<br />    " ;
+						$data[] = "<br />    " ;
 						if (empty($_POST['main-name'])) {
 							$error[] = "列名を入力してください";
 						}
@@ -27,6 +27,20 @@
 						}		
 						else{
 							$data[] = $_POST['Type']; //列の型名	
+						}
+
+
+						if ($_POST['Type'] == ' CHAR' || $_POST['Type'] == ' VARCHAR') {
+							if (empty($_POST['Type-numerical'])) {
+								$error[] = "入力可能な文字の数を入力してください";
+							}
+							else{
+								$data[] = " (".$_POST['Type-numerical'].") "; //
+								
+							}
+						}		
+						else{
+							$data[] = ''; //
 						}
 
                         
@@ -81,11 +95,25 @@
 							$error[] = "外部キーの有無を決めてください";
 						}
 						else{
-							$data[] = $_POST['forign-key']; //外部キー規約
+							$data[] = $_POST['forign-key']; //外部キー制約
+						}
+
+						if ($_POST['forign-key'] == ' REFERENCES') {
+							if (empty($_POST['forign-name'])) {
+								$error[] = "外部キーとして扱う値を入力してください";
+							}
+							else{
+								$data[] = " (".$_POST['forign-name'].") "; //
+								
+							}
+						}		
+						else{
+							$data[] = ''; //
 						}
 
 
 						$data[] = "<br /> ) ;" ;
+						
 						
 					}
 ?>
@@ -114,64 +142,99 @@
 					<input type="text" name="test" size="10" maxlength="10">
 				 </div>
 					<ul class="globalnav">
-						<div class="1">
-							<li><p>列名</p></li>
-							<input type="text" name="main-name" size="10" maxlength="10"> 
-						</div>
-						<div class="2">
-							<li><p>列の型名</p></li>
-							<select name='Type' >
-							<option value=' 未入力(型)'>--</option>
-							<option value=' INTEGER'>INTEGER(整数値)</option>
-							<option value=' DECIMAL'>DECIMAL(小数)</option>
-							<option value=' CHAR'>CHAR(固定長 文字列)</option>
-							<option value=' VARCHAR(10)'>VARCHAR(可変長 文字列10文字)</option>
-							<option value=' VARCHAR(100)'>VARCHAR(可変長 文字列100文字)</option>
-							<option value=' DATETIME'>DATETIME(日付と時間)</option>
-							<option value=' DATE'>DATE(日付)</option>
-							<option value=' TIME'>TIME(時間)</option>
-						</select>
-						</div>
-						<div class="3">
-							<li><p>初期値</p></li>
-							<input type="text" name="start" >
-				        </div>
-						<div class="4">
-							<li><p>重複</p></li>
-							<select name='重複'>
-							<option value=' 未入力(重複)'>--</option>
-							<option value=''>重複あってもいい</option>
-							<option value=' UNIQUE'>重複なし</option>
-						    </select>
-				        </div>
-						<div class="5">
-							<li><p>その他条件</p></li>
-							<input type="text" name="else-rule" size="10" maxlength="10">
-						</div>
-						<div class="6">
-							<li><p>NULLについて</p></li>
-							<select name='yes-no-null' >
-							<option value=' 未入力(null)'>--</option>
-							<option value=' NOT NULL'>NOT NULL</option>
-							<option value=''>NULL可</option>
-							</select>
-						</div>
-                        <div class="7">
-							<li><p>主キー</p></li>
-							<select name='main-key' >
-							<option value=' 未入力(主キー)'>--</option>
-							<option value=' PRIMARY KEY'>Yes</option>
-							<option value=''>No</option>
-						    </select>
-				        </div>
-						<div class="8">	
-							<li><p>外部キー制約</p></li>
-							<select name='forign-key'>
-							<option value=' 未入力(外部キー)'>--</option>
-							<option value=' REFERENCES'>Yes</option>
-							<option value=''>No</option>
-						</select>
-				        </div>
+						<table>
+				
+							<colgroup span="1"></colgroup>
+							<colgroup>
+								<col class="main-name">
+								<col class="Type">
+								<col class="Type-numerical">
+								<col class="start">
+								<col class="重複">
+								<col class="else-rule">
+								<col class="yes-no-null">
+								<col class="main-key">
+								<col class="forign-key">
+								<col class="forign-name">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="col">列名</th>
+									<th scope="col">列の型名</th>
+									<th scope="col">型の桁など</th>
+									<th scope="col">初期値</th>
+									<th scope="col">重複</th>
+									<th scope="col">その他ルール</th>
+									<th scope="col">未入力</th>
+									<th scope="col">主キー</th>
+									<th scope="col">外部キー</th>
+									<th scope="col">どれ</th>
+								</tr>
+								<tr>
+									<th scope="row"> 
+										<input type="text" name="main-name" size="10" maxlength="10">
+									</th>
+									<td>
+										<select name='Type' >
+										<option value=' 未入力(型)'>--</option>
+										<option value=' INTEGER'>INTEGER(整数値)</option>
+										<option value=' DECIMAL'>DECIMAL(小数)</option>
+										<option value=' CHAR'>CHAR(固定長 文字列)</option>
+										<option value=' VARCHAR'>VARCHAR(可変長 文字列)</option>
+										<option value=' DATETIME'>DATETIME(日付と時間)</option>
+										<option value=' DATE'>DATE(日付)</option>
+										<option value=' TIME'>TIME(時間)</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" name="Type-numerical" size="3" maxlength="3">
+									</td>
+									<td><input type="text" name="start" size="5" maxlength="10"></td>
+									<td>
+										<select name='重複'>
+											<option value=' 未入力(重複)'>--</option>
+											<option value=''>重複可</option>
+											<option value=' UNIQUE'>重複なし</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" name="else-rule" size="5" maxlength="10">
+									</td>
+									<td>
+										<select name='yes-no-null' >
+											<option value=' 未入力(null)'>--</option>
+											<option value=' NOT NULL'>不可</option>
+											<option value=''>可</option>
+										</select>
+									</td>
+									<td>
+										<select name='main-key' >
+										<option value=' 未入力(主キー)'>--</option>
+										<option value=''>不要</option>
+										<option value=' PRIMARY KEY'>必要</option>
+										</select>
+									</td>
+									<td>
+										<select name='forign-key'>
+											<option value=' 未入力(外部キー)'>--</option>
+											<option value=''>不要</option>
+											<option value=' REFERENCES'>必要</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" name="forign-name" size="10" maxlength="10">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">4/2</th>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th scope="row">4/2</th>
+								</tr>
+							</tfoot>
+						</table>
 					</ul>
 						
 						<br><input type="submit" value="生成">
@@ -196,4 +259,3 @@
 <?php
       require_once __DIR__ .'./footer.php';
 ?>
-			

@@ -56,19 +56,16 @@
 			<ul class="formnav">
 		        <form method="post" action="">
 				    <li>テーブル名:<input type="text" name="table" size="10" maxlength="10"></li>
-			        <li>更新する列:<input type="text" name="colatai" size="10" maxlength="10"></li>
-					<li>更新する列の値:<input type="text" name="colatai2" size="10" maxlength="10"></li>
-
-				
-					<input type="button" value="行を追加" id="coladd" onclick="coladd()">
+					
+					<input type="button" value="行を追加" id="addition" onclick="coladd()">
         
 					<table id="table" border="1">
    					 <tr>
         				<td>
-            				SAMPLE FOR TABLE-ROWADD
+						<li>更新する列:<input type="text" name="colatai" size="10" maxlength="10"></li>
        					 </td>
         				<td>
-           					 SAMPLE FOR TABLE-ROWDELETE
+						<li>更新する列の値:<input type="text" name="colatai2" size="10" maxlength="10"></li>
         				</td>
     				 </tr>
 					</table>
