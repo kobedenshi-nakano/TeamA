@@ -10,6 +10,7 @@
 	  require_once __DIR__ .'./subnav.php';
 ?>
 <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/createuser.css">
 	
 	<div class="column2">
 		<ul class="news-contents">
