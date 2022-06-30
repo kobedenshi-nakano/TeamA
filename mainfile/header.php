@@ -27,6 +27,30 @@
         			// trのインデックスを取得して行を削除する
         			tr.parentNode.deleteRow(tr.sectionRowIndex);
     				}
+
+					function AddStringToTextarea() {
+   					// ▼textareaの内容を改行で分割して配列に格納
+   					var nowArray = document.getElementById('sampleInputedList').value.split("\n");
+   					// ▼ユーザの入力得る
+   					var UserString = document.getElementById('sampleUserInput').value;
+   					// ▼配列の末尾に追加
+   					nowArray.push(UserString);
+   					// ▼空行を削除
+   					var resArray = [];
+   					for( var i=0 ; i < nowArray.length ; i++ ) {
+      					if( nowArray[i].length > 0 ) {
+        				 resArray.push( nowArray[i] );
+      				}
+   				}
+   						// ▼配列の内容に、1つずつ改行を付加
+   					var retString = "";
+   					for( var i=0 ; i<resArray.length ; i++ ) {
+      					retString += resArray[i] + "\n";
+   					}
+   					// ▼表示
+   					document.getElementById('sampleInputedList').value = retString;
+			}
+
 </script>
 <header>
 	<div class="header-container">

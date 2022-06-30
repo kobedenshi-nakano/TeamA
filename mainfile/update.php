@@ -57,6 +57,12 @@
 		        <form method="post" action="">
 				    <li>テーブル名:<input type="text" name="table" size="10" maxlength="10"></li>
 					
+					<input type="text" id="sampleUserInput" value="更新する列">
+					<input type="button" value="追加" onclick="AddStringToTextarea();">
+					<textarea cols="30" rows="6" id="sampleInputedList" readonly>
+						
+					</textarea>
+					<!--
 					<input type="button" value="行を追加" id="addition" onclick="coladd()">
         
 					<table id="table" border="1">
@@ -69,7 +75,7 @@
         				</td>
     				 </tr>
 					</table>
-
+						-->
 			        <li>where句の指定:<input type="text" name="where" size="10" maxlength="20"></li>
 					<li>order by句の指定:<input type="text" name="order" size="10" maxlength="20"><li>
 					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10"></li>	

@@ -26,7 +26,7 @@
                 <ul class="formnav">
                     <form method="post" action="">
 					    <li>テーブル名:<input type="text" name="tbl_name" size="10" maxlength="20"></li>
-						<li>VALUES:<input type="text" name="username" size="10" maxlength="10"></li>
+						<li>VALUES句:<input type="text" name="value_name" size="10" maxlength="100"></li>
 						<li><input type="submit" value="生成"></li>
 
                     </form>
