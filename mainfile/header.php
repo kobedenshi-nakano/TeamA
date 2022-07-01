@@ -18,8 +18,8 @@
         			var cell1 = row.insertCell(-1);
         			var cell2 = row.insertCell(-1);
         			// セルの内容入力
-        			cell1.innerHTML = '更新する列:<input type="text" name="colatai" size="10" maxlength="10">';
-        			cell2.innerHTML = '更新する列の値:<input type="text" name="colatai2" size="10" maxlength="10">この行を削除しますか？<input type="button" value=削除" id="addition" onclick="coldel(this)">';
+        			cell1.innerHTML = '更新する列:<input type="text" name="nextcola" size="10" maxlength="10">';
+        			cell2.innerHTML = '更新する列の値:<input type="text" name="nextcola2" size="10" maxlength="10">この行を削除しますか？<input type="button" value=削除" id="addition" onclick="coldel(this)">';
     				}
     				function coldel(obj) {
         			// 削除ボタンを押下された行を取得

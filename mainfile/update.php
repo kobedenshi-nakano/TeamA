@@ -21,6 +21,18 @@
 		$naiyou[]=" = ".$_POST['colatai2'];
 	   }
 
+	   if(empty($_POST['nextcola'])){
+		$error[]="更新する列が入力されていません。";
+		}else{
+		$naiyou[]=" set ".$_POST['nextcola'];
+		}
+
+		if(empty($_POST['nextcola2'])){
+	 	$error[]="更新する列の値が入力されていません。";
+		}else{
+	 	$naiyou[]=" = ".$_POST['nextcola2'];
+		}
+
 	   if(!empty($_POST['where'])){
 		 $naiyou[]=" where ".$_POST['where'];
 	   }
@@ -56,13 +68,14 @@
 			<ul class="formnav">
 		        <form method="post" action="">
 				    <li>テーブル名:<input type="text" name="table" size="10" maxlength="10"></li>
-					
+					<!--
 					<input type="text" id="sampleUserInput" placeholder="更新する列">
 					<input type="button" value="追加" onclick="AddStringToTextarea();">
 					<textarea cols="30" rows="6" id="sampleInputedList" readonly>
 						
 					</textarea>
-					<!--
+						-->
+					
 					<input type="button" value="行を追加" id="addition" onclick="coladd()">
         
 					<table id="table" border="1">
@@ -75,7 +88,7 @@
         				</td>
     				 </tr>
 					</table>
-						-->
+					
 			        <li>where句の指定:<input type="text" name="where" size="10" maxlength="20"></li>
 					<li>order by句の指定:<input type="text" name="order" size="10" maxlength="20"><li>
 					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10"></li>	
