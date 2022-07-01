@@ -57,7 +57,7 @@
 		        <form method="post" action="">
 				    <li>テーブル名:<input type="text" name="table" size="10" maxlength="10"></li>
 					
-					<input type="text" id="sampleUserInput" value="更新する列">
+					<input type="text" id="sampleUserInput" placeholder="更新する列">
 					<input type="button" value="追加" onclick="AddStringToTextarea();">
 					<textarea cols="30" rows="6" id="sampleInputedList" readonly>
 						
