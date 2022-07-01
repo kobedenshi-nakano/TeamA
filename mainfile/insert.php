@@ -35,12 +35,44 @@
                 </ul>
                     <?php endif; ?>
 				<br>
-                <ul class="formnav">
+                <ul class="globalnav">
                     <form method="post" action="">
-					    <li>テーブル名:<input type="text" name="tbl_name" size="10" maxlength="20"></li>
-						<li>VALUES句:<input type="text" name="value_name" size="10" maxlength="100"></li>
-						<li><input type="submit" value="生成"></li>
-
+                    
+                    <li>追加するテーブル名:
+                            <select name="tbl_name">
+                                <option value="none">---</option>
+                                <option value=' create role'>create文で生成したテーブル名1</option>
+                            
+                            </select></li>
+                        <table>
+                                <tr>
+									<th scope="col">create tableにあるカラム1</th>
+									<th scope="col">create tableにあるカラム2</th>
+									<th scope="col">create tableにあるカラム3</th>
+									<th scope="col">create tableにあるカラム4</th>
+									<th scope="col">create tableにあるカラム5</th>
+								</tr>
+                            <tbody>
+                                <tr>
+									<th scope="row"> 
+										<input type="text" name="#1" size="10" maxlength="10">
+									</th>
+									<td>
+										<input type="text" name="#2" size="10" maxlength="3">
+									</td>
+									<td>
+                                        <input type="text" name="#3" size="10" maxlength="10">
+                                    </td>
+									<td>
+										<input type="text" name="#4" size="10" maxlength="10">
+									</td>
+									<td>
+										<input type="text" name="f#5" size="10" maxlength="10">
+									</td>
+								</tr>
+                            </tbody>
+                        </table>
+					<li><input type="submit" value="生成"></li>
                     </form>
 				</ul>
 
