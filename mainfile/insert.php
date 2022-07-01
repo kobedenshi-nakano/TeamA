@@ -3,6 +3,17 @@
        $naiyou=array();
 	   $error=array();
 	   
+       if(empty($_POST['tbl_name'])){
+           $error[]="テーブル名が入力されていません。";
+       }else{
+           $naiyou[]="insert into ".$_POST['tbl_name'];
+       }
+
+       if(empty($_POST['value_name'])){
+           $error[]="values句が入力されていません。";
+       }else{
+           $naiyou[]=" values (".$_POST['value_name'].");";
+       }
    }
 ?>
 <?php
@@ -23,7 +34,7 @@
                         }?>
                 </ul>
                     <?php endif; ?>
-				
+				<br>
                 <ul class="formnav">
                     <form method="post" action="">
 					    <li>テーブル名:<input type="text" name="tbl_name" size="10" maxlength="20"></li>
