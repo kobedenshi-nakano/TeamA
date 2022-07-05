@@ -1,4 +1,3 @@
-うべい
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
        $naiyou=array();
@@ -9,28 +8,24 @@
            $naiyou[]="update ".$_POST['table'];
 	   }
 
-	   if(empty($_POST['colatai'])){
+	   if(empty($_POST['inputform_0'])){
            $error[]="更新する列が入力されていません。";
 	   }else{
-           $naiyou[]=" set ".$_POST['colatai'];
+           $naiyou[]=" set ".$_POST['inputform_0'];
 	   }
 
-	   if(empty($_POST['colatai2'])){
+	   if(empty($_POST['inputformnext_0'])){
 		$error[]="更新する列の値が入力されていません。";
 	   }else{
-		$naiyou[]=" = ".$_POST['colatai2'];
+		$naiyou[]=" = ".$_POST['inputformnext_0'];
 	   }
 
-	   if(empty($_POST['nextcola'])){
-		$error[]="更新する列が入力されていません。";
-		}else{
-		$naiyou[]=" set ".$_POST['nextcola'];
+	   if(isset($_POST['inputform_1'])){
+		$naiyou[]=",".$_POST['inputform_1'];
 		}
 
-		if(empty($_POST['nextcola2'])){
-	 	$error[]="更新する列の値が入力されていません。";
-		}else{
-	 	$naiyou[]=" = ".$_POST['nextcola2'];
+		if(isset($_POST['inputformnext_1'])){
+	 	$naiyou[]=" = ".$_POST['inputformnext_1'];
 		}
 
 	   if(!empty($_POST['where'])){
@@ -75,20 +70,14 @@
 						
 					</textarea>
 						-->
-					
-					<input type="button" value="行を追加" id="addition" onclick="coladd()">
-        
-					<table id="table" border="1">
-   					 <tr>
-        				<td>
-						<li>更新する列:<input type="text" name="colatai" size="10" maxlength="10"></li>
-       					 </td>
-        				<td>
-						<li>更新する列の値:<input type="text" name="colatai2" size="10" maxlength="10"></li>
-        				</td>
-    				 </tr>
-					</table>
-					
+				
+					<div id="form_area">
+  						<input type="text" name="inputform_0" placeholder="列の名前">
+						<input type="text" name="inputformnext_0" placeholder="更新する列の値">
+  						<button id="0" onclick="deleteBtn(this)">削除</button>
+					</div>
+						<input type="button" value="フォーム追加" onclick="addForm()">
+				
 			        <li>where句の指定:<input type="text" name="where" size="10" maxlength="20"></li>
 					<li>order by句の指定:<input type="text" name="order" size="10" maxlength="20"><li>
 					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10"></li>	
