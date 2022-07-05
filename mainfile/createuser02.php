@@ -131,9 +131,7 @@
 							<option value=' update'title="UPDATE文の使用を許可する">UPDATE</option>
 							<option value=' usage'title="「権限なし」を設定する">USAGE</option>
                             </select></li>
-
-                            <li>複数付与:<input type="text" name="password" size="10" maxlength="20"></li>
-                            
+                                                        
                             <li>グローバル権限:
                             <select name="global">
                                 <option value="none">---</option>
