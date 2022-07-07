@@ -35,7 +35,7 @@
 			</ul>
 				<?php endif; ?>
 			<br>
-			<ul class="globalnav">
+			<ul class="formnav">
 				<form method="post" action="">
 				
 				<li>追加するテーブル名:

@@ -3,3 +3,21 @@
 label{
     margin: 0 0 0 120px;
 }
+
+.formnav {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.formnav li {
+	flex: 0 0 100px;	
+}
+.formnav li p {
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	text-align: center;
+	line-height: 100%;
+	color: #000000;
+}
