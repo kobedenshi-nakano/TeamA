@@ -12,10 +12,12 @@
 <script>
     var i = 1 ;
 function addForm() {
+if(i<=1){
   var input_data = document.createElement('input');
   input_data.type = 'text';
   input_data.name = 'inputform_' + i;
   input_data.placeholder = '列の名前' + i;
+  input_data.innerHTML="&nbsp;";
   var parent = document.getElementById('form_area');
   parent.appendChild(input_data);
 
@@ -23,17 +25,21 @@ function addForm() {
   input_data.type = 'text';
   input_data.name = 'inputformnext_' + i;
   input_data.placeholder = '更新する列の値' + i;
+  input_data.innerHTML="&nbsp;";
   var parent = document.getElementById('form_area');
   parent.appendChild(input_data);
 
   var button_data = document.createElement('button');
   button_data.name = i;
   button_data.onclick = function(){deleteBtn(this);}
+  button_data.innerHTML = "&nbsp;";
   button_data.innerHTML = '削除';
   var input_area = document.getElementById(input_data.name);
   parent.appendChild(button_data);
+}
+  
 
-  i++ ;
+  i++;
 }
 
 function deleteBtn(target) {
