@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-label{
-    margin: 0 0 0 120px;
-}
 .formnav {
 	display: flex;
 	margin: 0;
@@ -11,4 +8,20 @@ label{
 }
 .formnav li {
 	flex: 0 0 100px;	
+}
+.formtable{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.formtable li{
+	overflow: hidden;
+	margin: 0 300px 5px 0;
+	padding: 20px;
+}
+.formtable li p{
+	margin: 0 150px 5px 0;
+	padding: auto;
+    text-decoration: none;
+	text-align: center;
 }
