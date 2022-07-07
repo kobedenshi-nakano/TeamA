@@ -29,12 +29,12 @@
 		}
 
 	   if(!empty($_POST['where'])){
-		 $naiyou[]=" where ".$_POST['where'];
+		 $naiyou[]=" where ".$_POST['inputform_0']."=".$_POST['where'];
 	   }
 
-	   if(!empty($_POST['order'])){
-		$naiyou[]=" order by ".$_POST['order'];
-	   }
+	   if(!($_POST['order']==="none")){
+		$naiyou[]=" order by ".$_POST['inputform_0']." ".$_POST['order'];
+		}
 
 	   if(!empty($_POST['limit'])){
 		$naiyou[]=" limit ".$_POST['limit'];
@@ -74,13 +74,17 @@
 					<div id="form_area">
   						<input type="text" name="inputform_0" placeholder="列の名前">
 						<input type="text" name="inputformnext_0" placeholder="更新する列の値">
-  						<button id="0" onclick="deleteBtn(this)">削除</button>
+  						<!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
 					</div>
 						<input type="button" value="フォーム追加" onclick="addForm()">
 				
-			        <li>where句の指定:<input type="text" name="where" size="10" maxlength="20"></li>
-					<li>order by句の指定:<input type="text" name="order" size="10" maxlength="20"><li>
-					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10"></li>	
+			        <li>where句の指定:<input type="text" name="where" size="20" maxlength="20" placeholder="最初の列名のみ適用"></li>
+					<li>order by句の指定:<select name='order'>
+											<option value='none' >--</option>
+                            				<option value='ASC' >昇順</option>
+											<option value='DESC' >降順</option>
+										</select><li>
+					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10" placeholder="半角のみ"></li>	
 			        <li><input type="submit" value="生成"></li>
 		        </form>
 				<!--<input type="button" value="行を追加" id="coladd" onclick="coladd()">
@@ -100,12 +104,14 @@
 				<p>出力結果</p>
 		        <li>
 				<?php
+				if(empty($error)){
 					if(isset($naiyou)){
-                       foreach($naiyou as $value){
-						    echo $value;
+						foreach($naiyou as $value){
+							echo $value;
 							echo '';
-					   }
+						}
 					}
+				}
 				?>
 				</li>
 		    </div>
