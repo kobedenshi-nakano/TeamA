@@ -45,21 +45,29 @@
 						</select>
 						<label>全データを削除する<input type="checkbox" name=""></label>
 				</li>
+				<table>
 				    <tr>
-						<th scope="col">主キーでの削除</th>
-						<th scope="col">選択</th>	
+						<th>主キーでの削除</th>
+						<th>選択</th>	
 					</tr>
-						<br><br>
-						<label>ID<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
-						<br><br>
-						
 					<tr>
-						<th scope="col">テーブル内の値を細かく削除</th>
-					</tr>
-					    <br><br>
-						<label>名前<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
 						<br><br>
-							
+						<th>
+						<label>ID<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
+				        </th>
+						<br><br>
+				    </tr>	
+					<tr>
+						<th>テーブル内の値を細かく削除</th>
+					</tr>
+					<tr>
+					    <br><br>
+						<th>
+						<label>名前<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
+				        </th>
+						<br><br>
+				    </tr>
+				</table>
 				<li><input type="submit" value="生成"></li>
 				</form>
 			</ul>
