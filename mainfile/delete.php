@@ -35,9 +35,8 @@
 			</ul>
 				<?php endif; ?>
 			<br>
-			<ul class="globalnav">
+			<ul class="formnav">
 				<form method="post" action="">
-				
 				<li>追加するテーブル名:
 						<select name="tbl_name">
 							<option value="none">---</option>
@@ -45,21 +44,25 @@
 						</select>
 						<label>全データを削除する<input type="checkbox" name=""></label>
 				</li>
+				<table>
 				    <tr>
-						<th scope="col">主キーでの削除</th>
-						<th scope="col">選択</th>	
+						<td>主キーでの削除</td>
+						<td>選択</td>	
 					</tr>
-						<br><br>
-						<label>ID<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
-						<br><br>
-						
 					<tr>
-						<th scope="col">テーブル内の値を細かく削除</th>
+						<td>
+						<label>ID<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
+				        </td>
+				    </tr>	
+					<tr>
+						<td>テーブル内の値を細かく削除</td>
 					</tr>
-					    <br><br>
+					<tr>
+						<td>
 						<label>名前<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
-						<br><br>
-							
+				        </td>
+				    </tr>
+				</table>
 				<li><input type="submit" value="生成"></li>
 				</form>
 			</ul>
