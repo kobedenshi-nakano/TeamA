@@ -46,8 +46,8 @@
 				</li>
 				<table>
 				    <tr>
-						<td>主キーでの削除</td>
-						<td>選択</td>	
+						<td align="right">主キーでの削除</td>
+						<td align="right">選択</td>
 					</tr>
 					<tr>
 						<td>
@@ -55,7 +55,7 @@
 				        </td>
 				    </tr>	
 					<tr>
-						<td>テーブル内の値を細かく削除</td>
+						<td align="right">テーブル内の値を細かく削除</td>
 					</tr>
 					<tr>
 						<td>
