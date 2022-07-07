@@ -5,7 +5,6 @@
         $button=array();
         
         if(isset($_POST['seisei'])){
-        /*明日if文を2つに分ける*/
         if($_POST['kekka']===" NONO"){
             if($_POST['global']==="none"){
                 $error[]="権限を選択してください。";
