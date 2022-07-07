@@ -37,7 +37,6 @@
 			<br>
 			<ul class="formnav">
 				<form method="post" action="">
-				
 				<li>追加するテーブル名:
 						<select name="tbl_name">
 							<option value="none">---</option>
@@ -47,25 +46,21 @@
 				</li>
 				<table>
 				    <tr>
-						<th>主キーでの削除</th>
-						<th>選択</th>	
+						<td>主キーでの削除</td>
+						<td>選択</td>	
 					</tr>
 					<tr>
-						<br><br>
-						<th>
+						<td>
 						<label>ID<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
-				        </th>
-						<br><br>
+				        </td>
 				    </tr>	
 					<tr>
-						<th>テーブル内の値を細かく削除</th>
+						<td>テーブル内の値を細かく削除</td>
 					</tr>
 					<tr>
-					    <br><br>
-						<th>
+						<td>
 						<label>名前<input type="text" size="10" maxlength="20"><input type="checkbox" name=""></label>
-				        </th>
-						<br><br>
+				        </td>
 				    </tr>
 				</table>
 				<li><input type="submit" value="生成"></li>
