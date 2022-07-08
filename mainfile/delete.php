@@ -45,10 +45,9 @@
 						<label>全データを削除する<input type="checkbox" name=""></label>
 				</li>
 			
-				    <li>
-						主キーでの削除
-					    <p>選択</p>
-				    </li>
+				<li>
+					主キーでの削除選択
+				</li>
 				
 					<li>
 						<select name="col_name">

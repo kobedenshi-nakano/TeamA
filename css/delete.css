@@ -9,8 +9,4 @@
 .formnav li {
 	flex: 0 0 100px;	
 }
-.formnav li p{
-	padding: auto;
-	display: flex;
-}
 
