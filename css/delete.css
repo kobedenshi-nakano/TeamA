@@ -9,19 +9,8 @@
 .formnav li {
 	flex: 0 0 100px;	
 }
-.formtable{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.formtable li{
-	overflow: hidden;
-	margin: 0 300px 5px 0;
-	padding: 20px;
-}
-.formtable li p{
-	margin: 0 150px 5px 0;
+.formnav li p{
 	padding: auto;
-    text-decoration: none;
-	text-align: center;
+	display: flex;
 }
+

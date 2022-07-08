@@ -35,7 +35,7 @@
 			</ul>
 				<?php endif; ?>
 			<br>
-			<ul class="formnav">
+			<div class="formnav">
 				<form method="post" action="">
 				<li>追加するテーブル名:
 						<select name="tbl_name">
@@ -44,11 +44,12 @@
 						</select>
 						<label>全データを削除する<input type="checkbox" name=""></label>
 				</li>
-				<ul class="formtable">
-				    <li><p>主キーでの削除</p>
-						<p>選択</p>
+			
+				    <li>
+						主キーでの削除
+					    <p>選択</p>
 				    </li>
-				</ul>
+				
 					<li>
 						<select name="col_name">
 							<option value="none">---</option>
@@ -70,7 +71,7 @@
 				    </li>
 				<li><input type="submit" value="生成"></li>
 				</form>
-			</ul>
+			</div>
 	</ul>
 
 		<div class="kekka-container">
@@ -94,4 +95,3 @@
 <?php
       require_once __DIR__ .'./footer.php';
 ?>
-			
