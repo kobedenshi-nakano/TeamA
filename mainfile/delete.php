@@ -3,17 +3,25 @@
        $naiyou=array();
 	   $error=array();
 	   
-       if(empty($_POST['tbl_name'])){
-           $error[]="テーブル名が入力されていません。";
+	   if(isset($_POST['truncate'])){
+           $naiyou[]="Drop table";
+	   
+       if(!($_POST['tbl_name'] == 'none')){
+           $naiyou[]=" ".$_POST['tbl_name'];
        }else{
-           $naiyou[]="insert into ".$_POST['tbl_name'];
+		   $error[]="テーブル名が入力されていません。";
        }
-
-       if(empty($_POST['value_name'])){
-           $error[]="values句が入力されていません。";
+	  }
+       if(!($_POST['col_name']=='none1')){
+           $naiyou[]=" ".$_POST['col_name']."";
        }else{
-           $naiyou[]=" values (".$_POST['value_name'].");";
+           $error[]="1が入力されていません。";
        }
+	   if(!($_POST['col_name']=='none2')){
+		$naiyou[]=" ".$_POST['col_name']."";
+	}else{
+		$error[]="2が入力されていません。";
+	}
    }
 ?>
 <?php
@@ -42,16 +50,16 @@
 							<option value="none">---</option>
 							<option value=' create role'>create文で生成したテーブル名1</option>
 						</select>
-						<label>全データを削除する<input type="checkbox" name=""></label>
+						<label>全データを削除する<input type="checkbox" name="truncate"></label>
 				</li>
 			
 				<li>
-					主キーでの削除選択
+					主キーでの削除  選択
 				</li>
 				
 					<li>
 						<select name="col_name">
-							<option value="none">---</option>
+							<option value="none1">---</option>
 							<option value='id'>id</option>
 						</select>
 						<input type="text" size="10" maxlength="20">
@@ -62,7 +70,7 @@
 				    </li>
 					<li>
 						<select name="col_name2">
-							<option value="none">---</option>
+							<option value="none2">---</option>
 							<option value='name'>name</option>
 						</select>
 						<input type="text" size="10" maxlength="20">
