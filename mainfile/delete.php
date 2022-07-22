@@ -45,13 +45,13 @@
 			<br>
 			<div class="formnav">
 				<form method="post" action="">
-				<li>追加するテーブル名:
+				<p class="addtable">追加するテーブル名:
 						<select name="tbl_name">
 							<option value="none">---</option>
 							<option value=' create role'>create文で生成したテーブル名1</option>
 						</select>
-						<label>全データを削除する<input type="checkbox" name="truncate"></label>
-				</li>
+				</p>
+				<p class="all-delete">全データを削除する<input type="checkbox" name="truncate"></p>
 			
 				<li>
 					主キーでの削除  選択

@@ -4,9 +4,12 @@
 	display: flex;
 	margin: 0;
 	padding: 0;
-	list-style: none;
+	list-style: none
+}	
+.addtable{
+	
 }
-.formnav li {
-	flex: 0 0 100px;	
+.all-delete{
+
 }
 
