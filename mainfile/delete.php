@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="../css/delete.css">
 	
 <div class="column2">
-	<ul class="news-contents">
+	<div class="news-contents">
 				
 	<?php if(!empty($error)):?>
 			<ul class="error_list">
@@ -43,7 +43,7 @@
 			</ul>
 				<?php endif; ?>
 			<br>
-			<div class="formnav">
+			<ul class="formnav1">
 				<form method="post" action="">
 				<p class="addtable">追加するテーブル名:
 						<select name="tbl_name">
@@ -53,9 +53,8 @@
 				</p>
 				<p class="all-delete">全データを削除する<input type="checkbox" name="truncate"></p>
 			
-				<li>
-					主キーでの削除  選択
-				</li>
+				<p>主キーでの削除</p>
+				<p>選択</p>
 				
 					<li>
 						<select name="col_name">
@@ -78,8 +77,7 @@
 				    </li>
 				<li><input type="submit" value="生成"></li>
 				</form>
-			</div>
-	</ul>
+			</ul>
 
 		<div class="kekka-container">
 			<p>出力結果</p>
@@ -97,7 +95,7 @@
 			</li>
 		</div>
 
-	</ul>
+	</div>
 </div>
 <?php
       require_once __DIR__ .'./footer.php';
