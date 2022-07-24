@@ -55,24 +55,23 @@
 			
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
-				
-				<p>
+                <p class="colname1">
 					<select name="col_name">
 						<option value="none1">---</option>
 						<option value='id'>id</option>
 					</select>
-					<input type="text" size="10" maxlength="20">
-					<input type="checkbox" name="check1">
-				</p>	
-				<p>テーブル内の値を細かく削除</p>
-				<p>
+				</p>
+				<p class="mainkey1"><input type="text" size="10" maxlength="20"></p>
+				<p><input type="checkbox" name="check1"></p>
+				<p class="koumoku2">テーブル内の値を細かく削除</p>
+				<p class="colname1">
 					<select name="col_name2">
 						<option value="none2">---</option>
 						<option value='name'>name</option>
 					</select>
-					<input type="text" size="10" maxlength="20">
-					<input type="checkbox" name="check2">
 				</p>
+				<p class="mainkey2"><input type="text" size="10" maxlength="20"></p>
+				<p><input type="checkbox" name="check2"></p>
 				<input type="submit" value="生成">
 				</form>
 			</ul>
