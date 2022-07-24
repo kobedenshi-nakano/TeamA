@@ -5,10 +5,12 @@
 	padding: auto;
 	border: 1px solid #000000;
 }	
-.addtable{
-
+.addtable{ 
+   margin: 0 50px 5px 0;
+   float: left;
 }
-.all-delete{
-
+.koumoku{
+    margin: 0 150px 5px 200px;
+    float: left;
 }
 

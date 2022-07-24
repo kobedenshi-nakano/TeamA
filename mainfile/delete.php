@@ -51,31 +51,29 @@
 							<option value=' create role'>create文で生成したテーブル名1</option>
 						</select>
 				</p>
-				<p class="all-delete">全データを削除する<input type="checkbox" name="truncate"></p>
+				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			
-				<p>主キーでの削除</p>
+				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
 				
-					<li>
-						<select name="col_name">
-							<option value="none1">---</option>
-							<option value='id'>id</option>
-						</select>
-						<input type="text" size="10" maxlength="20">
-						<input type="checkbox" name="check1">
-				    </li>	
-					<li>
-						<p>テーブル内の値を細かく削除</p>
-				    </li>
-					<li>
-						<select name="col_name2">
-							<option value="none2">---</option>
-							<option value='name'>name</option>
-						</select>
-						<input type="text" size="10" maxlength="20">
-						<input type="checkbox" name="check2">
-				    </li>
-				<li><input type="submit" value="生成"></li>
+				<p>
+					<select name="col_name">
+						<option value="none1">---</option>
+						<option value='id'>id</option>
+					</select>
+					<input type="text" size="10" maxlength="20">
+					<input type="checkbox" name="check1">
+				</p>	
+				<p>テーブル内の値を細かく削除</p>
+				<p>
+					<select name="col_name2">
+						<option value="none2">---</option>
+						<option value='name'>name</option>
+					</select>
+					<input type="text" size="10" maxlength="20">
+					<input type="checkbox" name="check2">
+				</p>
+				<input type="submit" value="生成">
 				</form>
 			</ul>
 
