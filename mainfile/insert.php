@@ -38,12 +38,17 @@
                 <ul class="globalnav">
                     <form method="post" action="">
                     
-                    <li>追加するテーブル名:
+                       <li>追加するテーブル名:<input type="text" name="tbl_name" size="10" maxlength="10"></li>
+
+                       <!--
                             <select name="tbl_name">
                                 <option value="none">---</option>
+
                                 <option value=' create role'>create文で生成したテーブル名1</option>
                             
                             </select></li>
+                        -->
+                        
                         <table>
                                 <tr>
 									<th scope="col">create tableにあるカラム1</th>
