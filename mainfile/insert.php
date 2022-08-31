@@ -9,10 +9,38 @@
            $naiyou[]="insert into ".$_POST['tbl_name'];
        }
 
-       if(empty($_POST['value_name'])){
+       if(isset($_POST['colom_name_0']))
+       {
+        $naiyou[]=" (".$_POST['colom_name_0'].",";
+        if(isset($_POST['colom_name_1']))
+         {
+            $naiyou[]=$_POST['colom_name_1'];
+            if(isset($_POST['colom_name_2']))
+            {
+                $naiyou[]=",".$_POST['colom_name_2'].") ";
+            }else{
+                $naiyou[]=") ";
+            }
+         }
+         
+       }
+
+        
+
+       if(empty($_POST['value_name_0'])){
            $error[]="values句が入力されていません。";
        }else{
-           $naiyou[]=" values (".$_POST['value_name'].");";
+           $naiyou[]=" values (".$_POST['value_name_0'];
+           if(isset($_POST['value_name_1']))
+         {
+            $naiyou[]=",".$_POST['value_name_1'];
+            if(isset($_POST['value_name_2']))
+            {
+                $naiyou[]=",".$_POST['value_name_2'].") ";
+            }else{
+                $naiyou[]=") ";
+            }
+         }
        }
    }
 ?>
@@ -51,7 +79,16 @@
                         
                         <table>
                                 <tr>
-									<th scope="col">create tableにあるカラム1</th>
+
+                                <div id="form_area">
+                                <input type="text" name="colom_name_0" size="10" maxlength="10" placeholder="カラム名"></li>
+						        <input type="text" name="value_name_0" size="10" maxlength="10" placeholder="値を入力(value)">
+  						        <!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
+					            </div>
+						        <input type="button" value="フォーム追加" onclick="addcolom()">
+
+                                <!--
+                                <li>カラム名:<input type="text" name="colom_name" size="10" maxlength="10"></li>
 									<th scope="col">create tableにあるカラム2</th>
 									<th scope="col">create tableにあるカラム3</th>
 									<th scope="col">create tableにあるカラム4</th>
@@ -60,7 +97,7 @@
                             <tbody>
                                 <tr>
 									<th scope="row"> 
-										<input type="text" name="#1" size="10" maxlength="10">
+										<input type="text" name="value_name" size="10" maxlength="10">
 									</th>
 									<td>
 										<input type="text" name="#2" size="10" maxlength="3">
@@ -76,6 +113,7 @@
 									</td>
 								</tr>
                             </tbody>
+                            -->
                         </table>
 					<li><input type="submit" value="生成"></li>
                     </form>
