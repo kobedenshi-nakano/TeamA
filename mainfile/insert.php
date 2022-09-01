@@ -9,21 +9,19 @@
            $naiyou[]="insert into ".$_POST['tbl_name'];
        }
 
-       if(isset($_POST['colom_name_0']))
-       {
-        $naiyou[]=" (".$_POST['colom_name_0'].",";
-        if(isset($_POST['colom_name_1']))
-         {
-            $naiyou[]=$_POST['colom_name_1'];
-            if(isset($_POST['colom_name_2']))
+       if(empty($_POST['colom_name_0'])){
+        $naiyou[]="";
+       }else{
+            $naiyou[]=" (".$_POST['colom_name_0'];
+            if(empty($_POST['colom_name_1']))
             {
-                $naiyou[]=",".$_POST['colom_name_2'].") ";
-            }else{
                 $naiyou[]=") ";
-            }
-         }
-         
-       }
+            }else if(empty($_POST['colom_name_2'])){
+                $naiyou[]=",".$_POST['colom_name_1'].")";
+            }else{
+                $naiyou[]=",".$_POST['colom_name_1'].",".$_POST['colom_name_2'].")";
+            }   
+        }
 
         
 
@@ -31,17 +29,20 @@
            $error[]="values句が入力されていません。";
        }else{
            $naiyou[]=" values (".$_POST['value_name_0'];
-           if(isset($_POST['value_name_1']))
-         {
-            $naiyou[]=",".$_POST['value_name_1'];
-            if(isset($_POST['value_name_2']))
+           if(empty($_POST['value_name_1']))
             {
-                $naiyou[]=",".$_POST['value_name_2'].") ";
-            }else{
-                $naiyou[]=") ";
-            }
-         }
-       }
+                $naiyou[]="); ";
+            }else
+             {
+                $naiyou[]=",".$_POST['value_name_1'];
+                if(empty($_POST['value_name_2'])){
+                    $naiyou[]="); ";
+                }else{
+                    $naiyou[]=",".$_POST['value_name_2'].");";
+                }
+             }
+           
+        }
    }
 ?>
 <?php
@@ -63,7 +64,7 @@
                 </ul>
                     <?php endif; ?>
 				<br>
-                <ul class="globalnav">
+                <ul class="formnav">
                     <form method="post" action="">
                     
                        <li>追加するテーブル名:<input type="text" name="tbl_name" size="10" maxlength="10"></li>
@@ -78,23 +79,25 @@
                         -->
                         
                         <table>
-                                <tr>
-
+                            <tr>
+                            <tbody>
+                            <li>colomとvalue:(文字型の場合は""を付ける)</li>
                                 <div id="form_area">
-                                <input type="text" name="colom_name_0" size="10" maxlength="10" placeholder="カラム名"></li>
-						        <input type="text" name="value_name_0" size="10" maxlength="10" placeholder="値を入力(value)">
+                                <input type="text" name="colom_name_0" placeholder="カラム名"></li>
+						        <input type="text" name="value_name_0" placeholder="値を入力(value)">
   						        <!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
 					            </div>
 						        <input type="button" value="フォーム追加" onclick="addcolom()">
-
+                                </tbody>
+                            </tr>
                                 <!--
                                 <li>カラム名:<input type="text" name="colom_name" size="10" maxlength="10"></li>
 									<th scope="col">create tableにあるカラム2</th>
 									<th scope="col">create tableにあるカラム3</th>
 									<th scope="col">create tableにあるカラム4</th>
 									<th scope="col">create tableにあるカラム5</th>
-								</tr>
-                            <tbody>
+							
+                            
                                 <tr>
 									<th scope="row"> 
 										<input type="text" name="value_name" size="10" maxlength="10">
@@ -112,7 +115,7 @@
 										<input type="text" name="f#5" size="10" maxlength="10">
 									</td>
 								</tr>
-                            </tbody>
+                            
                             -->
                         </table>
 					<li><input type="submit" value="生成"></li>
