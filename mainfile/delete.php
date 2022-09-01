@@ -12,6 +12,7 @@
 		   $error[]="テーブル名が入力されていません。";
        }
 	  }else{
+		if(isset($_POST['check1'])){
 		if(!empty($_POST['table'])){
 			$naiyou[]="Delete from '".$_POST['table']."' ";
 		}else{
@@ -27,7 +28,15 @@
 	    }else{
 		$error[]="値を入力してください";
 	    }
-		
+		}
+	}
+
+	if(isset($_POST['check2'])){
+		if(!empty($_POST['table'])){
+			$naiyou[]="Delete from '".$_POST['table']."' ";
+		}else{
+			$error[]="テーブル名が入力されていません。";
+		}
        if(!empty($_POST['col_name2'])){
            $naiyou[]="where '".$_POST['col_name2']."' =";
        }else{
@@ -39,7 +48,8 @@
 		$error[]="値を入力してください";
 	    }
 	}
-   }
+
+}
 ?>
 <?php
       require_once __DIR__ .'./header.php';
