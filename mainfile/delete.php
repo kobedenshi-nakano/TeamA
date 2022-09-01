@@ -46,31 +46,34 @@
 			<ul class="formnav1">
 				<form method="post" action="">
 				<p class="addtable">追加するテーブル名:
-						<select name="tbl_name">
+				<input type="text" name="table" size="10" maxlength="10">
+						<!--<select name="tbl_name">
 							<option value="none">---</option>
 							<option value=' create role'>create文で生成したテーブル名1</option>
-						</select>
+						</select>-->
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
                 <p class="colname1">
-					<select name="col_name">
+				<input type="text" name="table" size="10" maxlength="10" placeholder="主キーに当たる列名を入力してください">
+					<!--<select name="col_name">
 						<option value="none1">---</option>
 						<option value='id'>id</option>
-					</select>
+					</select>-->
 				</p>
-				<p class="mainkey1"><input type="text" size="10" maxlength="20"></p>
+				<p class="mainkey1"><input type="text" size="10" maxlength="20" placeholder="値を入力してください"></p>
 				<p><input type="checkbox" name="check1"></p>
 				<p class="koumoku2">テーブル内の値を細かく削除</p>
 				<p class="colname1">
-					<select name="col_name2">
+				<input type="text" name="table" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
+					<!--<select name="col_name2">
 						<option value="none2">---</option>
 						<option value='name'>name</option>
-					</select>
+					</select>-->
 				</p>
-				<p class="mainkey2"><input type="text" size="10" maxlength="20"></p>
+				<p class="mainkey2"><input type="text" size="10" maxlength="20" placeholder="値を入力してください"></p>
 				<p><input type="checkbox" name="check2"></p>
 				<input type="submit" value="生成">
 				</form>
