@@ -7,13 +7,13 @@
            $naiyou[]="Drop table";
 	   
        if(!empty($_POST['table'])){
-           $naiyou[]=" if exists  '".$_POST['table'],"' ";
+           $naiyou[]=" if exists  '".$_POST['table']."' ";
        }else{
 		   $error[]="テーブル名が入力されていません。";
        }
 	  }else{
 		if(!empty($_POST['table'])){
-			$naiyou[]="Delete from '".$_POST['table'],"' ";
+			$naiyou[]="Delete from '".$_POST['table']."' ";
 		}else{
 			$error[]="テーブル名が入力されていません。";
 		}
