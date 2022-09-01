@@ -6,23 +6,50 @@
 	   if(isset($_POST['truncate'])){
            $naiyou[]="Drop table";
 	   
-       if(!($_POST['tbl_name'] == 'none')){
-           $naiyou[]=" ".$_POST['tbl_name'];
+       if(!empty($_POST['table'])){
+           $naiyou[]=" if exists  '".$_POST['table']."' ";
        }else{
 		   $error[]="テーブル名が入力されていません。";
        }
-	  }
-       if(!($_POST['col_name']=='none1')){
-           $naiyou[]=" ".$_POST['col_name']."";
+	  }else{
+		if(isset($_POST['check1'])){
+		if(!empty($_POST['table'])){
+			$naiyou[]="Delete from '".$_POST['table']."' ";
+		}else{
+			$error[]="テーブル名が入力されていません。";
+		}
+       if(!empty($_POST['col_name1'])){
+           $naiyou[]="where '".$_POST['col_name1']."' =";
        }else{
-           $error[]="1が入力されていません。";
+           $error[]="列名を入力してください";
        }
-	   if(!($_POST['col_name']=='none2')){
-		$naiyou[]=" ".$_POST['col_name']."";
-	}else{
-		$error[]="2が入力されていません。";
+	    if(!empty($_POST['value1'])){
+		$naiyou[]=" ".$_POST['value1']."";
+	    }else{
+		$error[]="値を入力してください";
+	    }
+		}
 	}
-   }
+
+	if(isset($_POST['check2'])){
+		if(!empty($_POST['table'])){
+			$naiyou[]="Delete from '".$_POST['table']."' ";
+		}else{
+			$error[]="テーブル名が入力されていません。";
+		}
+       if(!empty($_POST['col_name2'])){
+           $naiyou[]="where '".$_POST['col_name2']."' =";
+       }else{
+           $error[]="列名を入力してください";
+       }
+	    if(!empty($_POST['value2'])){
+		$naiyou[]=" ".$_POST['value1']."";
+	    }else{
+		$error[]="値を入力してください";
+	    }
+	}
+
+}
 ?>
 <?php
       require_once __DIR__ .'./header.php';
@@ -46,31 +73,34 @@
 			<ul class="formnav1">
 				<form method="post" action="">
 				<p class="addtable">追加するテーブル名:
-						<select name="tbl_name">
+				<input type="text" name="table" size="10" maxlength="10">
+						<!--<select name="tbl_name">
 							<option value="none">---</option>
 							<option value=' create role'>create文で生成したテーブル名1</option>
-						</select>
+						</select>-->
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
                 <p class="colname1">
-					<select name="col_name">
+				<input type="text" name="col_name1" size="10" maxlength="10" placeholder="主キーに当たる列名を入力してください">
+					<!--<select name="col_name">
 						<option value="none1">---</option>
 						<option value='id'>id</option>
-					</select>
+					</select>-->
 				</p>
-				<p class="mainkey1"><input type="text" size="10" maxlength="20"></p>
+				<p class="mainkey1"><input type="text" name="value1" size="10" maxlength="20" placeholder="値を入力してください"></p>
 				<p><input type="checkbox" name="check1"></p>
 				<p class="koumoku2">テーブル内の値を細かく削除</p>
 				<p class="colname1">
-					<select name="col_name2">
+				<input type="text" name="col_name2" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
+					<!--<select name="col_name2">
 						<option value="none2">---</option>
 						<option value='name'>name</option>
-					</select>
+					</select>-->
 				</p>
-				<p class="mainkey2"><input type="text" size="10" maxlength="20"></p>
+				<p class="mainkey2"><input type="text" name="value2" size="10" maxlength="20" placeholder="値を入力してください"></p>
 				<p><input type="checkbox" name="check2"></p>
 				<input type="submit" value="生成">
 				</form>
