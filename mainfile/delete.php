@@ -27,6 +27,17 @@
 	    }else{
 		$error[]="値を入力してください";
 	    }
+		
+       if(!empty($_POST['col_name2'])){
+           $naiyou[]="where '".$_POST['col_name2']."' =";
+       }else{
+           $error[]="列名を入力してください";
+       }
+	    if(!empty($_POST['value2'])){
+		$naiyou[]=" ".$_POST['value1']."";
+	    }else{
+		$error[]="値を入力してください";
+	    }
 	}
    }
 ?>
