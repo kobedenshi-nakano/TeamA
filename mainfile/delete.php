@@ -29,30 +29,26 @@
 				$error[]="値を入力してください";
 	    	}
 		}
-		else{
+		else if(isset($_POST['check2'])){
+			if(!empty($_POST['table'])){
+				$naiyou[]="Delete from '".$_POST['table']."' ";
+			}else{
+				$error[]="テーブル名が入力されていません。";
+			}
+       		if(!empty($_POST['col_name2'])){
+           		$naiyou[]="where '".$_POST['col_name2']."' =";
+       		}else{
+           		$error[]="列名を入力してください";
+       		}
+	    	if(!empty($_POST['value2'])){
+				$naiyou[]=" ".$_POST['value2']."";
+	    	}else{
+				$error[]="値を入力してください";
+	    	}
+		}
+    	else{
 			$error[]="選択にチェックしてください";
 		}
-	}
-
-	if(isset($_POST['check2'])){
-		if(!empty($_POST['table'])){
-			$naiyou[]="Delete from '".$_POST['table']."' ";
-		}else{
-			$error[]="テーブル名が入力されていません。";
-		}
-       if(!empty($_POST['col_name2'])){
-           $naiyou[]="where '".$_POST['col_name2']."' =";
-       }else{
-           $error[]="列名を入力してください";
-       }
-	    if(!empty($_POST['value2'])){
-		$naiyou[]=" ".$_POST['value1']."";
-	    }else{
-		$error[]="値を入力してください";
-	    }
-	}
-    else{
-		$error[]="選択にチェックしてください";
 	}
 }
 ?>
