@@ -76,3 +76,7 @@ nav {
 	border: 1px solid #ff2e5a;
 	border-radius: 5px;
 }
+
+.form_area {
+	display:inline-block
+}
