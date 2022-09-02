@@ -5,29 +5,32 @@
 	   
 	   if(isset($_POST['truncate'])){
            $naiyou[]="Drop table";
-	   
-       if(!empty($_POST['table'])){
-           $naiyou[]=" if exists  '".$_POST['table']."' ";
-       }else{
-		   $error[]="テーブル名が入力されていません。";
-       }
-	  }else{
+       		if(!empty($_POST['table'])){
+           		$naiyou[]=" if exists  '".$_POST['table']."' ";
+       		}else{
+		   		$error[]="テーブル名が入力されていません。";
+       		}
+	  	}
+		else{
 		if(isset($_POST['check1'])){
-		if(!empty($_POST['table'])){
-			$naiyou[]="Delete from '".$_POST['table']."' ";
-		}else{
-			$error[]="テーブル名が入力されていません。";
+			if(!empty($_POST['table'])){
+				$naiyou[]="Delete from '".$_POST['table']."' ";
+			}else{
+				$error[]="テーブル名が入力されていません。";
+			}
+       		if(!empty($_POST['col_name1'])){
+           		$naiyou[]="where '".$_POST['col_name1']."' =";
+       		}else{
+           		$error[]="列名を入力してください";
+       		}
+	    	if(!empty($_POST['value1'])){
+				$naiyou[]=" ".$_POST['value1']."";
+	    	}else{
+				$error[]="値を入力してください";
+	    	}
 		}
-       if(!empty($_POST['col_name1'])){
-           $naiyou[]="where '".$_POST['col_name1']."' =";
-       }else{
-           $error[]="列名を入力してください";
-       }
-	    if(!empty($_POST['value1'])){
-		$naiyou[]=" ".$_POST['value1']."";
-	    }else{
-		$error[]="値を入力してください";
-	    }
+		else{
+			$error[]="選択にチェックしてください";
 		}
 	}
 
@@ -48,7 +51,9 @@
 		$error[]="値を入力してください";
 	    }
 	}
-
+    else{
+		$error[]="選択にチェックしてください";
+	}
 }
 ?>
 <?php
