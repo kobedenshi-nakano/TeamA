@@ -72,9 +72,11 @@
 						-->
 				
 					<div id="form_area">
-  						<input type="text" name="inputform_0" placeholder="列の名前">
+						
+						<input type="text" name="inputform_0" placeholder="列の名前">
 						<input type="text" name="inputformnext_0" placeholder="更新する列の値">
   						<!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
+					
 					</div>
 						<input type="button" value="フォーム追加" onclick="addForm()">
 				
