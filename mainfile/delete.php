@@ -75,33 +75,111 @@
 				<form method="post" action="">
 				<p class="addtable">追加するテーブル名:
 				<input type="text" name="table" size="10" maxlength="10">
-						<!--<select name="tbl_name">
-							<option value="none">---</option>
-							<option value=' create role'>create文で生成したテーブル名1</option>
-						</select>-->
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
+				<div id="">
                 <p class="colname1">
-				<input type="text" name="col_name1" size="10" maxlength="10" placeholder="主キーに当たる列名を入力してください">
-					<!--<select name="col_name">
-						<option value="none1">---</option>
-						<option value='id'>id</option>
-					</select>-->
+				<input type="text" name="col_name1" size="20" maxlength="20" placeholder="主キーに当たる列名を入力してください">
 				</p>
-				<p class="mainkey1"><input type="text" name="value1" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey1"><input type="text" name="value1" size="20" maxlength="20" placeholder="値を入力してください"></p>
+                </div>
+				<input type="button" value="フォーム追加" onclick="">
+                <script>
+					var i=1;
+				function deleteBtn(target) {
+  					var target_id = target.id;
+  					var parent = document.getElementById('form_area');
+  					/*このした5行を削除するとリロードがかかるが値がリセットされるので配列に影響が出ない*/
+  					var ipt_id = document.getElementById('inputform_' + target_id);
+  					var ipt_id = document.getElementById('inputformnext_' + target_id);
+  					var tgt_id = document.getElementById(target_id);
+  					parent.removeChild(ipt_id);
+  					parent.removeChild(tgt_id);	
+				}
+
+				function addcolom() {
+					if(i<=2){
+  					var input_data = document.createElement('input');
+  						input_data.type = 'text';
+  						input_data.name = 'colom_name_' + i;
+  						input_data.placeholder = 'カラム名' + i;
+  						input_data.innerHTML="&nbsp;";
+  					var parent = document.getElementById('form_area');
+  						parent.appendChild(input_data);
+
+  					var input_data = document.createElement('input');
+  						input_data.type = 'text';
+  						input_data.name = 'value_name_' + i;
+  						input_data.placeholder = '値を入力(value)' + i;
+  						input_data.innerHTML="&nbsp;";
+  					var parent = document.getElementById('form_area');
+  						parent.appendChild(input_data);
+
+  					var button_data = document.createElement('button');
+  						button_data.name = i;
+  						button_data.onclick = function(){deleteBtn(this);}
+  						button_data.innerHTML = "&nbsp;";
+  						button_data.innerHTML = '削除';
+  					var input_area = document.getElementById(input_data.name);
+  						parent.appendChild(button_data);
+					}
+  					i++;
+				}
+				</script>
 				<p><input type="checkbox" name="check1"></p>
 				<p class="koumoku2">テーブル内の値を細かく削除</p>
+				<div id="">
 				<p class="colname1">
-				<input type="text" name="col_name2" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
-					<!--<select name="col_name2">
-						<option value="none2">---</option>
-						<option value='name'>name</option>
-					</select>-->
+				<input type="text" name="col_name2" size="20" maxlength="20" placeholder="主キーじゃない列名を入力してください">
 				</p>
-				<p class="mainkey2"><input type="text" name="value2" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey2"><input type="text" name="value2" size="20" maxlength="20" placeholder="値を入力してください"></p>
+			    </div>
+				<input type="button" value="フォーム追加" onclick="">
+				<script>
+						var i=1;
+				function deleteBtn(target) {
+  					var target_id = target.id;
+  					var parent = document.getElementById('form_area');
+  					/*このした5行を削除するとリロードがかかるが値がリセットされるので配列に影響が出ない*/
+  					var ipt_id = document.getElementById('inputform_' + target_id);
+  					var ipt_id = document.getElementById('inputformnext_' + target_id);
+  					var tgt_id = document.getElementById(target_id);
+  					parent.removeChild(ipt_id);
+  					parent.removeChild(tgt_id);	
+				}
+
+				function addcolom() {
+					if(i<=2){
+  					var input_data = document.createElement('input');
+  						input_data.type = 'text';
+  						input_data.name = 'colom_name_' + i;
+  						input_data.placeholder = 'カラム名' + i;
+  						input_data.innerHTML="&nbsp;";
+  					var parent = document.getElementById('form_area');
+  						parent.appendChild(input_data);
+
+  					var input_data = document.createElement('input');
+  						input_data.type = 'text';
+  						input_data.name = 'value_name_' + i;
+  						input_data.placeholder = '値を入力(value)' + i;
+  						input_data.innerHTML="&nbsp;";
+  					var parent = document.getElementById('form_area');
+  						parent.appendChild(input_data);
+
+  					var button_data = document.createElement('button');
+  						button_data.name = i;
+  						button_data.onclick = function(){deleteBtn(this);}
+  						button_data.innerHTML = "&nbsp;";
+  						button_data.innerHTML = '削除';
+  					var input_area = document.getElementById(input_data.name);
+  						parent.appendChild(button_data);
+					}
+  					i++;
+				}
+				</script>
 				<p><input type="checkbox" name="check2"></p>
 				<input type="submit" value="生成">
 				</form>
