@@ -139,9 +139,9 @@
 			    </div>
 				<input type="button" value="フォーム追加" onclick="addform2()">
 				<script>
-				var i=1;
-				function deleteBtn(target) {
-  					var target_id = target.id;
+				var j=1;
+				function deleteBtn(target1) {
+  					var target_id = target1.id;
   					var parent = document.getElementById('col_data2');
   					/*このした5行を削除するとリロードがかかるが値がリセットされるので配列に影響が出ない*/
   					var ipt_id = document.getElementById('inputform_' + target_id);
@@ -152,7 +152,7 @@
 				}
 
 				function addform2() {
-					if(i<=2){
+					if(j<=2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'col_name2' + i;
@@ -170,14 +170,14 @@
   						parent.appendChild(input_data);
 
   					var button_data = document.createElement('button');
-  						button_data.name = i;
+  						button_data.name = j;
   						button_data.onclick = function(){deleteBtn(this);}
   						button_data.innerHTML = "&nbsp;";
   						button_data.innerHTML = '削除';
   					var input_area = document.getElementById(input_data.name);
   						parent.appendChild(button_data);
 					}
-  					i++;
+  					j++;
 				}
 				</script>
 				<p><input type="checkbox" name="check2"></p>
