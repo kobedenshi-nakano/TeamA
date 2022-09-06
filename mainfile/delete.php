@@ -80,18 +80,18 @@
 			
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
-				<div id="">
+				<div id="col_data1">
                 <p class="colname1">
 				<input type="text" name="col_name1" size="20" maxlength="20" placeholder="主キーに当たる列名を入力してください">
 				</p>
 				<p class="mainkey1"><input type="text" name="value1" size="20" maxlength="20" placeholder="値を入力してください"></p>
                 </div>
-				<input type="button" value="フォーム追加" onclick="">
+				<input type="button" value="フォーム追加" onclick="addform()">
                 <script>
-					var i=1;
+				var i=1;
 				function deleteBtn(target) {
   					var target_id = target.id;
-  					var parent = document.getElementById('form_area');
+  					var parent = document.getElementById('col_data1');
   					/*このした5行を削除するとリロードがかかるが値がリセットされるので配列に影響が出ない*/
   					var ipt_id = document.getElementById('inputform_' + target_id);
   					var ipt_id = document.getElementById('inputformnext_' + target_id);
@@ -100,22 +100,22 @@
   					parent.removeChild(tgt_id);	
 				}
 
-				function addcolom() {
+				function addform() {
 					if(i<=2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
-  						input_data.name = 'colom_name_' + i;
+  						input_data.name = 'col_name1' + i;
   						input_data.placeholder = 'カラム名' + i;
   						input_data.innerHTML="&nbsp;";
-  					var parent = document.getElementById('form_area');
+  					var parent = document.getElementById('col_data1');
   						parent.appendChild(input_data);
 
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
-  						input_data.name = 'value_name_' + i;
+  						input_data.name = 'value1' + i;
   						input_data.placeholder = '値を入力(value)' + i;
   						input_data.innerHTML="&nbsp;";
-  					var parent = document.getElementById('form_area');
+  					var parent = document.getElementById('col_data1');
   						parent.appendChild(input_data);
 
   					var button_data = document.createElement('button');
@@ -131,18 +131,18 @@
 				</script>
 				<p><input type="checkbox" name="check1"></p>
 				<p class="koumoku2">テーブル内の値を細かく削除</p>
-				<div id="">
+				<div id="col_data2">
 				<p class="colname1">
 				<input type="text" name="col_name2" size="20" maxlength="20" placeholder="主キーじゃない列名を入力してください">
 				</p>
 				<p class="mainkey2"><input type="text" name="value2" size="20" maxlength="20" placeholder="値を入力してください"></p>
 			    </div>
-				<input type="button" value="フォーム追加" onclick="">
+				<input type="button" value="フォーム追加" onclick="addform2()">
 				<script>
-						var i=1;
+				var i=1;
 				function deleteBtn(target) {
   					var target_id = target.id;
-  					var parent = document.getElementById('form_area');
+  					var parent = document.getElementById('col_data2');
   					/*このした5行を削除するとリロードがかかるが値がリセットされるので配列に影響が出ない*/
   					var ipt_id = document.getElementById('inputform_' + target_id);
   					var ipt_id = document.getElementById('inputformnext_' + target_id);
@@ -151,22 +151,22 @@
   					parent.removeChild(tgt_id);	
 				}
 
-				function addcolom() {
+				function addform2() {
 					if(i<=2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
-  						input_data.name = 'colom_name_' + i;
+  						input_data.name = 'col_name2' + i;
   						input_data.placeholder = 'カラム名' + i;
   						input_data.innerHTML="&nbsp;";
-  					var parent = document.getElementById('form_area');
+  					var parent = document.getElementById('col_data2');
   						parent.appendChild(input_data);
 
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
-  						input_data.name = 'value_name_' + i;
+  						input_data.name = 'value2' + i;
   						input_data.placeholder = '値を入力(value)' + i;
   						input_data.innerHTML="&nbsp;";
-  					var parent = document.getElementById('form_area');
+  					var parent = document.getElementById('col_data2');
   						parent.appendChild(input_data);
 
   					var button_data = document.createElement('button');
