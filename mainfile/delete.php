@@ -22,11 +22,13 @@
 				$error[]="列名を入力してください";
        		}else{
            		$naiyou[]="where ".$_POST['col_name10']." =";
+
        		}
 	    	if(empty($_POST['value10'])){
 				$error[]="値を入力してください";
 	    	}else{
 				$naiyou[]=" '".$_POST['value10']."'";
+
 	    	}
 		}
 		else if(isset($_POST['check2'])){
@@ -39,11 +41,13 @@
 				$error[]="列名を入力してください";
        		}else{
            		$naiyou[]="where ".$_POST['col_name10']." =";
+
        		}
 	    	if(empty($_POST['value10'])){
 				$error[]="値を入力してください";
 	    	}else{
 				$naiyou[]=" '".$_POST['value10']."'";
+				
 	    	}
 		}
     	else{
