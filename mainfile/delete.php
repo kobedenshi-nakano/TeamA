@@ -24,14 +24,11 @@
            		$naiyou[]="where ".$_POST['col_name10']." =";
                 if(empty($_POST['col_name11'])){
 					$naiyou[]="";
-				}else{
+				}else if(empty($_POST['col_name12'])){
                     $naiyou[]="where ".$_POST['col_name11']." =";
-					if(empty($_POST['col_name12'])){
-                       $naiyou[]="";
-					}else{
-						$naiyou[]="where ".$_POST['col_name12']." =";
-					}
-				}
+				}else{
+					$naiyou[]="where ".$_POST['col_name11']." ="."where ".$_POST['col_name12']." =";
+				}	
        		}
 	    	if(empty($_POST['value10'])){
 				$error[]="値を入力してください";
@@ -39,14 +36,11 @@
 				$naiyou[]=" '".$_POST['value10']."'";
                 if(empty($_POST['value11'])){
                    $naiyou[]="";
-				}else{
+				}else if(empty($_POST['value12'])){
 					$naiyou[]=" '".$_POST['value11']."'";
-					if(empty($_POST['value12'])){
-						$naiyou[]="";
-					 }else{
-						 $naiyou[]=" '".$_POST['value12']."'";	
-					 }	
-				}
+				}else{
+					$naiyou[]=" '".$_POST['value11']." '".$_POST['value12']."'";	
+			   }	
 	    	}
 		}
 		else if(isset($_POST['check2'])){
@@ -61,28 +55,22 @@
            		$naiyou[]="where ".$_POST['col_name20']." =";
 				if(empty($_POST['col_name21'])){
 					$naiyou[]="";
-				}else{
+				}else if(empty($_POST['col_name22'])){
                     $naiyou[]="where ".$_POST['col_name21']." =";
-					if(empty($_POST['col_name22'])){
-                       $naiyou[]="";
-					}else{
-						$naiyou[]="where ".$_POST['col_name22']." =";
-					}
+				}else{
+					$naiyou[]="where ".$_POST['col_name21']." ="."where ".$_POST['col_name22']." =";
 				}
        		}
 	    	if(empty($_POST['value20'])){
 				$error[]="値を入力してください";
 	    	}else{
 				$naiyou[]=" '".$_POST['value20']."'";
-                if(empty($_POST['value21'])){
-                   $naiyou[]="";
-				}else{
-					$naiyou[]=" '".$_POST['value21']."'";
-					if(empty($_POST['value22'])){
-						$naiyou[]="";
-					 }else{
-						 $naiyou[]=" '".$_POST['value22']."'";	
-					 }	
+				if(empty($_POST['value21'])){
+					$naiyou[]="";
+				 }else if(empty($_POST['value22'])){
+					 $naiyou[]=" '".$_POST['value21']."'";
+				 }else{
+					 $naiyou[]=" '".$_POST['value21']." '".$_POST['value22']."'";	
 				}
 	    	}
 		}
@@ -205,9 +193,9 @@
 				<p>選択</p>
 				<div id="col_data1">
                 <p class="colname1">
-				<input type="text" name="col_name1" size="20" maxlength="20" placeholder="主キーに当たる列名を入力してください">
+				<input type="text" name="col_name10" size="20" maxlength="20" placeholder="主キーに当たる列名を入力してください">
 				</p>
-				<p class="mainkey1"><input type="text" name="value1" size="20" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey1"><input type="text" name="value10" size="20" maxlength="20" placeholder="値を入力してください"></p>
                 </div>
 				<input type="button" value="フォーム追加" onclick="addform()">
                 
@@ -215,9 +203,9 @@
 				<p class="koumoku2">テーブル内の値を細かく削除</p>
 				<div id="col_data2">
 				<p class="colname1">
-				<input type="text" name="col_name2" size="20" maxlength="20" placeholder="主キーじゃない列名を入力してください">
+				<input type="text" name="col_name20" size="20" maxlength="20" placeholder="主キーじゃない列名を入力してください">
 				</p>
-				<p class="mainkey2"><input type="text" name="value2" size="20" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey2"><input type="text" name="value20" size="20" maxlength="20" placeholder="値を入力してください"></p>
 			    </div>
 				<input type="button" value="フォーム追加" onclick="addform2()">
 				
