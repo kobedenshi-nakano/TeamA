@@ -22,13 +22,31 @@
 				$error[]="列名を入力してください";
        		}else{
            		$naiyou[]="where ".$_POST['col_name10']." =";
-
+                if(empty($_POST['col_name11'])){
+					$naiyou[]="";
+				}else{
+                    $naiyou[]="where ".$_POST['col_name11']." =";
+					if(empty($_POST['col_name12'])){
+                       $naiyou[]="";
+					}else{
+						$naiyou[]="where ".$_POST['col_name12']." =";
+					}
+				}
        		}
 	    	if(empty($_POST['value10'])){
 				$error[]="値を入力してください";
 	    	}else{
 				$naiyou[]=" '".$_POST['value10']."'";
-
+                if(empty($_POST['value11'])){
+                   $naiyou[]="";
+				}else{
+					$naiyou[]=" '".$_POST['value11']."'";
+					if(empty($_POST['value12'])){
+						$naiyou[]="";
+					 }else{
+						 $naiyou[]=" '".$_POST['value12']."'";	
+					 }	
+				}
 	    	}
 		}
 		else if(isset($_POST['check2'])){
@@ -37,17 +55,35 @@
 			}else{
 				$naiyou[]="Delete from '".$_POST['table']."' ";
 			}
-       		if(empty($_POST['col_name10'])){
+       		if(empty($_POST['col_name20'])){
 				$error[]="列名を入力してください";
        		}else{
-           		$naiyou[]="where ".$_POST['col_name10']." =";
-
+           		$naiyou[]="where ".$_POST['col_name20']." =";
+				if(empty($_POST['col_name21'])){
+					$naiyou[]="";
+				}else{
+                    $naiyou[]="where ".$_POST['col_name21']." =";
+					if(empty($_POST['col_name22'])){
+                       $naiyou[]="";
+					}else{
+						$naiyou[]="where ".$_POST['col_name22']." =";
+					}
+				}
        		}
-	    	if(empty($_POST['value10'])){
+	    	if(empty($_POST['value20'])){
 				$error[]="値を入力してください";
 	    	}else{
-				$naiyou[]=" '".$_POST['value10']."'";
-				
+				$naiyou[]=" '".$_POST['value20']."'";
+                if(empty($_POST['value21'])){
+                   $naiyou[]="";
+				}else{
+					$naiyou[]=" '".$_POST['value21']."'";
+					if(empty($_POST['value22'])){
+						$naiyou[]="";
+					 }else{
+						 $naiyou[]=" '".$_POST['value22']."'";	
+					 }	
+				}
 	    	}
 		}
     	else{
