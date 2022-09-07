@@ -1,6 +1,7 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
        $naiyou=array();
+	   $naiyou1=array();
 	   $error=array();
 	   
 	   if(isset($_POST['truncate'])){
@@ -20,59 +21,46 @@
 			}
        		if(empty($_POST['col_name10'])){
 				$error[]="列名を入力してください";
-       		}else{
-           		$naiyou[]="where ".$_POST['col_name10']." =";
-                if(empty($_POST['col_name11'])){
-					$naiyou[]="";
-				}else if(empty($_POST['col_name12'])){
-                    $naiyou[]="where ".$_POST['col_name11']." =";
-				}else{
-					$naiyou[]="where ".$_POST['col_name11']." ="."where ".$_POST['col_name12']." =";
-				}	
-       		}
-	    	if(empty($_POST['value10'])){
+       		}else if(empty($_POST['value10'])){
 				$error[]="値を入力してください";
 	    	}else{
-				$naiyou[]=" '".$_POST['value10']."'";
-                if(empty($_POST['value11'])){
-                   $naiyou[]="";
-				}else if(empty($_POST['value12'])){
-					$naiyou[]=" '".$_POST['value11']."'";
+           		$naiyou[]="where ".$_POST['col_name10']." ="." '".$_POST['value10']."'";
+                if(empty($_POST['col_name11'])){
+					$naiyou[]="";
+				}else if(empty($_POST['value11'])){
+					$naiyou[]="";
+				}else if(empty($_POST['col_name12'])||empty($_POST['value12'])){
+                    $naiyou[]="where ".$_POST['col_name11']." ="." '".$_POST['value11']."'";
 				}else{
-					$naiyou[]=" '".$_POST['value11']." '".$_POST['value12']."'";	
-			   }	
-	    	}
+					$naiyou[]="where ".$_POST['col_name11']." ="." '".$_POST['value11']."'";
+					$naiyou[]="where ".$_POST['col_name12']." ="." '".$_POST['value12']."'";
+				}	
+       		}	    
 		}
+		//上の部分と下の部分を両方選んだ時に出力画面に表示されない問題
 		else if(isset($_POST['check2'])){
 			if(empty($_POST['table'])){
 				$error[]="テーブル名が入力されていません。";
 			}else{
-				$naiyou[]="Delete from '".$_POST['table']."' ";
+				$naiyou1[]="Delete from '".$_POST['table']."' ";
 			}
-       		if(empty($_POST['col_name20'])){
+			if(empty($_POST['col_name20'])){
 				$error[]="列名を入力してください";
-       		}else{
-           		$naiyou[]="where ".$_POST['col_name20']." =";
-				if(empty($_POST['col_name21'])){
-					$naiyou[]="";
-				}else if(empty($_POST['col_name22'])){
-                    $naiyou[]="where ".$_POST['col_name21']." =";
-				}else{
-					$naiyou[]="where ".$_POST['col_name21']." ="."where ".$_POST['col_name22']." =";
-				}
-       		}
-	    	if(empty($_POST['value20'])){
+       		}else if(empty($_POST['value20'])){
 				$error[]="値を入力してください";
 	    	}else{
-				$naiyou[]=" '".$_POST['value20']."'";
-				if(empty($_POST['value21'])){
-					$naiyou[]="";
-				 }else if(empty($_POST['value22'])){
-					 $naiyou[]=" '".$_POST['value21']."'";
-				 }else{
-					 $naiyou[]=" '".$_POST['value21']." '".$_POST['value22']."'";	
-				}
-	    	}
+           		$naiyou1[]="where ".$_POST['col_name20']." ="." '".$_POST['value20']."'";
+                if(empty($_POST['col_name21'])){
+					$naiyou1[]="";
+				}else if(empty($_POST['value21'])){
+					$naiyou1[]="";
+				}else if(empty($_POST['col_name22'])||empty($_POST['value22'])){
+                    $naiyou1[]="where ".$_POST['col_name21']." ="." '".$_POST['value21']."'";
+				}else{
+					$naiyou1[]="where ".$_POST['col_name21']." ="." '".$_POST['value21']."'";
+					$naiyou1[]="where ".$_POST['col_name22']." ="." '".$_POST['value22']."'";
+				}	
+       		}
 		}
     	else{
 			$error[]="選択にチェックしてください";
@@ -227,6 +215,12 @@
 					if(isset($naiyou)){
 						foreach($naiyou as $value){
 							echo $value;
+							echo '';
+						}
+					}
+					if(isset($naiyou1)){
+						foreach($naiyou1 as $value1){
+							echo $value1;
 							echo '';
 						}
 					}
