@@ -9,6 +9,7 @@ if($_REQUEST["search"]){
 ?>
 <link rel="stylesheet" href="../css/home.css">
 
+
 		<div class="column2">
 		
 			<ul class="news-contents">
