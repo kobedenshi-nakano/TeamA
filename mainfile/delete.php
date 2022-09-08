@@ -30,11 +30,11 @@
 				}else if(empty($_POST['value11'])){
 					$naiyou[]="";
 				}else if(empty($_POST['col_name12'])||empty($_POST['value12'])){
-                    $naiyou[]="where ".$_POST['col_name11']." ="." '".$_POST['value11']."'";
+                    $naiyou[]=" and where ".$_POST['col_name11']." ="." '".$_POST['value11']."'";
 				}else{
-					$naiyou[]="where ".$_POST['col_name11']." ="." '".$_POST['value11']."'";
-					$naiyou[]="where ".$_POST['col_name12']." ="." '".$_POST['value12']."'";
-				}	
+					
+				}
+				$naiyou[]=';<br>';	
        		}	    
 		}
 		//上の部分と下の部分を両方選んだ時に出力画面に表示されない問題
@@ -55,14 +55,13 @@
 				}else if(empty($_POST['value21'])){
 					$naiyou1[]="";
 				}else if(empty($_POST['col_name22'])||empty($_POST['value22'])){
-                    $naiyou1[]="where ".$_POST['col_name21']." ="." '".$_POST['value21']."'";
+                    $naiyou1[]="and where ".$_POST['col_name21']." ="." '".$_POST['value21']."'";
 				}else{
-					$naiyou1[]="where ".$_POST['col_name21']." ="." '".$_POST['value21']."'";
-					$naiyou1[]="where ".$_POST['col_name22']." ="." '".$_POST['value22']."'";
+					
 				}	
        		}
+			$naiyou1[]=';<br>';
 		}
-    	
 	}
 }
 ?>
@@ -84,7 +83,7 @@
 				}
 
 				function addform2() {
-					if(j<=2){
+					if(j<2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'col_name2' + i;
@@ -128,7 +127,7 @@
 				}
 
 				function addform() {
-					if(i<=2){
+					if(i<2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'col_name1' + i;
