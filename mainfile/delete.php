@@ -38,7 +38,7 @@
        		}	    
 		}
 		//上の部分と下の部分を両方選んだ時に出力画面に表示されない問題
-		else if(isset($_POST['check2'])){
+		if(isset($_POST['check2'])){
 			if(empty($_POST['table'])){
 				$error[]="テーブル名が入力されていません。";
 			}else{
@@ -62,9 +62,7 @@
 				}	
        		}
 		}
-    	else{
-			$error[]="選択にチェックしてください";
-		}
+    	
 	}
 }
 ?>
