@@ -30,7 +30,7 @@
 				}else if(empty($_POST['value11'])){
 					$naiyou[]="";
 				}else if(empty($_POST['col_name12'])||empty($_POST['value12'])){
-                    $naiyou[]=" and where ".$_POST['col_name11']." ="." '".$_POST['value11']."'";
+                    $naiyou[]=" and ".$_POST['col_name11']." ="." '".$_POST['value11']."'";
 				}else{
 					
 				}
@@ -55,7 +55,7 @@
 				}else if(empty($_POST['value21'])){
 					$naiyou1[]="";
 				}else if(empty($_POST['col_name22'])||empty($_POST['value22'])){
-                    $naiyou1[]="and where ".$_POST['col_name21']." ="." '".$_POST['value21']."'";
+                    $naiyou1[]="and ".$_POST['col_name21']." ="." '".$_POST['value21']."'";
 				}else{
 					
 				}	
