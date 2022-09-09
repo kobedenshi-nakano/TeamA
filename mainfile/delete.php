@@ -87,7 +87,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'col_name2' + i;
-  						input_data.placeholder = 'カラム名' + i;
+  						input_data.placeholder = '主キーじゃない列名を入力してください' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('col_data2');
   						parent.appendChild(input_data);
@@ -95,7 +95,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'value2' + i;
-  						input_data.placeholder = '値を入力(value)' + i;
+  						input_data.placeholder = '値を入力' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('col_data2');
   						parent.appendChild(input_data);
@@ -131,7 +131,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'col_name1' + i;
-  						input_data.placeholder = 'カラム名' + i;
+  						input_data.placeholder = '主キーに当たる列名を入力してください' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('col_data1');
   						parent.appendChild(input_data);
@@ -139,7 +139,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'value1' + i;
-  						input_data.placeholder = '値を入力(value)' + i;
+  						input_data.placeholder = '値を入力' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('col_data1');
   						parent.appendChild(input_data);
@@ -180,7 +180,7 @@
                 <p class="colname1">
 				<input type="text" name="col_name10" size="20" maxlength="20" placeholder="主キーに当たる列名を入力してください">
 				</p>
-				<p class="mainkey1"><input type="text" name="value10" size="20" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey1"><input type="text" name="value10" size="20" maxlength="20" placeholder="値を入力してください"></p><br>
                 </div>
 				<!--<input type="button" value="フォーム追加" onclick="addform()">
 			    checkboxの部分を2カラムレイアウトにできるようにする
