@@ -110,10 +110,6 @@
 					}
   					j++;
 				}
-				</script>
-<link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/delete.css">
-<script>
 				var i=1;
 				function deleteBtn(target) {
   					var target_id = target.id;
@@ -154,7 +150,10 @@
 					}
   					i++;
 				}
-				</script>
+</script>
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/delete.css">
+
 <div class="column2">
 	<div class="news-contents">
 				
