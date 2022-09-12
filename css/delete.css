@@ -9,11 +9,12 @@
    float: left;
 }
 .koumoku{
-    margin: 0 150px 5px 200px;
+    margin: 0 60px 5px 200px;
     float: left;
 }
-.koumoku2{
-	margin: 0 150px 5px 50px;
+#koumoku2{
+	margin: 0 0 0 180px;
+	padding: 0 180px 0 0;
 }
 .colname1{
 	margin:0 0 10px 50px;
