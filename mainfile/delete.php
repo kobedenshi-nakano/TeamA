@@ -190,16 +190,16 @@
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
                 <p class="colname1">
-				<input type="text" name="col_name1" size="10" maxlength="10" placeholder="主キーに当たる列名を入力してください">
+				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="主キーに当たる列名を入力してください">
 				</p>
-				<p class="mainkey1"><input type="text" name="value1" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey1"><input type="text" name="value10" size="10" maxlength="20" placeholder="値を入力してください"></p>
 				<p><input type="checkbox" name="check1"></p><br>
 				<div id="koumoku2">テーブル内の値を細かく削除</div>
 				<p class="colname1">
-				<input type="text" name="col_name2" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
+				<input type="text" name="col_name20" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
 					
 				</p>
-				<p class="mainkey2"><input type="text" name="value2" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey2"><input type="text" name="value20" size="10" maxlength="20" placeholder="値を入力してください"></p>
 				<p><input type="checkbox" name="check2"></p>
 				<input type="submit" value="生成">
 				</form>
