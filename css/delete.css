@@ -14,27 +14,26 @@
 }
 .koumoku2{
     margin: 20px 150px 20px 170px;
-   
+	float: left;
 }
 .colname1{
 	margin:0 0 0 50px;
 	float: left;
 }
 .mainkey1{
-	margin: 0 160px 0 60px;
+	margin: 0 60px 0 60px;
 	padding: auto;
 	float: left;
 }
 .mainkey2{
-	margin: 0 160px 0 60px;
+	margin: 0 60px 0 60px;
 	padding: auto;
+}
+.sentaku01{
+	margin:0 10px 20px 0;
 	float: left;
 }
-.check1{
-	margin:0 0 0 50px;
-	padding:auto;
-}
-.check2{
-	margin:0 0 0 50px;
+.sentaku02{
+	margin:auto;
 	padding:auto;
 }
