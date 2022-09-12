@@ -33,13 +33,7 @@
 
 /*.subnav li a.current,*/
 	
-.subnav li	a:link {
-	color:#0000FF;
-	}
-	
-.subnav li a:visited {
-	color:#000000;
-	}
+
 	
 .subnav li	a:hover {
 	color:orange;
