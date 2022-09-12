@@ -181,34 +181,27 @@
 			<br>
 			<ul class="formnav1">
 				<form method="post" action="">
-				    <p class="addtable">追加するテーブル名:
-				    <input type="text" name="table" size="10" maxlength="10">
-				    </p>
+				<p class="addtable">追加するテーブル名:
+				<input type="text" name="table" size="10" maxlength="10">
+						
+				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			
-				   <p class="koumoku">主キーでの削除</p>
-				   <p>選択</p>
-				<div id="col_data1">
-                  <p class="colname1">
-				    <input type="text" name="col_name10" size="20" maxlength="20" placeholder="主キーに当たる列名を入力してください">
-				  </p>
-				  <p class="mainkey1">
-					<input type="text" name="value10" size="20" maxlength="20" placeholder="値を入力してください">
-				  </p><br>
-                </div>
-				<p class="sentaku01"><input type="checkbox" name="check1"></p><br>
-				<!--<input type="button" value="フォーム追加" onclick="addform()">-->
-				<p class="koumoku">テーブル内の値を細かく削除</p>
-				<div id="col_data2">
-				  <p class="colname1">
-				  <input type="text" name="col_name20" size="20" maxlength="20" placeholder="主キーじゃない列名を入力してください">
-				  </p>
-				  <p class="mainkey1">
-					<input type="text" name="value20" size="20" maxlength="20" placeholder="値を入力してください">
-				  </p>
-			    </div>
-				<p class="sentaku01"><input type="checkbox" name="check2"></p><br>
-				<!--<input type="button" value="フォーム追加" onclick="addform2()">-->
+				<p class="koumoku">主キーでの削除</p>
+				<p>選択</p>
+                <p class="colname1">
+				<input type="text" name="col_name1" size="10" maxlength="10" placeholder="主キーに当たる列名を入力してください">
+					
+				</p>
+				<p class="mainkey1"><input type="text" name="value1" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p><input type="checkbox" name="check1"></p>
+				<p class="koumoku2">テーブル内の値を細かく削除</p>
+				<p class="colname1">
+				<input type="text" name="col_name2" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
+					
+				</p>
+				<p class="mainkey2"><input type="text" name="value2" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p><input type="checkbox" name="check2"></p>
 				<input type="submit" value="生成">
 				</form>
 			</ul>
