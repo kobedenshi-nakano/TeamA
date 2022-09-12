@@ -196,7 +196,7 @@
                 </div>
 				<!--<input type="button" value="フォーム追加" onclick="addform()">-->
 				<p><input type="checkbox" name="check1"></p>
-				<input type="button" value="フォーム追加" onclick="addform()">
+				<!--<input type="button" value="フォーム追加" onclick="addform()">-->
 				<p class="koumoku2">テーブル内の値を細かく削除</p>
 				<div id="col_data2">
 				<p class="colname1">
@@ -206,7 +206,7 @@
 			    </div>
 				<!--<input type="button" value="フォーム追加" onclick="addform2()">-->	
 				<p><input type="checkbox" name="check2"></p>
-				<input type="button" value="フォーム追加" onclick="addform2()">
+				<!--<input type="button" value="フォーム追加" onclick="addform2()">-->
 				<input type="submit" value="生成">
 				<!--<p><input type="checkbox" name="check1"></p>
 				<p><input type="checkbox" name="check2"></p>-->
