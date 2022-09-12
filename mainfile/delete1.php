@@ -198,17 +198,16 @@
                 </div>
 				<p class="sentaku01"><input type="checkbox" name="check1"></p><br>
 				<!--<input type="button" value="フォーム追加" onclick="addform()">-->
-				<p class="koumoku2">テーブル内の値を細かく削除</p>
+				<p class="koumoku">テーブル内の値を細かく削除</p>
 				<div id="col_data2">
 				  <p class="colname1">
-				  <br>
 				  <input type="text" name="col_name20" size="20" maxlength="20" placeholder="主キーじゃない列名を入力してください">
-				  </p><br>
-				  <p class="mainkey2">
+				  </p>
+				  <p class="mainkey1">
 					<input type="text" name="value20" size="20" maxlength="20" placeholder="値を入力してください">
-				  </p><br>
+				  </p>
 			    </div>
-				<p class="sentaku02"><input type="checkbox" name="check2"></p><br>
+				<p class="sentaku01"><input type="checkbox" name="check2"></p><br>
 				<!--<input type="button" value="フォーム追加" onclick="addform2()">-->
 				<input type="submit" value="生成">
 				</form>

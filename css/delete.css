@@ -13,8 +13,7 @@
     float: left;
 }
 .koumoku2{
-    margin: 20px 150px 20px 170px;
-	float: left;
+    margin: 0 150px 5px 200px;
 }
 .colname1{
 	margin:0 0 0 50px;
@@ -28,6 +27,7 @@
 .mainkey2{
 	margin: 0 60px 0 60px;
 	padding: auto;
+	float: left;
 }
 .sentaku01{
 	margin:0 10px 20px 0;
