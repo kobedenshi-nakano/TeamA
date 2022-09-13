@@ -197,7 +197,6 @@
 				<div id="koumoku2">テーブル内の値を細かく削除</div>
 				<p class="colname1">
 				<input type="text" name="col_name20" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
-					
 				</p>
 				<p class="mainkey2"><input type="text" name="value20" size="10" maxlength="20" placeholder="値を入力してください"></p>
 				<p><input type="checkbox" name="check2"></p>
