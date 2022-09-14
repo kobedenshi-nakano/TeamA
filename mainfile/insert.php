@@ -92,7 +92,7 @@
                         <table>
                             <tr>
                             <tbody>
-                            <li>colomとvalue:(文字型の場合は""を付ける)</li>
+                            <li>columnとvalue:(文字型の場合は""を付ける)</li>
                                 <div id="form_area">
                                 <input type="text" name="colom_name_0" placeholder="カラム名"></li>
 						        <input type="text" name="value_name_0" placeholder="値を入力(value)">
