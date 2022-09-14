@@ -183,7 +183,7 @@
 				<form method="post" action="">
 				<p class="addtable">追加するテーブル名:
 				<input type="text" name="table" size="10" maxlength="10">
-						
+				<!--文字列型を入れるときクォーテーションを入れる案内を書く-->		
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			
