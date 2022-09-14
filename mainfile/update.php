@@ -83,7 +83,7 @@
 						
 					</textarea>
 						-->
-				
+				<li>columnとvalue:(文字型の場合は""を付ける)</li>
 					<div id="form_area">
 						
 						<input type="text" name="inputform_0" placeholder="列の名前">
