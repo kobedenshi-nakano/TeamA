@@ -181,7 +181,7 @@
 			<br>
 			<ul class="formnav1">
 				<form method="post" action="">
-				<p class="addtable">追加するテーブル名:
+				<p class="addtable">削除するテーブル名:
 				<input type="text" name="table" size="10" maxlength="10">
 				<!--文字列型を入れるときクォーテーションを入れる案内を書く-->		
 				</p>
