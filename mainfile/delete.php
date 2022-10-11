@@ -215,7 +215,6 @@
 							echo '';
 						}
 					}
-			?></p><p id="copy-text"><?php
 					if(isset($naiyou1)){
 						foreach($naiyou1 as $value1){
 							echo $value1;
