@@ -215,6 +215,7 @@
 							echo '';
 						}
 					}
+			?></p><p id="copy-text"><?php
 					if(isset($naiyou1)){
 						foreach($naiyou1 as $value1){
 							echo $value1;
@@ -223,9 +224,12 @@
 					}
 				}
 				?>
+			</p>
 			</li>
+			<!--<button id="copy-btn">コピーボタン</button>-->
+            <scirpt src="script01.js"></script>
 		</div>
-
+		<button id="copy-btn">コピーボタン</button>
 	</div>
 </div>
 <?php
