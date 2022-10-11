@@ -1,17 +1,17 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-       $naiyou=array();
-	   $error=array();
-	   
-       if(empty($_POST['tbl_name'])){
-           $error[]="テーブル名が入力されていません。";
-       }else{
-           $naiyou[]="insert into ".$_POST['tbl_name'];
-       }
+    $naiyou=array();
+	$error=array();
+	
+    if(empty($_POST['tbl_name'])){
+        $error[]="テーブル名が入力されていません。";
+    }else{
+        $naiyou[]="insert into ".$_POST['tbl_name'];
+    }
 
-       if(empty($_POST['colom_name_0'])){
+    if(empty($_POST['colom_name_0'])){
         $naiyou[]="";
-       }else{
+    }else{
             $naiyou[]=" (".$_POST['colom_name_0'];
             if(empty($_POST['colom_name_1']))
             {
@@ -25,29 +25,30 @@
 
         
 
-       if(empty($_POST['value_name_0'])){
-           $error[]="values句が入力されていません。";
-       }else{
-           $naiyou[]=" values (".$_POST['value_name_0'];
-           if(empty($_POST['value_name_1']))
+    if(empty($_POST['value_name_0'])){
+        $error[]="values句が入力されていません。";
+    }else{
+        $naiyou[]=" values (".$_POST['value_name_0'];
+        if(empty($_POST['value_name_1']))
             {
                 $naiyou[]="); ";
             }else
-             {
+            {
                 $naiyou[]=",".$_POST['value_name_1'];
                 if(empty($_POST['value_name_2'])){
                     $naiyou[]="); ";
                 }else{
                     $naiyou[]=",".$_POST['value_name_2'].");";
                 }
-             }
-           
+            }
+        
         }
-   }
+}
 ?>
+
 <?php
-      require_once __DIR__ .'./header.php';
-	  /*require_once __DIR__ .'./subnav.php';*/
+    require_once __DIR__ .'./header.php';
+	/*require_once __DIR__ .'./subnav.php';*/
 ?>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/subnav.css">
@@ -78,9 +79,9 @@
                 <ul class="formnav">
                     <form method="post" action="">
                     
-                       <li>追加するテーブル名:<input type="text" name="tbl_name" size="10" maxlength="10"></li>
+                    <li>追加するテーブル名:<input type="text" name="tbl_name" size="10" maxlength="10"></li>
 
-                       <!--
+                    <!--
                             <select name="tbl_name">
                                 <option value="none">---</option>
 
@@ -154,6 +155,6 @@
 		</ul>
 	</div>
 <?php
-      require_once __DIR__ .'./footer.php';
+    require_once __DIR__ .'./footer.php';
 ?>
 			

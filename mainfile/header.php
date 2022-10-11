@@ -84,6 +84,29 @@ if(i<=2){
   i++;
 }
 
+function addselect() {
+if(i<=2){
+  var input_data = document.createElement('input');
+  input_data.type = 'text';
+  input_data.name = 'colom_name_' + i;
+  input_data.placeholder = 'カラム名' + i;
+  input_data.innerHTML="&nbsp;";
+  var parent = document.getElementById('form_area');
+  parent.appendChild(input_data);
+
+  var button_data = document.createElement('button');
+  button_data.name = i;
+  button_data.onclick = function(){deleteBtn(this);}
+  button_data.innerHTML = "&nbsp;";
+  button_data.innerHTML = '削除';
+  var input_area = document.getElementById(input_data.name);
+  parent.appendChild(button_data);
+}
+  
+
+  i++;
+}
+
 
 </script>
 
