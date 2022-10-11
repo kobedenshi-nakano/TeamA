@@ -117,7 +117,7 @@
                             <li>権限のジャンル選択:
                             <select name='kekka'>
 							<option value=' NONO' >--</option>
-                            <option value=' More' >複数使用</option>
+                            <!--<option value=' More' >複数使用</option>-->
 							<option value=' all' title="GRANT OPTION（権限の付与）以外の全てを許可する">ALL</option>
 							<option value=' alter'title="ALTER TABLE（テーブルの変更）の使用を許可する">ALTER</option>
 							<option value=' alter routine'title="ストアドルーチン(プロシージャ or 関数)の変更・削除を許可する">ALTER ROUTINE</option>
