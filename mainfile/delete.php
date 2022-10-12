@@ -207,28 +207,31 @@
 		<div class="kekka-container">
 			<p>出力結果</p>
 			<li>
+			<span id="copy-text">
 			<?php
 				if(empty($error)){
 					if(isset($naiyou)){
 						foreach($naiyou as $value){
 							echo $value;
 							echo '';
+							$json_value=json_encode($value);
 						}
 					}
 					if(isset($naiyou1)){
 						foreach($naiyou1 as $value1){
 							echo $value1;
 							echo '';
+							$json_value1=json_encode($value1);
 						}
 					}
 				}
 				?>
-			</p>
+			</span>
 			</li>
 			<!--<button id="copy-btn">コピーボタン</button>-->
             <scirpt src="script01.js"></script>
 		</div>
-		<button id="copy-btn">コピーボタン</button>
+		<button onclick="copyBoard()">コピーボタン</button>
 	</div>
 </div>
 <?php

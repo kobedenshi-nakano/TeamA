@@ -1,4 +1,4 @@
-let copy_text = document.querySelector('#copy-text').textContent;
+/*var copy_text = document.querySelector('#copy-text').textContent;
 let copy_btn = document.querySelector('#copy-btn');
 
   copy_btn.addEventListener(`click`, () => {
@@ -10,7 +10,7 @@ let copy_btn = document.querySelector('#copy-btn');
     // false
     output.textContent = 'Could not copy.';
    });*/
-   navigator.clipboard.readText().then(
-    (copy_text) => document.getElementById("copy-text").innerText = copy_text);
+   //navigator.clipboard.readText().then(
+    //(copy_text) => document.getElementById("copy-text").innerText = copy_text);
   
-});
+//});
