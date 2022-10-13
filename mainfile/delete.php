@@ -231,7 +231,7 @@
 			<!--<button id="copy-btn">コピーボタン</button>-->
             <scirpt src="script01.js"></script>
 		</div>
-		<button onclick="copyBoard()">コピーボタン</button>
+		<button id="copy-btn">コピーボタン</button>
 	</div>
 </div>
 <?php
