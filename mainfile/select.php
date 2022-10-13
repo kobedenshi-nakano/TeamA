@@ -21,6 +21,11 @@ if(empty($_POST['colom_name_0'])){
 }else{
 	$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'].";";
 }
+
+if(!empty($_POST['where'])){
+	$naiyou[]=" where ".$_POST['inputform_0']."=".$_POST['where'];
+  }
+  
 }
 ?>
 
