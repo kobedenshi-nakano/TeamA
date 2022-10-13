@@ -150,6 +150,20 @@
 					}
   					i++;
 				}
+
+				function copyToClipboard() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("copy-text");
+
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+
+            // コピーをお知らせする
+            alert("コピーできました！ : " + copyTarget.value);
+        }
 </script>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/delete.css">
@@ -186,19 +200,19 @@
 				<!--文字列型を入れるときクォーテーションを入れる案内を書く-->		
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
-			
+			    <li>columnとvalue:(文字型の場合は""を付ける)</li>
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
                 <p class="colname1">
-				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="主キーに当たる列名を入力してください">
+				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力">
 				</p>
-				<p class="mainkey1"><input type="text" name="value10" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey1"><input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check1"></p><br>
 				<div id="koumoku2">テーブル内の値を細かく削除</div>
 				<p class="colname1">
-				<input type="text" name="col_name20" size="10" maxlength="10" placeholder="主キーじゃない列名を入力してください">
+				<input type="text" name="col_name20" size="10" maxlength="10" placeholder="columnを入力">
 				</p>
-				<p class="mainkey2"><input type="text" name="value20" size="10" maxlength="20" placeholder="値を入力してください"></p>
+				<p class="mainkey2"><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check2"></p>
 				<input type="submit" value="生成">
 				</form>
@@ -231,7 +245,7 @@
 			<!--<button id="copy-btn">コピーボタン</button>-->
             <scirpt src="script01.js"></script>
 		</div>
-		<button id="copy-btn">コピーボタン</button>
+		<button id="btn">Copy text</button>
 	</div>
 </div>
 <?php
