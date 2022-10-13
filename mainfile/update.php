@@ -130,6 +130,7 @@
 				?>
 				</li>
 		    </div>
+			<button onclick="copyToClipboard()">Copy text</button>
 		</ul>
 	</div>
 <?php

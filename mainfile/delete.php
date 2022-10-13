@@ -150,6 +150,20 @@
 					}
   					i++;
 				}
+
+				function copyToClipboard() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("copy-text");
+
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+
+            // コピーをお知らせする
+            alert("コピーできました！ : " + copyTarget.value);
+        }
 </script>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/delete.css">
@@ -186,7 +200,7 @@
 				<!--文字列型を入れるときクォーテーションを入れる案内を書く-->		
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
-			
+			    <li>columnとvalue:(文字型の場合は""を付ける)</li>
 				<p class="koumoku">主キーでの削除</p>
 				<p>選択</p>
                 <p class="colname1">
@@ -231,7 +245,7 @@
 			<!--<button id="copy-btn">コピーボタン</button>-->
             <scirpt src="script01.js"></script>
 		</div>
-		<button id="copy-btn">コピーボタン</button>
+		<button onclick="copyToClipboard()">Copy text</button>
 	</div>
 </div>
 <?php
