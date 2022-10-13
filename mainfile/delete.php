@@ -245,7 +245,7 @@
 			<!--<button id="copy-btn">コピーボタン</button>-->
             <scirpt src="script01.js"></script>
 		</div>
-		<button onclick="copyToClipboard()">Copy text</button>
+		<button id="btn">Copy text</button>
 	</div>
 </div>
 <?php
