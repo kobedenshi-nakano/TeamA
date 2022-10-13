@@ -22,10 +22,19 @@ if(empty($_POST['colom_name_0'])){
 	$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'].";";
 }
 
-if(!empty($_POST['where'])){
-	$naiyou[]=" where ".$_POST['inputform_0']."=".$_POST['where'];
-  }
-  
+if(!empty($_POST['where_0']) || !empty($_POST['search_0'])){
+	$naiyou[]=" where ".$_POST['where_0']."=".$_POST['search_0'];
+}
+
+
+if(!($_POST['order']==="none")){
+	$naiyou[]=" order by ".$_POST['inputform_0']." ".$_POST['order'];
+	}
+
+if(!empty($_POST['limit'])){
+	$naiyou[]=" limit ".$_POST['limit'];
+}
+
 }
 ?>
 
@@ -35,6 +44,7 @@ if(!empty($_POST['where'])){
 ?>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/subnav.css">
+<link rel="stylesheet" href="../css/createuser.css">
 <div class="main-contents">
 	<div class="main-contents-container">
 		<div class="column1">
@@ -84,8 +94,12 @@ if(!empty($_POST['where'])){
 						        <input type="button" value="フォーム追加" onclick="addselect()">
                                 </tbody>
                             </tr>
-
-					<li>where句の指定:<input type="text" name="where" size="20" maxlength="20" placeholder="最初の列名のみ適用"></li>
+							
+							<div id="where">
+								<li>where句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="条件にしたいカラム名"></li>
+								<li><input type="text" name="search_0" size="20" placeholder="カラム名検索内容"</li>
+							</div>
+	
 					<li>order by句の指定:<select name='order'>
 								<option value='none' >--</option>
                             	<option value='ASC' >昇順</option>
