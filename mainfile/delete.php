@@ -242,10 +242,24 @@
 				?>
 			</span>
 			</li>
-			<!--<button id="copy-btn">コピーボタン</button>-->
-            <scirpt src="script01.js"></script>
 		</div>
 		<button id="btn">Copy text</button>
+		<script>
+			const btn = document.getElementById("btn"); // button要素取得
+		const txt = document.getElementById("copy-text").textContent; // テキスト取得
+
+		btn.addEventListener("click", () => { // ボタンをクリックしたら
+ 		 navigator.clipboard
+   		 .writeText(txt) // テキストをクリップボードに書き込み（＝コピー）
+    	.then(
+      	(success) => console.log('テキストのコピーに成功'),
+      	(error) => console.log('テキストのコピーに失敗')
+    	);
+
+	btn.innerHTML = "OK!"; // ボタンの文字変更
+  	setTimeout(() => (btn.innerHTML = "COPY!"), 1000); // ボタンの文字を戻す
+		});
+		</script>
 	</div>
 </div>
 <?php
