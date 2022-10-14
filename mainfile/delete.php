@@ -245,7 +245,7 @@
 		</div>
 		<button id="btn">Copy text</button>
 		<script>
-			const btn = document.getElementById("btn"); // button要素取得
+		const btn = document.getElementById("btn"); // button要素取得
 		const txt = document.getElementById("copy-text").textContent; // テキスト取得
 
 		btn.addEventListener("click", () => { // ボタンをクリックしたら
