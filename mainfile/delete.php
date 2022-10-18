@@ -150,20 +150,6 @@
 					}
   					i++;
 				}
-
-				function copyToClipboard() {
-            // コピー対象をJavaScript上で変数として定義する
-            var copyTarget = document.getElementById("copy-text");
-
-            // コピー対象のテキストを選択する
-            copyTarget.select();
-
-            // 選択しているテキストをクリップボードにコピーする
-            document.execCommand("Copy");
-
-            // コピーをお知らせする
-            alert("コピーできました！ : " + copyTarget.value);
-        }
 </script>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/delete.css">
@@ -202,20 +188,23 @@
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			    <li>columnとvalue:(文字型の場合は""を付ける)</li>
-				<p class="koumoku">主キーでの削除</p>
-				<p>選択</p>
-                <p class="colname1">
-				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力">
-				</p>
-				<p class="mainkey1"><input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力"></p>
-				<p><input type="checkbox" name="check1"></p><br>
-				<div id="koumoku2">テーブル内の値を細かく削除</div>
-				<p class="colname1">
+				<li>主キーでの削除</li>
+				<p id="">選択</p>
+				<li>
+                <p>
+				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力"></p>
+				<p><input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力"></p>
+				<p><input type="checkbox" name="check1"></p>
+				</li>
+				<li>テーブル内の値を細かく削除</li>
+				<li>
+				<p>
 				<input type="text" name="col_name20" size="10" maxlength="10" placeholder="columnを入力">
 				</p>
-				<p class="mainkey2"><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
+				<p><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check2"></p>
-				<input type="submit" value="生成">
+				</li>
+				<input type="submit" class="generatebtn" value="生成">
 				</form>
 			</ul>
 
@@ -244,7 +233,7 @@
 			</span>
 			</li>
 		</div>
-		<button id="btn">Copy text</button>
+		<button id="button">Copy text</button>
 		<script>
 		const btn = document.getElementById("btn"); // button要素取得
 		const txt = document.getElementById("copy-text").textContent; // テキスト取得

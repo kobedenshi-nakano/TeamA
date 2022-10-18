@@ -81,4 +81,9 @@ input {
 	display: block;
 	margin-top: 10px;
   }
-  
+.generatebtn{
+	border-radius: 30px;
+}
+#button{
+	border-radius: 30px;
+}

@@ -132,7 +132,7 @@
                             
                             -->
                         </table>
-					<li><input type="submit" value="生成"></li>
+					<li><input type="submit" class="generatebtn" value="生成"></li>
                     </form>
 				</ul>
 

@@ -101,7 +101,7 @@
 											<option value='DESC' >降順</option>
 										</select><li>
 					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10" placeholder="半角のみ"></li>	
-			        <li><input type="submit" value="生成"></li>
+			        <li><input type="submit" class="generatebtn" value="生成"></li>
 		        </form>
 				<!--<input type="button" value="行を追加" id="coladd" onclick="coladd()">
         

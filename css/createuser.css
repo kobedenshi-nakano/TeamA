@@ -18,18 +18,18 @@
 }
 .grantA{
 	border-radius: 30px;
-	background-color: white;
+	background-color: gainsboro;
 }
 .grantA:hover {
-	background-color: yellow;
+	background-color: orange;
 	border-radius: 30px;
 }
 .grantB{
 	border-radius: 30px;
-	background-color: white;
+	background-color: gainsboro;
 }
 .grantB:hover {
-	background-color: yellow;
+	background-color: orange;
 	border-radius: 30px;
 }
 #where{
