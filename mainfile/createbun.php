@@ -255,7 +255,7 @@
 						</table>
 					</ul>
 						
-						<br><input type="submit" value="生成">
+						<br><input type="submit" class="generatebtn" value="生成">
 					</div>
                 </nav>
 			</form>

@@ -215,7 +215,7 @@
 				</p>
 				<p class="mainkey2"><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check2"></p>
-				<input type="submit" value="生成">
+				<input type="submit" class="generatebtn" value="生成">
 				</form>
 			</ul>
 

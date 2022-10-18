@@ -107,7 +107,7 @@ if(!empty($_POST['limit'])){
 								<option value='DESC' >降順</option>
 					</select><li>
 					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10" placeholder="半角のみ"></li>	
-			        <li><input type="submit" value="生成"></li>
+			        <li><input type="submit" class="generatebtn" value="生成"></li>
                     </table>
                     </form>
 				</ul>

@@ -162,7 +162,7 @@
                             </select></li>
                             <li>適用対象のデータベース:<input type="text" name="database" size="10" maxlength="10"></li>
 							<li>適用対象のテーブル:<input type="text" name="table" size="10" maxlength="10"></li>
-                            <li><input type="submit" value="生成" name="seisei"></li>
+                            <li><input type="submit" class="generatebtn" value="生成" name="seisei"></li>
                     </form> 
                 </ul>
 			    <div class="kekka-container">
