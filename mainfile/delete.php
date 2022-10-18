@@ -229,7 +229,7 @@
 			</span>
 			</li>
 		</div>
-		<button id="button">Copy text</button>
+		<button id="button">Copy!</button>
 		<script>
 		const btn = document.getElementById("btn"); // button要素取得
 		const txt = document.getElementById("copy-text").textContent; // テキスト取得
