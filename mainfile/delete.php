@@ -150,20 +150,6 @@
 					}
   					i++;
 				}
-
-				function copyToClipboard() {
-            // コピー対象をJavaScript上で変数として定義する
-            var copyTarget = document.getElementById("copy-text");
-
-            // コピー対象のテキストを選択する
-            copyTarget.select();
-
-            // 選択しているテキストをクリップボードにコピーする
-            document.execCommand("Copy");
-
-            // コピーをお知らせする
-            alert("コピーできました！ : " + copyTarget.value);
-        }
 </script>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/delete.css">
