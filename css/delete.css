@@ -8,24 +8,15 @@
    margin: 0 50px 5px 0;
    float: left;
 }
-.koumoku{
-    margin: 0 60px 5px 200px;
+#koumoku{
+    margin: 0 200px 5px 0;
     float: left;
 }
-#koumoku2{
-	margin: 0 0 0 180px;
-	padding: 0 180px 0 0;
-}
-.colname1{
-	margin:0 0 10px 50px;
+#colname1{
+	margin:0;
 	float: left;
 }
-.mainkey1{
-	margin: 0 60px 10px 60px;
-	padding: auto;
-	float: left;
-}
-.mainkey2{
+#mainkey1{
 	margin: 0 60px 10px 60px;
 	padding: auto;
 	float: left;

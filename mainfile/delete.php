@@ -188,20 +188,16 @@
 				</p>
 				<p>全データを削除する<input type="checkbox" name="truncate"></p>
 			    <li>columnとvalue:(文字型の場合は""を付ける)</li>
-				<li>主キーでの削除</li>
-				<p id="">選択</p>
+				<li><p id="koumoku">主キーでの削除</p><p>選択</p></li>
 				<li>
-                <p>
-				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力"></p>
-				<p><input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力"></p>
+                <p id="colname1"><input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力"></p>
+				<p id="mainkey1"><input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check1"></p>
 				</li>
 				<li>テーブル内の値を細かく削除</li>
 				<li>
-				<p>
-				<input type="text" name="col_name20" size="10" maxlength="10" placeholder="columnを入力">
-				</p>
-				<p><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
+				<p id="colname1"><input type="text" name="col_name20" size="10" maxlength="10" placeholder="columnを入力"></p>
+				<p id="mainkey1"><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check2"></p>
 				</li>
 				<input type="submit" class="generatebtn" value="生成">
