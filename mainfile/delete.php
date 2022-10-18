@@ -191,17 +191,17 @@
 				<li>主キーでの削除</li>
 				<p id="">選択</p>
 				<li>
-                <p class="colname1">
-				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力">
-				<input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力">
-				<input type="checkbox" name="check1"></p>
+                <p>
+				<input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力"></p>
+				<p><input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力"></p>
+				<p><input type="checkbox" name="check1"></p>
 				</li>
 				<li>テーブル内の値を細かく削除</li>
 				<li>
-				<p class="colname1">
+				<p>
 				<input type="text" name="col_name20" size="10" maxlength="10" placeholder="columnを入力">
 				</p>
-				<p class="mainkey2"><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
+				<p><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check2"></p>
 				</li>
 				<input type="submit" class="generatebtn" value="生成">
