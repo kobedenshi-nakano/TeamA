@@ -85,6 +85,7 @@
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
+                <li><a href="select.php">select</a></li>
 				<li><a href="update.php" >update</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
@@ -97,7 +98,7 @@
 		    <ul class="news-contents">
                 
                 <form action="createuser01.php" method="POST">
-                    <input type="submit" value="権限なしverへ" name="kirikae2">
+                    <input class="grantB" type="submit" value="権限なしverへ" name="kirikae2">
                 </form><br>
 			
             <?php if(!empty($error)):?>

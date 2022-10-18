@@ -38,6 +38,7 @@
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
+                <li><a href="select.php">select</a></li>
 				<li><a href="update.php">update</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
@@ -49,7 +50,7 @@
 		<div class="column2">
 		    <ul class="news-contents">
                 <form action="createuser02.php" method="POST">
-                    <input type="submit" value="権限ありverへ" name="kirikae1">
+                    <input class="grantA" type="submit" value="権限ありverへ" name="kirikae1">
                 </form><br>
 			
               <?php if(!empty($error)):?>

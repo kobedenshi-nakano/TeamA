@@ -173,6 +173,7 @@
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
+				<li><a href="select.php">select</a></li>
 				<li><a href="update.php">update</a></li>
 				<li><a href="delete.php" style="color:red">delete</a></li>
 				<li><a href="insert.php">insert</a></li>

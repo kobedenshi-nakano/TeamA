@@ -16,7 +16,22 @@
 	line-height: 100%;
 	color: #000000;
 }
-
+.grantA{
+	border-radius: 30px;
+	background-color: white;
+}
+.grantA:hover {
+	background-color: yellow;
+	border-radius: 30px;
+}
+.grantB{
+	border-radius: 30px;
+	background-color: white;
+}
+.grantB:hover {
+	background-color: yellow;
+	border-radius: 30px;
+}
 #where{
 
 }
