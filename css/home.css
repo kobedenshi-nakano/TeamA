@@ -78,8 +78,9 @@ nav {
 }
 
 input {
-	display: block;
+	display: inline-block;
 	margin-top: 10px;
+	margin-right: 10px;
   }
 .generatebtn{
 	border-radius: 30px;
