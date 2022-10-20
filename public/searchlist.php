@@ -1,7 +1,9 @@
 <?php
-require_once('../blog_app/dbc.php');
+require_once '../classes/dbc.php';
+require_once '../function.php';
 $dbc = new Dbc();
 $blogData = $dbc->getAllBlog();
+/*
 try{
 
     //DBに接続
@@ -25,6 +27,7 @@ try{
     echo "失敗:" . $e->getMessage() . "\n";
     exit();
 }
+*/
 ?>
 
 <!doctype html>

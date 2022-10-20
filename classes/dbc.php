@@ -5,9 +5,9 @@ Class Dbc
 //引数：なし
 //返り値；接続結果を返す
 function dbconnect(){
-    $dsn= 'mysql:host=localhost;dbname=blog_app;charset=utf8';
-    $user = 'blog_user';
-    $pass = 'asasin322';
+    $dsn= 'mysql:host=localhost;dbname=localtest;charset=utf8';
+    $user = 'root';
+    $pass = 'pass';
     
     try {
         $dbh = new \PDO($dsn,$user,$pass,[
@@ -26,7 +26,7 @@ function dbconnect(){
 function getAllBlog(){
         $dbh = $this->dbconnect();
         //sqlの準備
-        $sql = 'SELECT * FROM blogs';
+        $sql = 'SELECT * FROM memory';
         //sqlの実行
         $stmt = $dbh -> query($sql);
         //sqlの結果を受け取る
