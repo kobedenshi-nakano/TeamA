@@ -82,7 +82,7 @@
   					parent.removeChild(tgt_id);	
 				}
 
-				function addform2() {
+				function addForm2() {
 					if(j<2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
@@ -122,7 +122,7 @@
   					parent.removeChild(tgt_id);	
 				}
 
-				function addform1() {
+				function addForm1() {
 					if(i<2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
@@ -166,7 +166,7 @@
 				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php">create table</a></li>
 			</ul>
-</div>
+        </div>
 
 <div class="column2">
 	<div class="news-contents">
@@ -236,11 +236,11 @@
 			</li>
 		</div>
 		<button id="button">Copy!</button>
-		<script>
+<script>
 		const btn = document.getElementById("btn"); // button要素取得
 		const txt = document.getElementById("copy-text").textContent; // テキスト取得
 
-		btn.addEventListener("click", () => { // ボタンをクリックしたら
+	btn.addEventListener("click", () => { // ボタンをクリックしたら
  		 navigator.clipboard
    		 .writeText(txt) // テキストをクリップボードに書き込み（＝コピー）
     	.then(
@@ -248,10 +248,10 @@
       	(error) => console.log('テキストのコピーに失敗')
     	);
 
-	btn.innerHTML = "OK!"; // ボタンの文字変更
-  	setTimeout(() => (btn.innerHTML = "COPY!"), 1000); // ボタンの文字を戻す
-		});
-		</script>
+	    btn.innerHTML = "OK!"; // ボタンの文字変更
+  	    setTimeout(() => (btn.innerHTML = "COPY!"), 1000); // ボタンの文字を戻す
+	});
+</script>
 	</div>
 </div>
 <?php
