@@ -36,6 +36,7 @@ if(i<=1){
   button_data.innerHTML = '削除';
   var input_area = document.getElementById(input_data.name);
   parent.appendChild(button_data);
+  
 }
   
 
@@ -78,9 +79,8 @@ if(i<=2){
   button_data.innerHTML = '削除';
   var input_area = document.getElementById(input_data.name);
   parent.appendChild(button_data);
-}
-  
 
+}
   i++;
 }
 
@@ -133,6 +133,8 @@ if(i<=1){
   button_data.innerHTML = '削除';
   var input_area = document.getElementById(input_data.name);
   parent.appendChild(button_data);
+
+  input_data.innerText='\n';
 }
   
 

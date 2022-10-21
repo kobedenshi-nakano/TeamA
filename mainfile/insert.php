@@ -99,7 +99,6 @@
                                 <div id="form_area">
                                 <input type="text" name="colom_name_0" placeholder="カラム名"></li>
 						        <input type="text" name="value_name_0" placeholder="値を入力(value)">
-  						        <!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
 					            </div>
 						        <input type="button" value="フォーム追加" onclick="addcolom()">
                                 </tbody>
