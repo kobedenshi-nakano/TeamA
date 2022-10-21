@@ -104,33 +104,7 @@
 						        <input type="button" value="フォーム追加" onclick="addcolom()">
                                 </tbody>
                             </tr>
-                                <!--
-                                <li>カラム名:<input type="text" name="colom_name" size="10" maxlength="10"></li>
-									<th scope="col">create tableにあるカラム2</th>
-									<th scope="col">create tableにあるカラム3</th>
-									<th scope="col">create tableにあるカラム4</th>
-									<th scope="col">create tableにあるカラム5</th>
-							
                             
-                                <tr>
-									<th scope="row"> 
-										<input type="text" name="value_name" size="10" maxlength="10">
-									</th>
-									<td>
-										<input type="text" name="#2" size="10" maxlength="3">
-									</td>
-									<td>
-                                        <input type="text" name="#3" size="10" maxlength="10">
-                                    </td>
-									<td>
-										<input type="text" name="#4" size="10" maxlength="10">
-									</td>
-									<td>
-										<input type="text" name="f#5" size="10" maxlength="10">
-									</td>
-								</tr>
-                            
-                            -->
                         </table>
 					<li><input type="submit" class="generatebtn" value="生成"></li>
                     </form>
