@@ -7,7 +7,7 @@
 	   if(isset($_POST['truncate'])){
            $naiyou[]="Drop table";
        		if(!empty($_POST['table'])){
-           		$naiyou[]=" if exists  ".$_POST['table']." ";
+           		$naiyou[]=$_POST['table'];
        		}else{
 		   		$error[]="テーブル名が入力されていません。";
        		}
@@ -87,7 +87,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'col_name2' + i;
-  						input_data.placeholder = '主キーじゃない列名を入力してください' + i;
+  						input_data.placeholder = 'columnを入力' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('formadd2');
   						parent.appendChild(input_data);
@@ -95,7 +95,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'value2' + i;
-  						input_data.placeholder = '値を入力' + i;
+  						input_data.placeholder = 'valueを入力' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('formadd2');
   						parent.appendChild(input_data);
@@ -127,7 +127,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'col_name1' + i;
-  						input_data.placeholder = '主キーに当たる列名を入力してください' + i;
+  						input_data.placeholder = 'columnを入力' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('formadd');
   						parent.appendChild(input_data);
@@ -135,7 +135,7 @@
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
   						input_data.name = 'value1' + i;
-  						input_data.placeholder = '値を入力' + i;
+  						input_data.placeholder = 'valueを入力' + i;
   						input_data.innerHTML="&nbsp;";
   					var parent = document.getElementById('formadd');
   						parent.appendChild(input_data);
@@ -191,8 +191,8 @@
 				<li><p id="koumoku">主キーでの削除</p><p>選択</p></li>
 				<div id="formadd">
 				<li>
-                <p id="colname1"><input type="text" name="col_name10" size="10" maxlength="10" placeholder="columnを入力"></p>
-				<p id="mainkey1"><input type="text" name="value10" size="10" maxlength="20" placeholder="valueを入力"></p>
+                <p id="colname1"><input type="text" name="col_name10" placeholder="columnを入力"></p>
+				<p id="mainkey1"><input type="text" name="value10" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check1"></p>
 				</li>
 				</div>
@@ -200,8 +200,8 @@
 				<li>テーブル内の値を細かく削除</li>
 				<div id="formadd2">
 				<li>
-				<p id="colname1"><input type="text" name="col_name20" size="10" maxlength="10" placeholder="columnを入力"></p>
-				<p id="mainkey1"><input type="text" name="value20" size="10" maxlength="20" placeholder="valueを入力"></p>
+				<p id="colname1"><input type="text" name="col_name20" placeholder="columnを入力"></p>
+				<p id="mainkey1"><input type="text" name="value20" placeholder="valueを入力"></p>
 				<p><input type="checkbox" name="check2"></p>
 				</li>
 				</div>
