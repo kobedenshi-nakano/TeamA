@@ -220,14 +220,12 @@
 						foreach($naiyou as $value){
 							echo $value;
 							echo '';
-							$json_value=json_encode($value);
 						}
 					}
 					if(isset($naiyou1)){
 						foreach($naiyou1 as $value1){
 							echo $value1;
 							echo '';
-							$json_value1=json_encode($value1);
 						}
 					}
 				}
