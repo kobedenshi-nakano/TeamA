@@ -5,7 +5,7 @@
 	   $error=array();
 	   
 	   if(isset($_POST['truncate'])){
-           $naiyou[]="Drop table";
+           $naiyou[]="Drop table ";
        		if(!empty($_POST['table'])){
            		$naiyou[]=$_POST['table'];
        		}else{
