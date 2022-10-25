@@ -22,18 +22,19 @@ if(empty($_POST['colom_name_0'])){
 	$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'].";";
 }
 
+if(!($_POST['group_0']==="none")){
+	$naiyou[]=" order by ".$_POST['inputform_0']." ".$_POST['order'];
+}
+
 if(!empty($_POST['where_0']) || !empty($_POST['search_0'])){
 	$naiyou[]=" where ".$_POST['where_0']."=".$_POST['search_0'];
 }
 
 
-if(!($_POST['order']==="none")){
-	$naiyou[]=" order by ".$_POST['inputform_0']." ".$_POST['order'];
-	}
-
-if(!empty($_POST['limit'])){
-	$naiyou[]=" limit ".$_POST['limit'];
+if(!empty($_POST['group'])){
+	$naiyou[]=" group by ".$_POST['group'];
 }
+
 
 }
 ?>
@@ -74,15 +75,6 @@ if(!empty($_POST['limit'])){
                     <form method="post" action="">
                     
                     <li>参照するテーブル名:<input type="text" name="select" size="10" maxlength="10"></li>
-
-                    <!--
-                            <select name="tbl_name">
-                                <option value="none">---</option>
-
-                                <option value=' create role'>create文で生成したテーブル名1</option>
-                            
-                            </select></li>
-                        -->
                         
                         <table>
                             <tr>
@@ -96,17 +88,34 @@ if(!empty($_POST['limit'])){
                                 </tbody>
                             </tr>
 							
+							<li>集合関数の指定:<select name='group_0'>
+								<option value='none' >--</option>
+                            	<option value='SUM' >総和</option>
+								<option value='MAX' >最大値</option>
+								<option value="MIN">最小値</option>
+								<option value="AVG">平均値</option>
+								<option value="COUNT">カウント</option>
+					            </select>
+							<li>
+
+							<div id="as">
+								<li>as句の指定:<input type="text" name="as_0" size="20" maxlength="20" placeholder="カラム名"></li>
+								<li><input type="text" name="search_0" size="20" placeholder="別名"></li>
+							</div>
+
+							<div id="join">
+								<li>join句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム"></li>
+								<li><input type="text" name="search_0" size="20" placeholder="結合したいテーブル"></li>
+							</div>
+
 							<div id="where">
 								<li>where句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="条件にしたいカラム名"></li>
-								<li><input type="text" name="search_0" size="20" placeholder="カラム名検索内容"</li>
+								<li><input type="text" name="search_0" size="20" placeholder="カラム名検索内容"></li>
 							</div>
-	
-					<li>order by句の指定:<select name='order'>
-								<option value='none' >--</option>
-                            	<option value='ASC' >昇順</option>
-								<option value='DESC' >降順</option>
-					</select><li>
-					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10" placeholder="半角のみ"></li>	
+
+							<li>group by句の指定:<input type="text" name="group"  size="10" maxlength="10" placeholder="半角のみ"></li>	
+
+				
 			        <li><input type="submit" class="generatebtn" value="生成"></li>
                     </table>
                     </form>
