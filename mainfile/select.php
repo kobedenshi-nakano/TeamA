@@ -11,12 +11,12 @@ if(empty($_POST['colom_name_0'])){
 		}else{
 			$naiyou[]="select * from  ".$_POST['select'].";";
 	}
-}else if(isset($_POST['colom_name_1'])){
-			if(isset($_POST['colom_name_2'])){
-				$naiyou[]="select ".$_POST['colom_name_0'].",".$_POST['colom_name_1'].",".$_POST['colom_name_2']." from ".$_POST['select'].";";
+}else if(isset($_POST['colom_name_1'])&&!($_POST['group_0']==="none")){
+			if(isset($_POST['colom_name_2'])&&!($_POST['group_0']==="none")){
+				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0'].",".$_POST['group_0']." (".$_POST['colom_name_1'].",".$_POST['group_0']." (".$_POST['colom_name_2']." from ".$_POST['select'].";";
 			}
 			else{
-				$naiyou[]="select ".$_POST['colom_name_0'].",".$_POST['colom_name_1']." from ".$_POST['select'].";";
+				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0'].",".$_POST['group_0']." (".$_POST['colom_name_1']." from ".$_POST['select'].";";
 			}
 }else{
 	$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'].";";
@@ -103,7 +103,7 @@ if(!empty($_POST['group'])){
 						
 						<div id=ASarea>
 							
-								<li>as句の指定:<input type="text" name="ASsearch_0" class="AS" placeholder="別名"></li>
+								<li>as句の指定:<input type="text" name="ASsearch_0"  placeholder="別名"></li>
 							
 						</div>
 							<input type="button" value="フォーム追加" onclick="addAS()">
@@ -161,23 +161,26 @@ if(!empty($_POST['group'])){
 ?>
 
 
-<script>
+<script type="text/javascript">
     var i = 1 ;
 function addAS() {
 if(i<=1){
-  var d = document;
-  var input_data = d.createElement('ASarea');
-      input_data.href = '/select.css';
-	  input_data.rel = 'stylesheet';
-	  input_data.type = 'text/css';
-	var h = document.getElementsById('div')[0];
-		h.appendChild(input_data)
-  input_data = document.createElement('input');
-  input_data.type = 'text';
-  input_data.name = 'ASsearch_' + i;
-  input_data.placeholder = '別名' + i;
-  var parent = document.getElementById('ASarea');
-  parent.appendChild(input_data);
+	/*
+   var d = document;
+   var link = d.createElement('link').getElementsByTagName('input');
+      link.href = '../css/select.css';
+	  link.rel = 'stylesheet';
+	  link.type = 'text/css';
+   var parent = document.getElementById('ASarea');
+       parent.appendChild(link);
+*/
+
+   var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'ASsearch_' + i;
+       input_data.placeholder = '別名' + i;
+   var parent = document.getElementById('ASarea');
+       parent.appendChild(input_data);
 
 
   var button_data = document.createElement('button');
