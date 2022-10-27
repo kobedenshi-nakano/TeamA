@@ -20,11 +20,11 @@ if(empty($_POST['colom_name_0'])){
 			}
 }else{
 	$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'].";";
+	if(!($_POST['group_0']==="none")){
+		$naiyou[]= "select ".$_POST['group_0']." (".$_POST['colom_name_0'].") "." from ".$_POST['select'].";";
+	}
 }
 
-if(!($_POST['group_0']==="none")){
-	$naiyou[]=" order by ".$_POST['inputform_0']." ".$_POST['order'];
-}
 
 if(!empty($_POST['where_0']) || !empty($_POST['search_0'])){
 	$naiyou[]=" where ".$_POST['where_0']."=".$_POST['search_0'];
@@ -46,6 +46,7 @@ if(!empty($_POST['group'])){
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/subnav.css">
 <link rel="stylesheet" href="../css/createuser.css">
+<link rel="stylesheet" href="../css/select.css">
 <div class="main-contents">
 	<div class="main-contents-container">
 		<div class="column1">
@@ -88,7 +89,7 @@ if(!empty($_POST['group'])){
                                 </tbody>
                             </tr>
 							
-							<li>集合関数の指定:<select name='group_0'>
+							<!--<li>集合関数の指定:<select name='group_0'>
 								<option value='none' >--</option>
                             	<option value='SUM' >総和</option>
 								<option value='MAX' >最大値</option>
@@ -96,22 +97,36 @@ if(!empty($_POST['group'])){
 								<option value="AVG">平均値</option>
 								<option value="COUNT">カウント</option>
 					            </select>
-							<li>
+							<li>-->
+						
+						<!-- as句入力 -->
+						
+						<div id=ASarea>
+							
+								<li>as句の指定:<input type="text" name="ASsearch_0" class="AS" placeholder="別名"></li>
+							
+						</div>
+							<input type="button" value="フォーム追加" onclick="addAS()">
+						
+						<!-- as句入力ここまで -->
 
-							<div id="as">
-								<li>as句の指定:<input type="text" name="as_0" size="20" maxlength="20" placeholder="カラム名"></li>
-								<li><input type="text" name="search_0" size="20" placeholder="別名"></li>
-							</div>
-
+						<!-- join句入力 -->
+						
 							<div id="join">
 								<li>join句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム"></li>
 								<li><input type="text" name="search_0" size="20" placeholder="結合したいテーブル"></li>
 							</div>
+						
+						<!--join句ここまで -->
+
+						<!-- where句入力 -->
 
 							<div id="where">
 								<li>where句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="条件にしたいカラム名"></li>
 								<li><input type="text" name="search_0" size="20" placeholder="カラム名検索内容"></li>
 							</div>
+						
+						<!-- where句ここまで-->
 
 							<li>group by句の指定:<input type="text" name="group"  size="10" maxlength="10" placeholder="半角のみ"></li>	
 
@@ -144,3 +159,37 @@ if(!empty($_POST['group'])){
 <?php
     require_once __DIR__ .'./footer.php';
 ?>
+
+
+<script>
+    var i = 1 ;
+function addAS() {
+if(i<=1){
+  var d = document;
+  var input_data = d.createElement('ASarea');
+      input_data.href = '/select.css';
+	  input_data.rel = 'stylesheet';
+	  input_data.type = 'text/css';
+	var h = document.getElementsById('div')[0];
+		h.appendChild(input_data)
+  input_data = document.createElement('input');
+  input_data.type = 'text';
+  input_data.name = 'ASsearch_' + i;
+  input_data.placeholder = '別名' + i;
+  var parent = document.getElementById('ASarea');
+  parent.appendChild(input_data);
+
+
+  var button_data = document.createElement('button');
+  button_data.name = i;
+  button_data.onclick = function(){deleteBtn(this);}
+  button_data.innerHTML = '削除';
+  var input_area = document.getElementById(input_data.name);
+  parent.appendChild(button_data);
+  
+}
+  
+
+  i++;
+}
+</script>
