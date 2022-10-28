@@ -10,17 +10,16 @@ if(!empty($_POST['select'])){
 			$naiyou[]="select ".$_POST['colom_name_0']." AS ".$_POST['ASsearch_0'];
 		}else{
 			$naiyou[]="select ".$_POST['colom_name_0'];
-		}
 
-		if(!empty($_POST['where_0'])&&!empty($_POST['search_0'])){//<-join句の疑問文
-            $naiyou[]="from ".$_POST['select']." join ".$_POST['search_0']."on".$_POST['where_0'];
-		}else if(!empty($_POST['where_0'])||!empty($_POST['search_0'])){
-            $error="正しく入力してください。";
-			$naiyou="";
-		}else{
-			$naiyou[]="";  
+			if(!empty($_POST['where_0'])&&!empty($_POST['search_0'])){//<-join句の疑問文
+				$naiyou[]=" from ".$_POST['select']." join ".$_POST['search_0']."on".$_POST['where_0'];
+			}else if(!empty($_POST['where_0'])||!empty($_POST['search_0'])){
+				$error="正しく入力してください。";
+				$naiyou="";
+			}/*else{
+				$naiyou[]="";  
+			}*/
 		}
-
 	    if(!empty($_POST['colom_name_1'])){
 			if(!empty($_POST['ASsearch_1'])){
 				$naiyou[]=",".$_POST['colom_name_1']." AS ".$_POST['ASsearch_1'];
@@ -35,20 +34,19 @@ if(!empty($_POST['select'])){
 				}
 			}
 			else{
-				$naiyou[]="from ".$_POST['select'].";";
+				$naiyou[]=" from ".$_POST['select'].";";
 			}
 		}
 		else{
-			$naiyou[]="from ".$_POST['select'].";";
+			$naiyou[]=" from ".$_POST['select'].";";
 		}
-	}
+    }
 	else{
-		$naiyou[]="select * from ".$_POST['select'].";";
+		$naiyou[]="select * from ".$_POST['select'];
 	}
 }else{
-	$error[]="テーブル名を入力してください";
+	$error[]="テーブル名を入力してください。";
 }
-
 
 /*
 else if(isset($_POST['colom_name_1'])&&!($_POST['group_0']==="none")){
@@ -77,7 +75,6 @@ if(!empty($_POST['group'])){
 */
 
 
-}
 
 ?>
 
