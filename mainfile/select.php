@@ -142,8 +142,8 @@ if(!empty($_POST['group'])){
 
 						<!-- join句入力 -->
 						<div id="join">
-							<li>join句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム"></li>
-							<li><input type="text" name="search_0" size="20" placeholder="結合したいテーブル"></li>
+							join句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム">
+							<input type="text" name="search_0" size="20" placeholder="結合したいテーブル">
 						</div>
 						
 						<!--join句ここまで -->
@@ -151,8 +151,8 @@ if(!empty($_POST['group'])){
 						<!-- where句入力 -->
 
 							<div id="where">
-								<li>where句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="条件にしたいカラム名"></li>
-								<li><input type="text" name="search_0" size="20" placeholder="カラム名検索内容"></li>
+								where句の指定:<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
+								<input type="text" name="search_0" size="20" placeholder="カラム名検索内容">
 							</div>
 						
 						<!-- where句ここまで-->
