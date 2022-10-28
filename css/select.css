@@ -1,7 +1,8 @@
+#ASarea{
+      display: flex;    
+}
 
 #ASarea input{
-    width: 100px; 
-}
-#ASarea input.AS1{
+    display: flex;
     width: 100px; 
 }

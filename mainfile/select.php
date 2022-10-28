@@ -4,19 +4,49 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 $naiyou=array();
 $error=array();
 
-
-if(empty($_POST['colom_name_0'])){
-	if(empty($_POST['select'])){
-		$error[]="テーブル名が入力されていません。";
+if(!empty($_POST['select'])){
+	if(!empty($_POST['colom_name_0'])){		
+		if(!empty($_POST['ASsearch_0'])){
+			$naiyou[]="select ".$_POST['colom_name_0']." AS ".$_POST['ASsearch_0'];
 		}else{
-			$naiyou[]="select * from  ".$_POST['select'].";";
-	}
-}else if(isset($_POST['colom_name_1'])&&!($_POST['group_0']==="none")){
-			if(isset($_POST['colom_name_2'])&&!($_POST['group_0']==="none")){
-				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0'].",".$_POST['group_0']." (".$_POST['colom_name_1'].",".$_POST['group_0']." (".$_POST['colom_name_2']." from ".$_POST['select'].";";
+			$naiyou[]="select ".$_POST['colom_name_0'];
+		}
+		if(!empty($_POST['colom_name_1'])){
+			if(!empty($_POST['ASsearch_1'])){
+				$naiyou[]=",".$_POST['colom_name_1']." AS ".$_POST['ASsearch_1'];
+			}else{
+				$naiyou[]=",".$_POST['colom_name_1'];
+			}
+			if(!empty($_POST['colom_name_2'])){
+				if(!empty($_POST['ASsearch_2'])){
+					$naiyou[]=",".$_POST['colom_name_2']." AS ".$_POST['ASsearch_2'].";";
+				}else{
+					$naiyou[]=",".$_POST['colom_name_2'].";";
+				}
 			}
 			else{
-				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0'].",".$_POST['group_0']." (".$_POST['colom_name_1']." from ".$_POST['select'].";";
+				$naiyou[]=";";
+			}
+		}
+		else{
+			$naiyou[]=";";
+		}
+	}
+	else{
+		$naiyou[]="select * from ".$_POST['select'].";";
+	}
+}else{
+	$error[]="テーブル名を入力してください";
+}
+
+
+/*
+else if(isset($_POST['colom_name_1'])&&!($_POST['group_0']==="none")){
+			if(isset($_POST['colom_name_2'])&&!($_POST['group_0']==="none")){
+				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0']."), ".$_POST['group_0']." (".$_POST['colom_name_1']."), ".$_POST['group_0']." (".$_POST['colom_name_2'].") from ".$_POST['select'].";";
+			}
+			else{
+				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0']."),".$_POST['group_0']." (".$_POST['colom_name_1'].") from ".$_POST['select'].";";
 			}
 }else{
 	$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'].";";
@@ -34,9 +64,11 @@ if(!empty($_POST['where_0']) || !empty($_POST['search_0'])){
 if(!empty($_POST['group'])){
 	$naiyou[]=" group by ".$_POST['group'];
 }
+*/
 
 
 }
+
 ?>
 
 <?php
@@ -102,20 +134,17 @@ if(!empty($_POST['group'])){
 						<!-- as句入力 -->
 						
 						<div id=ASarea>
-							
-								<li>as句の指定:<input type="text" name="ASsearch_0"  placeholder="別名"></li>
-							
+							as句の指定:<input type="text" name="ASsearch_0"  placeholder="別名">
 						</div>
-							<input type="button" value="フォーム追加" onclick="addAS()">
-						
+						<input type="button" value="フォーム追加" onclick="addAS()">
+				
 						<!-- as句入力ここまで -->
 
 						<!-- join句入力 -->
-						
-							<div id="join">
-								<li>join句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム"></li>
-								<li><input type="text" name="search_0" size="20" placeholder="結合したいテーブル"></li>
-							</div>
+						<div id="join">
+							<li>join句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム"></li>
+							<li><input type="text" name="search_0" size="20" placeholder="結合したいテーブル"></li>
+						</div>
 						
 						<!--join句ここまで -->
 
@@ -164,7 +193,7 @@ if(!empty($_POST['group'])){
 <script type="text/javascript">
     var i = 1 ;
 function addAS() {
-if(i<=1){
+if(i<=2){
 	/*
    var d = document;
    var link = d.createElement('link').getElementsByTagName('input');
@@ -182,13 +211,15 @@ if(i<=1){
    var parent = document.getElementById('ASarea');
        parent.appendChild(input_data);
 
-
+if(i==2){
   var button_data = document.createElement('button');
   button_data.name = i;
   button_data.onclick = function(){deleteBtn(this);}
   button_data.innerHTML = '削除';
   var input_area = document.getElementById(input_data.name);
   parent.appendChild(button_data);
+}
+  
   
 }
   
