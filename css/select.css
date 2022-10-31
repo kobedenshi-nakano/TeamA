@@ -12,3 +12,10 @@
 #where{
     display: flex;
 }
+#colom_area{
+    display: flex;
+}
+#colom_area input{
+    display: flex;
+    width: 100px; 
+}

@@ -9,7 +9,7 @@ if(!empty($_POST['select'])){
 		if(!empty($_POST['ASsearch_0'])){//<-as句の疑問文
 			$naiyou[]="select ".$_POST['colom_name_0']." AS ".$_POST['ASsearch_0'];
 		}else{
-			$naiyou[]="select ".$_POST['colom_name_0'];
+			$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'];
 
 			if(!empty($_POST['where_0'])&&!empty($_POST['search_0'])){//<-join句の疑問文
 				$naiyou[]=" from ".$_POST['select']." join ".$_POST['search_0']."on".$_POST['where_0'];
@@ -24,14 +24,15 @@ if(!empty($_POST['select'])){
 			if(!empty($_POST['ASsearch_1'])){
 				$naiyou[]=",".$_POST['colom_name_1']." AS ".$_POST['ASsearch_1'];
 			}else{
-				$naiyou[]=",".$_POST['colom_name_1'];
+				$naiyou[]=",".$_POST['colom_name_1']." from ".$_POST['select'];
 			}
 			if(!empty($_POST['colom_name_2'])){
 				if(!empty($_POST['ASsearch_2'])){
-					$naiyou[]=",".$_POST['colom_name_2']." AS ".$_POST['ASsearch_2'].";";
+					$naiyou[]=",".$_POST['colom_name_2']." AS ".$_POST['ASsearch_2']." from ".$_POST['select'].";";
 				}else{
-					$naiyou[]=",".$_POST['colom_name_2'].";";
+					$naiyou[]=",".$_POST['colom_name_2']." from ".$_POST['select'].";";
 				}
+			/*ここまでAS句*/
 			}
 			else{
 				$naiyou[]=" from ".$_POST['select'].";";
@@ -42,7 +43,7 @@ if(!empty($_POST['select'])){
 		}
     }
 	else{
-		$naiyou[]="select * from ".$_POST['select'];
+		$naiyou[]="select * from ".$_POST['select'].";";
 	}
 }else{
 	$error[]="テーブル名を入力してください。";
@@ -74,7 +75,7 @@ if(!empty($_POST['group'])){
 }
 */
 
-
+}
 
 ?>
 
@@ -120,7 +121,7 @@ if(!empty($_POST['group'])){
                             <tr>
                             <tbody>
                             <li>column(文字型の場合は""を付ける)</li>
-                                <div id="form_area">
+                                <div id="colom_area">
                                 <input type="text" name="colom_name_0" placeholder="カラム名"></li>
   						        <!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
 					            </div>
@@ -139,26 +140,27 @@ if(!empty($_POST['group'])){
 							<li>-->
 						
 						<!-- as句入力 -->
-						
+						<li>as句の指定</li>
 						<div id=ASarea>
-							as句の指定:<input type="text" name="ASsearch_0"  placeholder="別名">
+							<input type="text" name="ASsearch_0"  placeholder="別名">
 						</div>
 						<input type="button" value="フォーム追加" onclick="addAS()">
 				
 						<!-- as句入力ここまで -->
 
 						<!-- join句入力 -->
+						<li>join句の指定</li>
 						<div id="join">
-							join句の指定:<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム">
+							<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム">
 							<input type="text" name="search_0" size="20" placeholder="結合したいテーブル">
 						</div>
 						
 						<!--join句ここまで -->
 
 						<!-- where句入力 -->
-
+						<li>where句の指定</li>
 							<div id="where">
-								where句の指定:<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
+								<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
 								<input type="text" name="search_0" size="20" placeholder="カラム名検索内容">
 							</div>
 						
@@ -198,8 +200,9 @@ if(!empty($_POST['group'])){
 
 
 <script type="text/javascript">
-    var i = 1 ;
-function addAS() {
+	var i = 1 ;
+function addAS() {//AS句追加処理
+
 if(i<=2){
 	/*
    var d = document;
@@ -226,11 +229,47 @@ if(i==2){
   var input_area = document.getElementById(input_data.name);
   parent.appendChild(button_data);
 }
-  
+  //ここまでAS句処理
   
 }
   
 
   i++;
+}
+
+var k = 1 ;
+function addselect() {//カラム追加処理
+if(k<=2){
+	/*
+   var d = document;
+   var link = d.createElement('link').getElementsByTagName('input');
+      link.href = '../css/select.css';
+	  link.rel = 'stylesheet';
+	  link.type = 'text/css';
+   var parent = document.getElementById('ASarea');
+       parent.appendChild(link);
+*/
+
+   var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'colom_name_' + k;
+       input_data.placeholder = 'カラム' + k;
+   var parent = document.getElementById('colom_area');
+       parent.appendChild(input_data);
+
+if(k==2){
+  var button_data = document.createElement('button');
+  button_data.name = k;
+  button_data.onclick = function(){deleteBtn(this);}
+  button_data.innerHTML = '削除';
+  var input_area = document.getElementById(input_data.name);
+  parent.appendChild(button_data);
+}
+  //ここまでカラム処理
+  
+}
+  
+
+  k++;
 }
 </script>
