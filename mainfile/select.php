@@ -95,8 +95,6 @@ if(!empty($_POST['select'])){
 	else{
 		$error[]="テーブル名を入力してください。";
 	}
-}else{
-	$error[]="POST methodが受け取れていません";
 }
 
 /*
