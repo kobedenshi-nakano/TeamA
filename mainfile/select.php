@@ -9,7 +9,7 @@ if(!empty($_POST['select'])){
 		if(!empty($_POST['ASsearch_0'])){//<-as句の疑問文
 			$naiyou[]="select ".$_POST['colom_name_0']." AS '".$_POST['ASsearch_0']."'";
 		}else{
-			$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'];
+			$naiyou[]="select ".$_POST['colom_name_0'];
 
 		}
 	    if(!empty($_POST['colom_name_1'])){
@@ -20,25 +20,25 @@ if(!empty($_POST['select'])){
 			}
 			if(!empty($_POST['colom_name_2'])){
 				if(!empty($_POST['ASsearch_2'])){
-					$naiyou[]=",".$_POST['colom_name_2']." AS '".$_POST['ASsearch_2']."' from ".$_POST['select'].";";
+					$naiyou[]=",".$_POST['colom_name_2']." AS '".$_POST['ASsearch_2']."' from ".$_POST['select'];
 				}else{
-					$naiyou[]=",".$_POST['colom_name_2']." from ".$_POST['select'].";";
+					$naiyou[]=",".$_POST['colom_name_2']." from ".$_POST['select'];
 				}
 			/*ここまでAS句*/
 			}
 			else{
-				$naiyou[]=" from ".$_POST['select'].";";
+				$naiyou[]=" from ".$_POST['select'];
 			}
 		}
 		else{
-			$naiyou[]=" from ".$_POST['select'].";";
+			$naiyou[]=" from ".$_POST['select'];
 		}
 		
 	if(!empty($_POST['join_table'])){//<-join句の疑問文
-			if(isset($_POST['join_colom'])){
-				$naiyou[]=" from ".$_POST['select']." join ".$_POST['join_table']." on ".$_POST['select'].".".$_POST['join_colom']." = ".$_POST['join_table'].$_POST['join_colom'];
+			if(!empty($_POST['join_colom'])){
+				$naiyou[]=" join ".$_POST['join_table']." on ".$_POST['select'].".".$_POST['join_colom']." = ".$_POST['join_table'].".".$_POST['join_colom'];
 			}else{
-				$naiyou[]=" from ".$_POST['select']." join ".$_POST['join_table'];
+				$naiyou[]=" join ".$_POST['join_table'];
 			}
 
 		}/*else if(isset($_POST['join_colom'])||empty($_POST['join_table'])){
@@ -48,12 +48,55 @@ if(!empty($_POST['select'])){
 			$error[]="正しく入力してください。";
 			$naiyou="";
 		}*/
+		if(!empty($_POST['where_0'])){//<-where句の疑問文
+			if(!empty($_POST['search_0'])){
+				if(!empty($_POST['comparion'])){
+					//and orを使う場合
+					$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+				}else{
+					//=のみ使う場合
+                    $naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+				}
+			}
+		}
+			/*if(!empty($_POST['search_0'])){
+				//比較演算子を使いながらandを使う
+				$naiyou[]=" where ".$_POST['where_0'].$_POST['searchh'].$_POST['search_0'];
+			}
+			if(!empty($_POST['search_0'])){
+				//比較演算子を使いながらandを使う
+				$naiyou[]=" where ".$_POST['where_0'].$_POST['searchh'].$_POST['search_0'];
+			}*/
+			else{
+				$naiyou[]="  ";
+			}
+
+		}
+		else{
+			$naiyou[]="select * from ".$_POST['select'];
+			if(!empty($_POST['where_0'])){//<-where句の疑問文
+				if(!empty($_POST['search_0'])){
+					if(!empty($_POST['comparion'])){
+						//and orを使う場合
+						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+					}else{
+						//=のみ使う場合
+						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+					}
+				}
+			}
+		}
+		$naiyou[]=";";
+		if((!empty($_POST['ASsearch_0']))&&((!empty($_POST['join_table']))||(!empty($_POST['join_colom'])))){//<-as句の疑問文
+			$naiyou[]="";
+			$error[]="併用できません。";
+		}
     }
 	else{
-		$naiyou[]="select * from ".$_POST['select'].";";
+		$error[]="テーブル名を入力してください。";
 	}
 }else{
-	$error[]="テーブル名を入力してください。";
+	$error[]="POST methodが受け取れていません";
 }
 
 /*
@@ -82,7 +125,7 @@ if(!empty($_POST['group'])){
 }
 */
 
-}
+
 
 ?>
 
@@ -167,8 +210,23 @@ if(!empty($_POST['group'])){
 						<!-- where句入力 -->
 						<li>where句の指定</li>
 							<div id="where">
-								<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
+								<li><input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
 								<input type="text" name="search_0" size="20" placeholder="カラム名検索内容">
+								<select name="symbol">
+									<option value="="> = </option>
+                                    <option value=">"> > </option>
+                                    <option value="<"> < </option>
+		                            <option value=">="> >= </option>
+									<option value="<="> <= </option>
+					            </select>
+								<select name="comparion">
+								    <option value=""> </option>
+									<option value="and"> and </option>
+                                    <option value="or"> or </option>
+                                    <option value="between"> between </option>
+		                            <option value=">="> >= </option>
+									<option value="<="> <= </option>
+					            </select></li>
 							</div>
 						
 						<!-- where句ここまで-->
