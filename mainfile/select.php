@@ -52,7 +52,7 @@ if(!empty($_POST['select'])){
 			if(!empty($_POST['search_0'])){
 				if(!empty($_POST['comparion'])){
 					//and orを使う場合
-					$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+					$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol']." ".$_POST['search_1'];
 				}else{
 					//=のみ使う場合
                     $naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
@@ -78,7 +78,7 @@ if(!empty($_POST['select'])){
 				if(!empty($_POST['search_0'])){
 					if(!empty($_POST['comparion'])){
 						//and orを使う場合
-						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol1']." ".$_POST['search_1'];
 					}else{
 						//=のみ使う場合
 						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
@@ -208,8 +208,7 @@ if(!empty($_POST['group'])){
 						<!-- where句入力 -->
 						<li>where句の指定</li>
 							<div id="where">
-								<li><input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
-								<input type="text" name="search_0" size="20" placeholder="カラム名検索内容">
+								<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
 								<select name="symbol">
 									<option value="="> = </option>
                                     <option value=">"> > </option>
@@ -217,14 +216,24 @@ if(!empty($_POST['group'])){
 		                            <option value=">="> >= </option>
 									<option value="<="> <= </option>
 					            </select>
+								<input type="text" name="search_0" size="20" placeholder="カラム名検索内容">
 								<select name="comparion">
 								    <option value=""> </option>
 									<option value="and"> and </option>
                                     <option value="or"> or </option>
                                     <option value="between"> between </option>
+		                            <option value="in"> in </option>
+									<option value="like"> like </option>
+					            </select>
+								<input type="text" name="where_1" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名2">
+								<select name="symbol1">
+									<option value="="> = </option>
+                                    <option value=">"> > </option>
+                                    <option value="<"> < </option>
 		                            <option value=">="> >= </option>
 									<option value="<="> <= </option>
-					            </select></li>
+					            </select>
+								<input type="text" name="search_1" size="20" placeholder="カラム名検索内容2">
 							</div>
 						
 						<!-- where句ここまで-->
