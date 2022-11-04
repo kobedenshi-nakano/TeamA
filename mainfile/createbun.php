@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	
+
 <?php
 					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						
@@ -12,10 +24,10 @@
 							
 						}
 
+						$count =0;
 						
 						
-						
-						for($i = 0 ;$i < 4; $i++) {
+						for($i = 0 ;$i < 1; $i++) {
 							$data[] = "<br />    " ;
 							if (empty($_POST['main-name-'.$i])) {
 								$error[] = ($i+1)."行目の列名を入力してください &nbsp;";
@@ -167,6 +179,7 @@
 				<?php endforeach; ?>
 				</ul>
 				<?php endif; ?>
+				
 				<div class="nav-container">
 				 <div class="table">
 					<p>テーブル名</p>&nbsp;&nbsp;&nbsp;
@@ -174,7 +187,7 @@
 				 </div>
 					<ul class="globalnav">
 						<table>
-				
+				<thead>
 				<colgroup span="1"></colgroup>
 				<colgroup>
 					<col class="main-name">
@@ -188,8 +201,7 @@
 					<col class="forign-key">
 					<col class="forign-name">
 				</colgroup>
-				<tbody>
-					<tr>
+				<tr>
 						<th scope="col">列名</th>
 						<th scope="col">列の型名</th>
 						<th scope="col">型の桁など</th>
@@ -201,231 +213,71 @@
 						<th scope="col">外部キー</th>
 						<th scope="col">どれ</th>
 					</tr>
+				</thead>
+				<tbody>
 					<tr>
-						<th scope="row"> 
-							<input type="text" name="main-name-0" size="10" maxlength="10">
-						</th>
+						<td><input type="text" name="main-name[]".$count size="10" maxlength="10"></td>
 						<td>
-							<select name='Type-0' >
-							<option value=' 未入力(型)'>--</option>
-							<option value=' INTEGER'>INTEGER(整数値)</option>
-							<option value=' DECIMAL'>DECIMAL(小数)</option>
-							<option value=' CHAR'>CHAR(固定長 文字列)</option>
-							<option value=' VARCHAR'>VARCHAR(可変長 文字列)</option>
-							<option value=' DATETIME'>DATETIME(日付と時間)</option>
-							<option value=' DATE'>DATE(日付)</option>
-							<option value=' TIME'>TIME(時間)</option>
+						<div id="view_1"></div>
+							<select name="Type[]" >
+							<option value=" 未入力(型)">--</option>
+							<option value=" INTEGER">INTEGER(整数値)</option>
+							<option value=" DECIMAL">DECIMAL(小数)</option>
+							<option value=" CHAR">CHAR(固定長 文字列)</option>
+							<option value=" VARCHAR">VARCHAR(可変長 文字列)</option>
+							<option value=" DATETIME">DATETIME(日付と時間)</option>
+							<option value=" DATE">DATE(日付)</option>
+							<option value=" TIME">TIME(時間)</option>
+							</select>
+						</td>
+						<td><input type="text" name="Type-numerical[]" size="3" maxlength="3"></td>
+						<td><input type="text" name="start[]" size="5" maxlength="10"></td>
+						<td>
+						<div id="view_1"></div>
+							<select name="重複[]">
+								<option value=" 未入力(重複)">--</option>
+								<option value="">重複可</option>
+								<option value=" UNIQUE">重複なし</option>
+							</select>
+						</td>
+						<td><input type="text" name="else-rule[]" size="5" maxlength="10"></td>
+						<td>
+						<div id="view_1"></div>
+							<select name="yes-no-null[]" >
+								<option value=" 未入力(null)">--</option>
+								<option value=" NOT NULL">不可</option>
+								<option value="">可</option>
 							</select>
 						</td>
 						<td>
-							<input type="text" name="Type-numerical-0" size="3" maxlength="3">
-						</td>
-						<td><input type="text" name="start-0" size="5" maxlength="10"></td>
-						<td>
-							<select name='重複-0'>
-								<option value=' 未入力(重複)'>--</option>
-								<option value=''>重複可</option>
-								<option value=' UNIQUE'>重複なし</option>
+						<div id="view_1"></div>
+							<select name="main-key[]" >
+							<option value=" 未入力(主キー)">--</option>
+							<option value="">不要</option>
+							<option value=" PRIMARY KEY">必要</option>
 							</select>
 						</td>
 						<td>
-							<input type="text" name="else-rule-0" size="5" maxlength="10">
-						</td>
-						<td>
-							<select name='yes-no-null-0' >
-								<option value=' 未入力(null)'>--</option>
-								<option value=' NOT NULL'>不可</option>
-								<option value=''>可</option>
+						<div id="view_1"></div>
+							<select name="forign-key[]">
+								<option value=" 未入力(外部キー)">--</option>
+								<option value="">不要</option>
+								<option value=" REFERENCES">必要</option>
 							</select>
 						</td>
-						<td>
-							<select name='main-key-0' >
-							<option value=' 未入力(主キー)'>--</option>
-							<option value=''>不要</option>
-							<option value=' PRIMARY KEY'>必要</option>
-							</select>
-						</td>
-						<td>
-							<select name='forign-key-0'>
-								<option value=' 未入力(外部キー)'>--</option>
-								<option value=''>不要</option>
-								<option value=' REFERENCES'>必要</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="forign-name-0" size="10" maxlength="10">
-						</td>
+						<td><input type="text" name="forign-name[]" size="10" maxlength="10"></td>
 					</tr>
-					<tr>
-						<th scope="row"> 
-							<input type="text" name="main-name-1" size="10" maxlength="10">
-						</th>
-						<td>
-							<select name='Type-1' >
-							<option value=' 未入力(型)'>--</option>
-							<option value=' INTEGER'>INTEGER(整数値)</option>
-							<option value=' DECIMAL'>DECIMAL(小数)</option>
-							<option value=' CHAR'>CHAR(固定長 文字列)</option>
-							<option value=' VARCHAR'>VARCHAR(可変長 文字列)</option>
-							<option value=' DATETIME'>DATETIME(日付と時間)</option>
-							<option value=' DATE'>DATE(日付)</option>
-							<option value=' TIME'>TIME(時間)</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="Type-numerical-1" size="3" maxlength="3">
-						</td>
-						<td><input type="text" name="start-1" size="5" maxlength="10"></td>
-						<td>
-							<select name='重複-1'>
-								<option value=' 未入力(重複)'>--</option>
-								<option value=''>重複可</option>
-								<option value=' UNIQUE'>重複なし</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="else-rule-1" size="5" maxlength="10">
-						</td>
-						<td>
-							<select name='yes-no-null-1' >
-								<option value=' 未入力(null)'>--</option>
-								<option value=' NOT NULL'>不可</option>
-								<option value=''>可</option>
-							</select>
-						</td>
-						<td>
-							<select name='main-key-1' >
-							<option value=' 未入力(主キー)'>--</option>
-							<option value=''>不要</option>
-							<option value=' PRIMARY KEY'>必要</option>
-							</select>
-						</td>
-						<td>
-							<select name='forign-key-1'>
-								<option value=' 未入力(外部キー)'>--</option>
-								<option value=''>不要</option>
-								<option value=' REFERENCES'>必要</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="forign-name-1" size="10" maxlength="10">
-						</td>
-					</tr>
-					<tr>
-						<th scope="row"> 
-							<input type="text" name="main-name-2" size="10" maxlength="10">
-						</th>
-						<td>
-							<select name='Type-2' >
-							<option value=' 未入力(型)'>--</option>
-							<option value=' INTEGER'>INTEGER(整数値)</option>
-							<option value=' DECIMAL'>DECIMAL(小数)</option>
-							<option value=' CHAR'>CHAR(固定長 文字列)</option>
-							<option value=' VARCHAR'>VARCHAR(可変長 文字列)</option>
-							<option value=' DATETIME'>DATETIME(日付と時間)</option>
-							<option value=' DATE'>DATE(日付)</option>
-							<option value=' TIME'>TIME(時間)</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="Type-numerical-2" size="3" maxlength="3">
-						</td>
-						<td><input type="text" name="start-2" size="5" maxlength="10"></td>
-						<td>
-							<select name='重複-2'>
-								<option value=' 未入力(重複)'>--</option>
-								<option value=''>重複可</option>
-								<option value=' UNIQUE'>重複なし</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="else-rule-2" size="5" maxlength="10">
-						</td>
-						<td>
-							<select name='yes-no-null-2' >
-								<option value=' 未入力(null)'>--</option>
-								<option value=' NOT NULL'>不可</option>
-								<option value=''>可</option>
-							</select>
-						</td>
-						<td>
-							<select name='main-key-2' >
-							<option value=' 未入力(主キー)'>--</option>
-							<option value=''>不要</option>
-							<option value=' PRIMARY KEY'>必要</option>
-							</select>
-						</td>
-						<td>
-							<select name='forign-key-2'>
-								<option value=' 未入力(外部キー)'>--</option>
-								<option value=''>不要</option>
-								<option value=' REFERENCES'>必要</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="forign-name-2" size="10" maxlength="10">
-						</td>
-					</tr>
-					<tr>
-						<th scope="row"> 
-							<input type="text" name="main-name-3" size="10" maxlength="10">
-						</th>
-						<td>
-							<select name='Type-3' >
-							<option value=' 未入力(型)'>--</option>
-							<option value=' INTEGER'>INTEGER(整数値)</option>
-							<option value=' DECIMAL'>DECIMAL(小数)</option>
-							<option value=' CHAR'>CHAR(固定長 文字列)</option>
-							<option value=' VARCHAR'>VARCHAR(可変長 文字列)</option>
-							<option value=' DATETIME'>DATETIME(日付と時間)</option>
-							<option value=' DATE'>DATE(日付)</option>
-							<option value=' TIME'>TIME(時間)</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="Type-numerical-3" size="3" maxlength="3">
-						</td>
-						<td><input type="text" name="start-3" size="5" maxlength="10"></td>
-						<td>
-							<select name='重複-3'>
-								<option value=' 未入力(重複)'>--</option>
-								<option value=''>重複可</option>
-								<option value=' UNIQUE'>重複なし</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="else-rule-3" size="5" maxlength="10">
-						</td>
-						<td>
-							<select name='yes-no-null-3' >
-								<option value=' 未入力(null)'>--</option>
-								<option value=' NOT NULL'>不可</option>
-								<option value=''>可</option>
-							</select>
-						</td>
-						<td>
-							<select name='main-key-3' >
-							<option value=' 未入力(主キー)'>--</option>
-							<option value=''>不要</option>
-							<option value=' PRIMARY KEY'>必要</option>
-							</select>
-						</td>
-						<td>
-							<select name='forign-key-3'>
-								<option value=' 未入力(外部キー)'>--</option>
-								<option value=''>不要</option>
-								<option value=' REFERENCES'>必要</option>
-							</select>
-						</td>
-						<td>
-							<input type="text" name="forign-name-3" size="10" maxlength="10">
-						</td>
-					</tr>
+					
 				</tbody>
 				<tfoot>
-				
+				<tr>
+     <td >
+      <button id="add" type="button">追加</button><span id="reload"></span>
+     </td>
+    </tr>
 				</tfoot>
 			</table>
+			
 					</ul>
 						
 						<br><input type="submit" class="generatebtn" value="生成">
@@ -444,9 +296,13 @@
 				<?php endforeach; ?>
 				<?php endif; ?>
 				</li>
+				<button id="button">COPY!</button>
 		    </div>
-		   </ul>
-		</div>
+
 <?php
       require_once __DIR__ .'./footer.php';
 ?>
+ <script src="createbun.js"></script>
+	<script src="Copy.js"></script>
+</body>
+</html>
