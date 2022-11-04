@@ -78,10 +78,10 @@ if(!empty($_POST['select'])){
 				if(!empty($_POST['search_0'])){
 					if(!empty($_POST['comparion'])){
 						//and orを使う場合
-						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol_1']." ".$_POST['search_1'];
+						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol_0']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol_1']." ".$_POST['search_1'];
 					}else{
 						//=のみ使う場合
-						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol_0']." ".$_POST['search_0'];
 					}
 				}
 			}
