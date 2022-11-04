@@ -59,17 +59,9 @@ if(!empty($_POST['select'])){
 				}
 			}
 		}
-			/*if(!empty($_POST['search_0'])){
-				//比較演算子を使いながらandを使う
-				$naiyou[]=" where ".$_POST['where_0'].$_POST['searchh'].$_POST['search_0'];
-			}
-			if(!empty($_POST['search_0'])){
-				//比較演算子を使いながらandを使う
-				$naiyou[]=" where ".$_POST['where_0'].$_POST['searchh'].$_POST['search_0'];
-			}*/
-			else{
-				$naiyou[]="  ";
-			}
+		else{
+			$naiyou[]="  ";
+		}
 
 		}
 		else{
