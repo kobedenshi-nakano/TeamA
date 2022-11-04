@@ -52,10 +52,10 @@ if(!empty($_POST['select'])){
 			if(!empty($_POST['search_0'])){
 				if(!empty($_POST['comparion'])){
 					//and orを使う場合
-					$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol']." ".$_POST['search_1'];
+					$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol_0']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol_1']." ".$_POST['search_1'];
 				}else{
 					//=のみ使う場合
-                    $naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
+                    $naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol_0']." ".$_POST['search_0'];
 				}
 			}
 		}
@@ -250,7 +250,7 @@ if(!empty($_POST['group'])){
 
 		    <div class="kekka-container">
 				<p>出力結果</p>
-		        <li>
+		        <li id="text">
 				<?php
                     if(empty($error)){
                         if(isset($naiyou)){
@@ -262,8 +262,8 @@ if(!empty($_POST['group'])){
                     }
                     ?>
 				</li>
+				<button id="button">COPY!</button>
 		    </div>
-
 		</ul>
 	</div>
 <?php
@@ -272,6 +272,23 @@ if(!empty($_POST['group'])){
 
 
 <script type="text/javascript">
+ const btn = document.getElementById("button"); // button要素取得
+		const txt = document.getElementById("text").textContent; // テキスト取得
+
+		btn.addEventListener("click", () => { // ボタンをクリックしたら
+ 		 navigator.clipboard
+   		 .writeText(txt) // テキストをクリップボードに書き込み（＝コピー）
+    	.then(
+      	(success) => console.log('テキストのコピーに成功'),
+      	(error) => console.log('テキストのコピーに失敗')
+    	);
+
+	    btn.innerHTML = "OK!"; // ボタンの文字変更
+  	    setTimeout(() => (btn.innerHTML = "COPY!"), 1000); // ボタンの文字を戻す
+		});
+
+
+
 	var i = 1 ;
 function addAS() {//AS句追加処理
 
