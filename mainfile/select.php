@@ -78,7 +78,7 @@ if(!empty($_POST['select'])){
 				if(!empty($_POST['search_0'])){
 					if(!empty($_POST['comparion'])){
 						//and orを使う場合
-						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol1']." ".$_POST['search_1'];
+						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0']." ".$_POST['comparion']." ".$_POST['where_1']." ".$_POST['symbol_1']." ".$_POST['search_1'];
 					}else{
 						//=のみ使う場合
 						$naiyou[]=" where ".$_POST['where_0']." ".$_POST['symbol']." ".$_POST['search_0'];
@@ -209,7 +209,7 @@ if(!empty($_POST['group'])){
 						<li>where句の指定</li>
 							<div id="where">
 								<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
-								<select name="symbol">
+								<select name="symbol_0">
 									<option value="="> = </option>
                                     <option value=">"> > </option>
                                     <option value="<"> < </option>
@@ -226,7 +226,7 @@ if(!empty($_POST['group'])){
 									<option value="like"> like </option>
 					            </select>
 								<input type="text" name="where_1" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名2">
-								<select name="symbol1">
+								<select name="symbol_1">
 									<option value="="> = </option>
                                     <option value=">"> > </option>
                                     <option value="<"> < </option>
