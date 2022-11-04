@@ -7,28 +7,20 @@ $error=array();
 if(!empty($_POST['select'])){
 	if(!empty($_POST['colom_name_0'])){		
 		if(!empty($_POST['ASsearch_0'])){//<-as句の疑問文
-			$naiyou[]="select ".$_POST['colom_name_0']." AS ".$_POST['ASsearch_0'];
+			$naiyou[]="select ".$_POST['colom_name_0']." AS '".$_POST['ASsearch_0']."'";
 		}else{
 			$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'];
 
-			if(!empty($_POST['where_0'])&&!empty($_POST['search_0'])){//<-join句の疑問文
-				$naiyou[]=" from ".$_POST['select']." join ".$_POST['search_0']."on".$_POST['where_0'];
-			}else if(!empty($_POST['where_0'])||!empty($_POST['search_0'])){
-				$error="正しく入力してください。";
-				$naiyou="";
-			}/*else{
-				$naiyou[]="";  
-			}*/
 		}
 	    if(!empty($_POST['colom_name_1'])){
 			if(!empty($_POST['ASsearch_1'])){
-				$naiyou[]=",".$_POST['colom_name_1']." AS ".$_POST['ASsearch_1'];
+				$naiyou[]=",".$_POST['colom_name_1']." AS '".$_POST['ASsearch_1']."'";
 			}else{
 				$naiyou[]=",".$_POST['colom_name_1']." from ".$_POST['select'];
 			}
 			if(!empty($_POST['colom_name_2'])){
 				if(!empty($_POST['ASsearch_2'])){
-					$naiyou[]=",".$_POST['colom_name_2']." AS ".$_POST['ASsearch_2']." from ".$_POST['select'].";";
+					$naiyou[]=",".$_POST['colom_name_2']." AS '".$_POST['ASsearch_2']."' from ".$_POST['select'].";";
 				}else{
 					$naiyou[]=",".$_POST['colom_name_2']." from ".$_POST['select'].";";
 				}
@@ -41,6 +33,21 @@ if(!empty($_POST['select'])){
 		else{
 			$naiyou[]=" from ".$_POST['select'].";";
 		}
+		
+	if(!empty($_POST['join_table'])){//<-join句の疑問文
+			if(isset($_POST['join_colom'])){
+				$naiyou[]=" from ".$_POST['select']." join ".$_POST['join_table']." on ".$_POST['select'].".".$_POST['join_colom']." = ".$_POST['join_table'].$_POST['join_colom'];
+			}else{
+				$naiyou[]=" from ".$_POST['select']." join ".$_POST['join_table'];
+			}
+
+		}/*else if(isset($_POST['join_colom'])||empty($_POST['join_table'])){
+			$error[]="正しく入力してください。";
+			$naiyou[]="";
+		}else if(empty($_POST['join_colom'])||isset($_POST['join_table'])){
+			$error[]="正しく入力してください。";
+			$naiyou="";
+		}*/
     }
 	else{
 		$naiyou[]="select * from ".$_POST['select'].";";
@@ -151,8 +158,8 @@ if(!empty($_POST['group'])){
 						<!-- join句入力 -->
 						<li>join句の指定</li>
 						<div id="join">
-							<input type="text" name="where_0" size="20" maxlength="20" placeholder="結合されるカラム">
-							<input type="text" name="search_0" size="20" placeholder="結合したいテーブル">
+							<input type="text" name="join_colom" size="20" maxlength="20" placeholder="結合されるカラム">
+							<input type="text" name="join_table" size="20" placeholder="結合したいテーブル">
 						</div>
 						
 						<!--join句ここまで -->
