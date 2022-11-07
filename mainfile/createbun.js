@@ -7,6 +7,16 @@ $(function() {
   num = num + 1 ;
   view_count = view_count + 1 ;
 
+  fetch('indexSumi4.php', {
+    method: 'POST',
+    headers: { 'Content-Type':'application/json'},
+    body: JSON.stringify(num)
+  })
+  .then(response => response.json())
+  .then(res => {
+    console.log(res);
+  });
+
   let tr_form = '' + 
    '<tr>' + 
     '<td><input type="text" name="main-name[]"></td>' + 
