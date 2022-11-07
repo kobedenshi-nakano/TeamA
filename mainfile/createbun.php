@@ -27,7 +27,7 @@
 						$count =0;
 						
 						
-						for($i = 0 ;$i < 2; $i++) {
+						for($i = 0 ;$i < 4; $i++) {
 							$data[] = "<br />    " ;
 							if (empty($_POST['main-name'][$i])) {
 								$error[] = ($i+1)."行目の列名を入力してください &nbsp;";
