@@ -160,7 +160,7 @@ if(!empty($_POST['group'])){
                         <table>
                             <tr>
                             <tbody>
-                            <li>column(文字型の場合は""を付ける)</li>
+                            column(文字型の場合は""を付ける)
                                 <div id="colom_area">
                                 <input type="text" name="colom_name_0" placeholder="カラム名"></li>
   						        <!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
@@ -180,7 +180,8 @@ if(!empty($_POST['group'])){
 							<li>-->
 						
 						<!-- as句入力 -->
-						<li>as句の指定</li>
+						<br>
+						as句の指定
 						<div id=ASarea>
 							<input type="text" name="ASsearch_0"  placeholder="別名">
 						</div>
@@ -189,7 +190,8 @@ if(!empty($_POST['group'])){
 						<!-- as句入力ここまで -->
 
 						<!-- join句入力 -->
-						<li>join句の指定</li>
+						<br>
+						join句の指定
 						<div id="join">
 							<input type="text" name="join_colom" size="20" maxlength="20" placeholder="結合されるカラム">
 							<input type="text" name="join_table" size="20" placeholder="結合したいテーブル">
@@ -198,7 +200,8 @@ if(!empty($_POST['group'])){
 						<!--join句ここまで -->
 
 						<!-- where句入力 -->
-						<li>where句の指定</li>
+						<br>
+						where句の指定
 							<div id="where">
 								<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
 								<select name="symbol_0">
@@ -207,7 +210,7 @@ if(!empty($_POST['group'])){
                                     <option value="<"> < </option>
 		                            <option value=">="> >= </option>
 									<option value="<="> <= </option>
-					            </select>
+					            </select>&nbsp;&nbsp;
 								<input type="text" name="search_0" size="20" placeholder="カラム名検索内容">
 								<select name="comparion">
 								    <option value=""> </option>
@@ -216,7 +219,7 @@ if(!empty($_POST['group'])){
                                     <option value="between"> between </option>
 		                            <option value="in"> in </option>
 									<option value="like"> like </option>
-					            </select>
+					            </select>&nbsp;&nbsp;
 								<input type="text" name="where_1" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名2">
 								<select name="symbol_1">
 									<option value="="> = </option>
@@ -224,7 +227,7 @@ if(!empty($_POST['group'])){
                                     <option value="<"> < </option>
 		                            <option value=">="> >= </option>
 									<option value="<="> <= </option>
-					            </select>
+					            </select>&nbsp;&nbsp;
 								<input type="text" name="search_1" size="20" placeholder="カラム名検索内容2">
 							</div>
 						
