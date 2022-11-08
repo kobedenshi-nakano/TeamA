@@ -222,8 +222,8 @@
 						<div id="view_1"></div>
 							<select name="重複[0]">
 								<option value=" 未入力(重複)">--</option>
-								<option value="">重複可</option>
-								<option value=" UNIQUE">重複なし</option>
+								<option value="">2つ以上可</option>
+								<option value=" UNIQUE">1つだけ</option>
 							</select>
 						</td>
 						<td><input type="text" name="else-rule[0]" size="5" maxlength="10"></td>
@@ -231,24 +231,24 @@
 						<div id="view_1"></div>
 							<select name="yes-no-null[0]" >
 								<option value=" 未入力(null)">--</option>
-								<option value=" NOT NULL">不可</option>
-								<option value="">可</option>
+								<option value=" NOT NULL">NG</option>
+								<option value="">OK</option>
 							</select>
 						</td>
 						<td>
 						<div id="view_1"></div>
 							<select name="main-key[0]" >
 							<option value=" 未入力(主キー)">--</option>
-							<option value="">不要</option>
-							<option value=" PRIMARY KEY">必要</option>
+							<option value="">いらない</option>
+							<option value=" PRIMARY KEY">いる</option>
 							</select>
 						</td>
 						<td>
 						<div id="view_1"></div>
 							<select name="forign-key[0]">
 								<option value=" 未入力(外部キー)">--</option>
-								<option value="">不要</option>
-								<option value=" REFERENCES">必要</option>
+								<option value="">いらない</option>
+								<option value=" REFERENCES">いる</option>
 							</select>
 						</td>
 						<td><input type="text" name="forign-name[0]" size="10" maxlength="10"></td>
