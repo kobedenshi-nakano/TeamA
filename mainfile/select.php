@@ -9,20 +9,20 @@ if(!empty($_POST['select'])){
 		if(!empty($_POST['ASsearch_0'])){//<-as句の疑問文
 			$naiyou[]="select ".$_POST['colom_name_0']." AS '".$_POST['ASsearch_0']."'";
 		}else{
-			$naiyou[]="select ".$_POST['colom_name_0'];
+			$naiyou[]="select ".$_POST['select'].".".$_POST['colom_name_0'];
 
 		}
 	    if(!empty($_POST['colom_name_1'])){
 			if(!empty($_POST['ASsearch_1'])){
 				$naiyou[]=",".$_POST['colom_name_1']." AS '".$_POST['ASsearch_1']."'";
 			}else{
-				$naiyou[]=",".$_POST['colom_name_1']." from ".$_POST['select'];
+				$naiyou[]=",".$_POST['select'].".".$_POST['colom_name_1'];
 			}
 			if(!empty($_POST['colom_name_2'])){
 				if(!empty($_POST['ASsearch_2'])){
 					$naiyou[]=",".$_POST['colom_name_2']." AS '".$_POST['ASsearch_2']."' from ".$_POST['select'];
 				}else{
-					$naiyou[]=",".$_POST['colom_name_2']." from ".$_POST['select'];
+					$naiyou[]=",".$_POST['select'].".".$_POST['colom_name_2']." from ".$_POST['select'];
 				}
 			/*ここまでAS句*/
 			}
@@ -60,12 +60,19 @@ if(!empty($_POST['select'])){
 			}
 		}
 		else{
-			$naiyou[]="  ";
+			$naiyou[]=" ";
 		}
 
 		}
 		else{
 			$naiyou[]="select * from ".$_POST['select'];
+			if(!empty($_POST['join_table'])){//<-join句の疑問文
+				if(!empty($_POST['join_colom'])){
+					$naiyou[]=" join ".$_POST['join_table']." on ".$_POST['select'].".".$_POST['join_colom']." = ".$_POST['join_table'].".".$_POST['join_colom'];
+				}else{
+					$naiyou[]=" join ".$_POST['join_table'];
+				}
+			}
 			if(!empty($_POST['where_0'])){//<-where句の疑問文
 				if(!empty($_POST['search_0'])){
 					if(!empty($_POST['comparion'])){
