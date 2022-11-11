@@ -85,14 +85,44 @@ if(!empty($_POST['select'])){
 				}
 			}
 			//betweenの処理
-			if(!empty($_POST['where_0'])){//<-where句の疑問文
-				if(!empty($_POST['search_0'])){
-					if(!empty($_POST['comparion'])){
-						//and orを使う場合
-						$naiyou[]=$_POST['atai1']." ".$_POST['atai'];
+			if(!empty($_POST['target'])){
+				if(!empty($_POST['atai1'])){
+					if(!empty($_POST['atai2'])){
+						$naiyou[]=" where ".$_POST['target']." "." between ".$_POST['atai1']." and ".$_POST['atai2'];
 					}
 				}
 			}
+
+			//INの処理
+		    if(!empty($_POST['whereIn'])){
+			    if(!empty($_POST['whereInplus_0'])){
+				    $naiyou[]=" where ".$_POST['whereIn']." In (".$_POST['whereInplus_0'];
+			    }
+				if(!empty($_POST['whereInplus_1'])){
+				    $naiyou[]=",".$_POST['whereInplus_1'];
+			    }
+				else{
+					$naiyou[]=")";
+				}
+				if(!empty($_POST['whereInplus_2'])){
+				    $naiyou[]=",".$_POST['whereInplus_2'].")";
+			    }else{
+					$naiyou[]=")";
+				}
+		    }
+			//LIKEの処理
+			if(!empty($_POST['likesearch'])){
+				if(!empty($_POST['searchchar'])){
+					//ワイルドカードを使う場合
+				if(!empty($_POST['wildcard'])){
+					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['wildcard'].$_POST['searchchar'].$_POST['wildcard']."' ";
+				}else{
+					//完全一致
+					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['searchchar']."' ";
+				}
+				}
+			}
+
 		}
 		$naiyou[]=";";
 		if((!empty($_POST['ASsearch_0']))&&((!empty($_POST['join_table']))||(!empty($_POST['join_colom'])))){//<-as句の疑問文
@@ -217,12 +247,15 @@ if(!empty($_POST['group'])){
 
 						<!-- where句入力 -->
 						<br>
+					<div>
+						
+					</div>
 						where句の指定
 						<input type="button" value="add" onclick="addAndOr()">
 						<input type="button" value="addbetween" onclick="addbetween()">
-						<input type="button" value="addIn" onclick="addIn()">
+						<input type="button" value="addIn" onclick="addIn()" id="addin">
 						<input type="button" value="addlike" onclick="addlike()">
-							<div id="where">
+							<div class="input-form" id="where">
 								<!--<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
 								<select name="symbol_0">
 									<option value="="> = </option>
@@ -380,41 +413,187 @@ if(k==2){
 
 
 //ここからAndOrの処理
-function addAndOr() {//AS句追加処理
 var AndOr=1;
-   var input_data = document.createElement('input');
+function addAndOr() {
+
+if(AndOr==1){
+	var input_data = document.createElement('input');
  	   input_data.type = 'text';
-       input_data.name = 'where_' + AndOr;
+       input_data.name = 'where_0';
        input_data.placeholder = '条件にしたいカラム名';
 	var parent = document.getElementById('where');
         parent.appendChild(input_data);
    
    var input_data = document.createElement("select");
-	   input_data.name='symbol_'+AndOr
-   var option = document.createElement("option");
- 	// optionタグのテキストを4に設定する
- 		option.text = "=";
- // optionタグのvalueを4に設定する
- 		option.value = "=";
- // selectタグの子要素にoptionタグを追加する
+	   input_data.name='symbol_0';
+	//option生成
+    var option = document.createElement("option");
+ 	// optionタグのテキストを空白に設定する
+ 		option.text = " ";
+    // optionタグのvalueを""に設定する
+ 		option.value = "";
+    // selectタグの子要素にoptionタグを追加する
  		input_data.appendChild(option);
+	//option生成
+   var option = document.createElement("option");
+ 	// optionタグのテキストを=に設定する
+ 		option.text = "=";
+    // optionタグのvalueを=に設定する
+ 		option.value = "=";
+   // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを>に設定する
+ 		option.text = ">";
+    // optionタグのvalueを>に設定する
+ 		option.value = ">";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを<に設定する
+ 		option.text = "<";
+    // optionタグのvalueを<に設定する
+ 		option.value = "<";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを>=に設定する
+ 		option.text = ">=";
+    // optionタグのvalueを>=に設定する
+ 		option.value = ">=";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを<=に設定する
+ 		option.text = "<=";
+    // optionタグのvalueを=に設定する
+ 		option.value = "<=";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//optionのすべての中身をinput_dataに挿入する
 	var parent = document.getElementById('where');
 		parent.appendChild(input_data);
 
 	var input_data = document.createElement('input');
  	   input_data.type = 'text';
-       input_data.name = 'search_' + i;
+       input_data.name = 'search_0';
        input_data.placeholder = 'カラム名検索内容';
 	var parent = document.getElementById('where');
         parent.appendChild(input_data);
 
+	var input_data = document.createElement("select");
+	    input_data.name='comparion';
+	//option生成
+    var option = document.createElement("option");
+ 	// optionタグのテキストを空白に設定する
+ 		option.text = " ";
+    // optionタグのvalueを""に設定する
+ 		option.value = "";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストをandに設定する
+ 		option.text = "and";
+    // optionタグのvalueをandに設定する
+ 		option.value = "and";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストをorに設定する
+ 		option.text = "or";
+    // optionタグのvalueを=に設定する
+ 		option.value = "or";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//optionのすべての中身をinput_dataに挿入する
+	var parent = document.getElementById('where');
+		parent.appendChild(input_data);
+	
+	var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'where_1';
+       input_data.placeholder = '条件にしたいカラム名2';
+	var parent = document.getElementById('where');
+        parent.appendChild(input_data);
+
+	var input_data = document.createElement("select");
+	    input_data.name='symbol_1';
+	//option生成
+    var option = document.createElement("option");
+ 	// optionタグのテキストを空白に設定する
+ 		option.text = " ";
+    // optionタグのvalueを""に設定する
+ 		option.value = "";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+   var option = document.createElement("option");
+ 	// optionタグのテキストを=に設定する
+ 		option.text = "=";
+    // optionタグのvalueを=に設定する
+ 		option.value = "=";
+   // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを>に設定する
+ 		option.text = ">";
+    // optionタグのvalueを>に設定する
+ 		option.value = ">";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを<に設定する
+ 		option.text = "<";
+    // optionタグのvalueを<に設定する
+ 		option.value = "<";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを>=に設定する
+ 		option.text = ">=";
+    // optionタグのvalueを>=に設定する
+ 		option.value = ">=";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+	var option = document.createElement("option");
+ 	// optionタグのテキストを<=に設定する
+ 		option.text = "<=";
+    // optionタグのvalueを=に設定する
+ 		option.value = "<=";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//optionのすべての中身をinput_dataに挿入する
+	var parent = document.getElementById('where');
+		parent.appendChild(input_data);
+
+	var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'search_1';
+       input_data.placeholder = 'カラム名検索内容2';
+	var parent = document.getElementById('where');
+        parent.appendChild(input_data);
+
+		AndOr++;
 }
-//ここまでAndorの処理
+
+}
+   //ここまでAndorの処理
 
 //INの処理
-var InVar = 0 ;
+var Inval = 1 ;
 function addIn() {
 //カラム名のtextboxの表示
+if(Inval==1){
   var input_data = document.createElement('input');
   input_data.type = 'text';
   input_data.name = 'whereIn';
@@ -423,38 +602,74 @@ function addIn() {
   var parent = document.getElementById('where');
   parent.appendChild(input_data);
 
-if(i<=1){
   var input_data = document.createElement('input');
   input_data.type = 'text';
-  input_data.name = 'whereInplus_' + InVar;
-  input_data.placeholder = 'INの中の値' + InVar;
+  input_data.name = 'whereInplus_0';
+  input_data.placeholder = 'INの中の値0';
   input_data.innerHTML="&nbsp;";
   var parent = document.getElementById('where');
   parent.appendChild(input_data);
   
-  var button_data = document.createElement('button');
-  button_data.name = Invar;
-  button_data.onclick = function(){deleteBtn(this);}
-  button_data.innerHTML = "&nbsp;";
-  button_data.innerHTML = '削除';
-  var input_area = document.getElementById(input_data.name);
-  parent.appendChild(button_data);
-  
+  var input_data = document.createElement('input');
+  input_data.type = 'text';
+  input_data.name = 'whereInplus_1';
+  input_data.placeholder = 'INの中の値1';
+  input_data.innerHTML="&nbsp;";
+  var parent = document.getElementById('where');
+  parent.appendChild(input_data);
+
+  var input_data = document.createElement('input');
+  input_data.type = 'text';
+  input_data.name = 'whereInplus_2';
+  input_data.placeholder = 'INの中の値2';
+  input_data.innerHTML="&nbsp;";
+  var parent = document.getElementById('where');
+  parent.appendChild(input_data);
+
 }
-  InVar++;
 }
+addin.addEventListener("click",()=>{
+	document.write("aa");
+});
 //ここまでがINの処理
 
 
+//ここからbetween
+var between=1;
+function addbetween(){
+
+if(between==1){
+   var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'target';
+       input_data.placeholder = '条件にするカラム';
+   var parent = document.getElementById('where');
+       parent.appendChild(input_data);
+	
+   var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'atai1';
+       input_data.placeholder = '条件1';
+   var parent = document.getElementById('where');
+       parent.appendChild(input_data);
+
+   var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'atai2' ;
+       input_data.placeholder = '条件2';
+   var parent = document.getElementById('where');
+       parent.appendChild(input_data);
+
+  between++;
+
+}
+}
+//ここまでbetweenの処理
+
+//ここからlikeの処理
 
 
-
-
-
-
-
-
-
+//ここまでlikeの処理
 
 
 </script>
