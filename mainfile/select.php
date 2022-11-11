@@ -84,6 +84,15 @@ if(!empty($_POST['select'])){
 					}
 				}
 			}
+			//betweenの処理
+			if(!empty($_POST['where_0'])){//<-where句の疑問文
+				if(!empty($_POST['search_0'])){
+					if(!empty($_POST['comparion'])){
+						//and orを使う場合
+						$naiyou[]=$_POST['atai1']." ".$_POST['atai'];
+					}
+				}
+			}
 		}
 		$naiyou[]=";";
 		if((!empty($_POST['ASsearch_0']))&&((!empty($_POST['join_table']))||(!empty($_POST['join_colom'])))){//<-as句の疑問文
@@ -375,12 +384,13 @@ function addAndOr() {//AS句追加処理
 var AndOr=1;
    var input_data = document.createElement('input');
  	   input_data.type = 'text';
-       input_data.name = 'where_' + i;
+       input_data.name = 'where_' + AndOr;
        input_data.placeholder = '条件にしたいカラム名';
 	var parent = document.getElementById('where');
         parent.appendChild(input_data);
    
    var input_data = document.createElement("select");
+	   input_data.name='symbol_'+AndOr
    var option = document.createElement("option");
  	// optionタグのテキストを4に設定する
  		option.text = "=";
@@ -391,13 +401,20 @@ var AndOr=1;
 	var parent = document.getElementById('where');
 		parent.appendChild(input_data);
 
+	var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'search_' + i;
+       input_data.placeholder = 'カラム名検索内容';
+	var parent = document.getElementById('where');
+        parent.appendChild(input_data);
+
 }
 //ここまでAndorの処理
 
 //INの処理
 var InVar = 0 ;
 function addIn() {
-if(i<=1){
+//カラム名のtextboxの表示
   var input_data = document.createElement('input');
   input_data.type = 'text';
   input_data.name = 'whereIn';
@@ -406,6 +423,7 @@ if(i<=1){
   var parent = document.getElementById('where');
   parent.appendChild(input_data);
 
+if(i<=1){
   var input_data = document.createElement('input');
   input_data.type = 'text';
   input_data.name = 'whereInplus_' + InVar;
