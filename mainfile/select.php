@@ -41,13 +41,8 @@ if(!empty($_POST['select'])){
 				$naiyou[]=" join ".$_POST['join_table'];
 			}
 
-		}/*else if(isset($_POST['join_colom'])||empty($_POST['join_table'])){
-			$error[]="正しく入力してください。";
-			$naiyou[]="";
-		}else if(empty($_POST['join_colom'])||isset($_POST['join_table'])){
-			$error[]="正しく入力してください。";
-			$naiyou="";
-		}*/
+		}
+
 		if(!empty($_POST['where_0'])){//<-where句の疑問文
 			if(!empty($_POST['search_0'])){
 				if(!empty($_POST['comparion'])){
@@ -255,34 +250,9 @@ if(!empty($_POST['group'])){
 						<input type="button" value="addbetween" onclick="addbetween()">
 						<input type="button" value="addIn" onclick="addIn()" id="addin">
 						<input type="button" value="addlike" onclick="addlike()">
-							<div class="input-form" id="where">
-								<!--<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
-								<select name="symbol_0">
-									<option value="="> = </option>
-                                    <option value=">"> > </option>
-                                    <option value="<"> < </option>
-		                            <option value=">="> >= </option>
-									<option value="<="> <= </option>
-					            </select>&nbsp;&nbsp;
-								<input type="text" name="search_0" size="20" placeholder="カラム名検索内容">
-								<select name="comparion">
-								    <option value=""> </option>
-									<option value="and"> and </option>
-                                    <option value="or"> or </option>
-                                    <option value="between"> between </option>
-		                            <option value="in"> in </option>
-									<option value="like"> like </option>
-					            </select>&nbsp;&nbsp;
-								<input type="text" name="where_1" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名2">
-								<select name="symbol_1">
-									<option value="="> = </option>
-                                    <option value=">"> > </option>
-                                    <option value="<"> < </option>
-		                            <option value=">="> >= </option>
-									<option value="<="> <= </option>
-					            </select>&nbsp;&nbsp;
-								<input type="text" name="search_1" size="20" placeholder="カラム名検索内容2">
-					--></div>
+						<div class="input-form" id="where">
+							
+					    </div>
 						
 						<!-- where句ここまで-->
 
