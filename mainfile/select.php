@@ -209,8 +209,12 @@ if(!empty($_POST['group'])){
 						<!-- where句入力 -->
 						<br>
 						where句の指定
+						<input type="button" value="add" onclick="addAndOr()">
+						<input type="button" value="addbetween" onclick="addbetween()">
+						<input type="button" value="addIn" onclick="addIn()">
+						<input type="button" value="addlike" onclick="addlike()">
 							<div id="where">
-								<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
+								<!--<input type="text" name="where_0" id="where1" size="20" maxlength="20" placeholder="条件にしたいカラム名">
 								<select name="symbol_0">
 									<option value="="> = </option>
                                     <option value=">"> > </option>
@@ -236,7 +240,7 @@ if(!empty($_POST['group'])){
 									<option value="<="> <= </option>
 					            </select>&nbsp;&nbsp;
 								<input type="text" name="search_1" size="20" placeholder="カラム名検索内容2">
-							</div>
+					--></div>
 						
 						<!-- where句ここまで-->
 
@@ -363,4 +367,76 @@ if(k==2){
 
   k++;
 }
+
+
+
+//ここからAndOrの処理
+function addAndOr() {//AS句追加処理
+var AndOr=1;
+   var input_data = document.createElement('input');
+ 	   input_data.type = 'text';
+       input_data.name = 'where_' + i;
+       input_data.placeholder = '条件にしたいカラム名';
+	var parent = document.getElementById('where');
+        parent.appendChild(input_data);
+   
+   var input_data = document.createElement("select");
+   var option = document.createElement("option");
+ 	// optionタグのテキストを4に設定する
+ 		option.text = "=";
+ // optionタグのvalueを4に設定する
+ 		option.value = "=";
+ // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	var parent = document.getElementById('where');
+		parent.appendChild(input_data);
+
+}
+//ここまでAndorの処理
+
+//INの処理
+var InVar = 0 ;
+function addIn() {
+if(i<=1){
+  var input_data = document.createElement('input');
+  input_data.type = 'text';
+  input_data.name = 'whereIn';
+  input_data.placeholder = 'カラム名';
+  input_data.innerHTML="&nbsp;";
+  var parent = document.getElementById('where');
+  parent.appendChild(input_data);
+
+  var input_data = document.createElement('input');
+  input_data.type = 'text';
+  input_data.name = 'whereInplus_' + InVar;
+  input_data.placeholder = 'INの中の値' + InVar;
+  input_data.innerHTML="&nbsp;";
+  var parent = document.getElementById('where');
+  parent.appendChild(input_data);
+  
+  var button_data = document.createElement('button');
+  button_data.name = Invar;
+  button_data.onclick = function(){deleteBtn(this);}
+  button_data.innerHTML = "&nbsp;";
+  button_data.innerHTML = '削除';
+  var input_area = document.getElementById(input_data.name);
+  parent.appendChild(button_data);
+  
+}
+  InVar++;
+}
+//ここまでがINの処理
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
