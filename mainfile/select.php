@@ -108,9 +108,16 @@ if(!empty($_POST['select'])){
 			//LIKEの処理
 			if(!empty($_POST['likesearch'])){
 				if(!empty($_POST['searchchar'])){
-					//ワイルドカードを使う場合
-				if(!empty($_POST['wildcard'])){
-					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['wildcard'].$_POST['searchchar'].$_POST['wildcard']."' ";
+				//ワイルドカードを使う場合
+				if(!empty($_POST['wildcard1'])){
+					//前のみ
+					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['wildcard1'].$_POST['searchchar']."' ";
+				}elseif (empty($_POST['wildcard2'])){
+					//後ろのみ
+					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['searchchar'].$_POST['wildcard2']."' ";
+				}elseif(!empty($_POST['wildcard1'])&&!empty($_POST['wildcard2'])){
+					//両方
+					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['wildcard1'].$_POST['searchchar'].$_POST['wildcard2']."' ";
 				}else{
 					//完全一致
 					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['searchchar']."' ";
@@ -598,9 +605,6 @@ if(Inval==1){
 
 }
 }
-addin.addEventListener("click",()=>{
-	document.write("aa");
-});
 //ここまでがINの処理
 
 
@@ -637,9 +641,90 @@ if(between==1){
 //ここまでbetweenの処理
 
 //ここからlikeの処理
+var like=1;
+function addlike(){
+  if(like==1){
+    var input_data = document.createElement('input');
+    input_data.type = 'text';
+    input_data.name = 'likesearch';
+    input_data.placeholder = 'カラム名';
+    input_data.innerHTML="&nbsp;";
+    var parent = document.getElementById('where');
+    parent.appendChild(input_data);
+	
+	var input_data = document.createElement("select");
+	   input_data.name='wildcard1';
+	//option生成
+    var option = document.createElement("option");
+ 	// optionタグのテキストを空白に設定する
+ 		option.text = " ";
+    // optionタグのvalueを""に設定する
+ 		option.value = "";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+   var option = document.createElement("option");
+ 	// optionタグのテキストを=に設定する
+ 		option.text = "%";
+    // optionタグのvalueを=に設定する
+ 		option.value = "%";
+   // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+  //option生成
+  var option = document.createElement("option");
+ 	// optionタグのテキストを=に設定する
+ 		option.text = "_";
+    // optionタグのvalueを=に設定する
+ 		option.value = "_";
+   // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//optionのすべての中身をinput_dataに挿入する
+	var parent = document.getElementById('where');
+		parent.appendChild(input_data);
 
+
+    var input_data = document.createElement('input');
+    input_data.type = 'text';
+    input_data.name = 'searchchar';
+    input_data.placeholder = '文字列';
+    input_data.innerHTML="&nbsp;";
+    var parent = document.getElementById('where');
+    parent.appendChild(input_data);
+
+    var input_data = document.createElement("select");
+	   input_data.name='wildcard2';
+	//option生成
+    var option = document.createElement("option");
+ 	// optionタグのテキストを空白に設定する
+ 		option.text = " ";
+    // optionタグのvalueを""に設定する
+ 		option.value = "";
+    // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//option生成
+   var option = document.createElement("option");
+ 	// optionタグのテキストを=に設定する
+ 		option.text = "%";
+    // optionタグのvalueを=に設定する
+ 		option.value = "%";
+   // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+  //option生成
+  var option = document.createElement("option");
+ 	// optionタグのテキストを=に設定する
+ 		option.text = "_";
+    // optionタグのvalueを=に設定する
+ 		option.value = "_";
+   // selectタグの子要素にoptionタグを追加する
+ 		input_data.appendChild(option);
+	//optionのすべての中身をinput_dataに挿入する
+	var parent = document.getElementById('where');
+		parent.appendChild(input_data);
+
+  like++;
+
+}
+}
 
 //ここまでlikeの処理
-
-
 </script>
