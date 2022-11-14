@@ -112,7 +112,7 @@ if(!empty($_POST['select'])){
 				if(!empty($_POST['wildcard1'])){
 					//前のみ
 					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['wildcard1'].$_POST['searchchar']."' ";
-				}elseif (empty($_POST['wildcard2'])){
+				}elseif (!empty($_POST['wildcard2'])){
 					//後ろのみ
 					$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['searchchar'].$_POST['wildcard2']."' ";
 				}elseif(!empty($_POST['wildcard1'])&&!empty($_POST['wildcard2'])){
@@ -253,10 +253,10 @@ if(!empty($_POST['group'])){
 						
 					</div>
 						where句の指定
-						<input type="button" value="add" onclick="addAndOr()">
-						<input type="button" value="addbetween" onclick="addbetween()">
-						<input type="button" value="addIn" onclick="addIn()" id="addin">
-						<input type="button" value="addlike" onclick="addlike()">
+						<input type="button" value="and or" onclick="addAndOr()">
+						<input type="button" value="between" onclick="addbetween()">
+						<input type="button" value="In" onclick="addIn()" id="addin">
+						<input type="button" value="like" onclick="addlike()">
 						<div class="input-form" id="where">
 							
 					    </div>
