@@ -19,7 +19,7 @@ $(function() {
 
   let tr_form = '' + 
    '<tr>' + 
-    '<td><input type="text" name="main-name[]"></td>' + 
+    '<td><input type="text" name="main-name[]" size="10" maxlength="10"></td>' + 
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="Type[]">' + 
@@ -33,39 +33,39 @@ $(function() {
       '<option value=" TIME">TIME(時間)</option>' + 
      '</select>' + 
     '</td>' + 
-    '<td><input type="text" name="Type-numerical[]"size="3" maxlength="3"></td>' + 
+    '<td><input type="text" name="Type-numerical[]" size="3" maxlength="3"></td>' + 
     '<td><input type="text" name="start[]" size="5" maxlength="10"></td>' + 
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="重複[]">' + 
-      '<option value=" 未入力(重複)">--</option>' + 
-      '<option value="">重複可</option>' + 
-      '<option value=" UNIQUE">重複なし</option>' + 
+      
+      '<option value="" selected>2つ以上可</option>' + 
+      '<option value=" UNIQUE">1つだけ</option>' + 
      '</select>' + 
     '</td>' + 
     '<td><input type="text" name="else-rule[]" size="5" maxlength="10"></td>' + 
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="yes-no-null[]" >' + 
-      '<option value=" 未入力(null)">--</option>' + 
-      '<option value=" NOT NULL">不可</option>' + 
-      '<option value="">可</option>' + 
+      
+      '<option value=" NOT NULL" selected>NG</option>' + 
+      '<option value="">OK</option>' + 
      '</select>' + 
     '</td>' + 
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="main-key[]" >' + 
-      '<option value=" 未入力(主キー)">--</option>' + 
-      '<option value="">不要</option>' + 
-      '<option value=" PRIMARY KEY">必要</option>' + 
+      
+      '<option value="" selected>いらない</option>' + 
+      '<option value=" PRIMARY KEY">いる</option>' + 
      '</select>' + 
     '</td>' + 
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="forign-key[]">' + 
-      '<option value=" 未入力(外部キー)">--</option>' + 
-      '<option value="">不要</option>' + 
-      '<option value=" REFERENCES">必要</option>' + 
+      
+      '<option value="" selected>いらない</option>' + 
+      '<option value=" REFERENCES">いる</option>' + 
      '</select>' + 
     '</td>' + 
     '<td><input type="text" name="forign-name[]" size="10" maxlength="10"></td>' + 

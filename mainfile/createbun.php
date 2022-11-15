@@ -202,7 +202,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" name="main-name[0]".$count size="10" maxlength="10"></td>
+						<td><input type="text" name="main-name[0]" size="10" maxlength="10"></td>
 						<td>
 						<div id="view_1"></div>
 							<select name="Type[0]" >
@@ -221,8 +221,8 @@
 						<td>
 						<div id="view_1"></div>
 							<select name="重複[0]">
-								<option value=" 未入力(重複)">--</option>
-								<option value="">2つ以上可</option>
+								
+								<option value="" selected>2つ以上可</option>
 								<option value=" UNIQUE">1つだけ</option>
 							</select>
 						</td>
@@ -230,24 +230,24 @@
 						<td>
 						<div id="view_1"></div>
 							<select name="yes-no-null[0]" >
-								<option value=" 未入力(null)">--</option>
-								<option value=" NOT NULL">NG</option>
+								
+								<option value=" NOT NULL" selected>NG</option>
 								<option value="">OK</option>
 							</select>
 						</td>
 						<td>
 						<div id="view_1"></div>
 							<select name="main-key[0]" >
-							<option value=" 未入力(主キー)">--</option>
-							<option value="">いらない</option>
+							
+							<option value="" selected>いらない</option>
 							<option value=" PRIMARY KEY">いる</option>
 							</select>
 						</td>
 						<td>
 						<div id="view_1"></div>
 							<select name="forign-key[0]">
-								<option value=" 未入力(外部キー)">--</option>
-								<option value="">いらない</option>
+								
+								<option value="" selected>いらない</option>
 								<option value=" REFERENCES">いる</option>
 							</select>
 						</td>
