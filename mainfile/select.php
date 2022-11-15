@@ -42,7 +42,7 @@ if(!empty($_POST['select'])){
 			}
 
 		}
-
+		//And OR
 		if(!empty($_POST['where_0'])){//<-where句の疑問文
 			if(!empty($_POST['search_0'])){
 				if(!empty($_POST['comparion'])){
@@ -54,6 +54,53 @@ if(!empty($_POST['select'])){
 				}
 			}
 		}
+		//ここまでAnd Or
+		//betweenの処理
+		if(!empty($_POST['target'])){
+			if(!empty($_POST['atai1'])){
+				if(!empty($_POST['atai2'])){
+					$naiyou[]=" where ".$_POST['target']." "." between ".$_POST['atai1']." and ".$_POST['atai2'];
+				}
+			}
+		}
+
+		//INの処理
+		if(!empty($_POST['whereIn'])){
+			if(!empty($_POST['whereInplus_0'])){
+				$naiyou[]=" where ".$_POST['whereIn']." In (".$_POST['whereInplus_0'];
+			}
+			if(!empty($_POST['whereInplus_1'])){
+				$naiyou[]=",".$_POST['whereInplus_1'];
+			}
+			else{
+				$naiyou[]=")";
+			}
+			if(!empty($_POST['whereInplus_2'])){
+				$naiyou[]=",".$_POST['whereInplus_2'].")";
+			}else{
+				$naiyou[]=")";
+			}
+		}
+		//LIKEの処理
+		if(!empty($_POST['likesearch'])){
+			if(!empty($_POST['searchchar'])){
+			//ワイルドカードを使う場合
+			if(!empty($_POST['wildcard1'])){
+				//前のみ
+				$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['wildcard1'].$_POST['searchchar']."' ";
+			}elseif (!empty($_POST['wildcard2'])){
+				//後ろのみ
+				$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['searchchar'].$_POST['wildcard2']."' ";
+			}elseif(!empty($_POST['wildcard1'])&&!empty($_POST['wildcard2'])){
+				//両方
+				$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['wildcard1'].$_POST['searchchar'].$_POST['wildcard2']."' ";
+			}else{
+				//完全一致
+				$naiyou[]=" where ".$_POST['likesearch']." like "." '" . $_POST['searchchar']."' ";
+			}
+			}
+		}
+
 		else{
 			$naiyou[]=" ";
 		}
@@ -68,6 +115,7 @@ if(!empty($_POST['select'])){
 					$naiyou[]=" join ".$_POST['join_table'];
 				}
 			}
+			//And Or
 			if(!empty($_POST['where_0'])){//<-where句の疑問文
 				if(!empty($_POST['search_0'])){
 					if(!empty($_POST['comparion'])){
@@ -79,6 +127,7 @@ if(!empty($_POST['select'])){
 					}
 				}
 			}
+			//ここまでAnd Or
 			//betweenの処理
 			if(!empty($_POST['target'])){
 				if(!empty($_POST['atai1'])){
@@ -124,6 +173,7 @@ if(!empty($_POST['select'])){
 				}
 				}
 			}
+			
 
 		}
 		$naiyou[]=";";
@@ -257,11 +307,15 @@ if(!empty($_POST['group'])){
 						<input type="button" value="between" onclick="addbetween()">
 						<input type="button" value="In" onclick="addIn()" id="addin">
 						<input type="button" value="like" onclick="addlike()">
+						<input type="button" value="reset" onclick="remove()">
 						<div class="input-form" id="where">
-							
+							<span padding-right:10px>
+
+							</span>
 					    </div>
-						
 						<!-- where句ここまで-->
+				
+						
 
 							<li>group by句の指定:<input type="text" name="group"  size="10" maxlength="10" placeholder="半角のみ"></li>	
 
@@ -403,6 +457,8 @@ if(AndOr==1){
    
    var input_data = document.createElement("select");
 	   input_data.name='symbol_0';
+	   input_data.classList.add('option-margin');
+	   
 	//option生成
     var option = document.createElement("option");
  	// optionタグのテキストを空白に設定する
@@ -464,6 +520,7 @@ if(AndOr==1){
 
 	var input_data = document.createElement("select");
 	    input_data.name='comparion';
+		input_data.classList.add('option-margin');
 	//option生成
     var option = document.createElement("option");
  	// optionタグのテキストを空白に設定する
@@ -501,6 +558,7 @@ if(AndOr==1){
 
 	var input_data = document.createElement("select");
 	    input_data.name='symbol_1';
+		input_data.classList.add('option-margin');
 	//option生成
     var option = document.createElement("option");
  	// optionタグのテキストを空白に設定する
@@ -654,6 +712,7 @@ function addlike(){
 	
 	var input_data = document.createElement("select");
 	   input_data.name='wildcard1';
+	   input_data.classList.add('option-margin');
 	//option生成
     var option = document.createElement("option");
  	// optionタグのテキストを空白に設定する
@@ -693,6 +752,7 @@ function addlike(){
 
     var input_data = document.createElement("select");
 	   input_data.name='wildcard2';
+	   input_data.classList.add('option-margin');
 	//option生成
     var option = document.createElement("option");
  	// optionタグのテキストを空白に設定する
@@ -727,4 +787,10 @@ function addlike(){
 }
 
 //ここまでlikeの処理
+
+function remove(id) 
+	 {
+		document.getElementById("where").remove();
+		var parent = document.getElementById('where');
+	 }
 </script>
