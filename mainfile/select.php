@@ -392,7 +392,9 @@ if(i<=2){
 if(i==2){
   var button_data = document.createElement('button');
   button_data.name = i;
-  button_data.onclick = function(){deleteBtn(this);}
+  button_data.onclick = function(){
+	
+  }
   button_data.innerHTML = '削除';
   var input_area = document.getElementById(input_data.name);
   parent.appendChild(button_data);
@@ -444,9 +446,10 @@ if(k==2){
 
 
 //ここからAndOrの処理
-var AndOr=1;
-function addAndOr() {
 
+function addAndOr() {
+	document.getElementById("where").innerHTML = "";
+	var AndOr=1;
 if(AndOr==1){
 	var input_data = document.createElement('input');
  	   input_data.type = 'text';
@@ -625,8 +628,9 @@ if(AndOr==1){
    //ここまでAndorの処理
 
 //INの処理
-var Inval = 1 ;
 function addIn() {
+	document.getElementById("where").innerHTML = "";
+	var Inval = 1 ;
 //カラム名のtextboxの表示
 if(Inval==1){
   var input_data = document.createElement('input');
@@ -667,9 +671,10 @@ if(Inval==1){
 
 
 //ここからbetween
-var between=1;
-function addbetween(){
 
+function addbetween(){
+	document.getElementById("where").innerHTML = "";
+	var between=1;
 if(between==1){
    var input_data = document.createElement('input');
  	   input_data.type = 'text';
@@ -699,8 +704,9 @@ if(between==1){
 //ここまでbetweenの処理
 
 //ここからlikeの処理
-var like=1;
 function addlike(){
+	document.getElementById("where").innerHTML = "";
+	var like=1;
   if(like==1){
     var input_data = document.createElement('input');
     input_data.type = 'text';
