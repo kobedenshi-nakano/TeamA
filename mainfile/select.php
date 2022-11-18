@@ -342,6 +342,7 @@ if(!empty($_POST['group'])){
                     ?>
 				</li>
 				<button id="button">COPY!</button>
+				<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
 		    </div>
 		</ul>
 	</div>
