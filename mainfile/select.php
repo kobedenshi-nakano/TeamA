@@ -307,7 +307,6 @@ if(!empty($_POST['group'])){
 						<input type="button" value="between" onclick="addbetween()">
 						<input type="button" value="In" onclick="addIn()" id="addin">
 						<input type="button" value="like" onclick="addlike()">
-						<input type="button" value="reset" onclick="remove()">
 						<div class="input-form" id="where">
 							<span padding-right:10px>
 

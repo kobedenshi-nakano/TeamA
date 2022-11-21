@@ -1,6 +1,6 @@
 <?php
 
-require_once('../public/dbc.php');
+require_once('../classes/dbc.php');
 
 $blogs = $_POST;
 
