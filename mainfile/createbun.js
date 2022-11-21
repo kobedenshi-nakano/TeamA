@@ -7,16 +7,6 @@ $(function() {
   num = num + 1 ;
   view_count = view_count + 1 ;
 
-  fetch('indexSumi4.php', {
-    method: 'POST',
-    headers: { 'Content-Type':'application/json'},
-    body: JSON.stringify(num)
-  })
-  .then(response => response.json())
-  .then(res => {
-    console.log(res);
-  });
-
   let tr_form = '' + 
    '<tr>' + 
     '<td><input type="text" name="main-name[]" size="10" maxlength="10"></td>' + 
@@ -33,12 +23,11 @@ $(function() {
       '<option value=" TIME">TIME(時間)</option>' + 
      '</select>' + 
     '</td>' + 
-    '<td><input type="text" name="Type-numerical[]" size="3" maxlength="3"></td>' + 
+    '<td><input type="text" name="Type-numerical[]"size="3" maxlength="3"></td>' + 
     '<td><input type="text" name="start[]" size="5" maxlength="10"></td>' + 
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="重複[]">' + 
-      
       '<option value="" selected>2つ以上可</option>' + 
       '<option value=" UNIQUE">1つだけ</option>' + 
      '</select>' + 
@@ -47,7 +36,6 @@ $(function() {
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="yes-no-null[]" >' + 
-      
       '<option value=" NOT NULL" selected>NG</option>' + 
       '<option value="">OK</option>' + 
      '</select>' + 
@@ -55,7 +43,6 @@ $(function() {
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="main-key[]" >' + 
-      
       '<option value="" selected>いらない</option>' + 
       '<option value=" PRIMARY KEY">いる</option>' + 
      '</select>' + 
@@ -63,7 +50,6 @@ $(function() {
     '<td>' + 
      '<div id="view_1"></div>' + 
      '<select name="forign-key[]">' + 
-      
       '<option value="" selected>いらない</option>' + 
       '<option value=" REFERENCES">いる</option>' + 
      '</select>' + 
