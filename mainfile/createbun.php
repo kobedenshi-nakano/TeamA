@@ -24,10 +24,10 @@
 							
 						}
 
-						$count =0;
+						$count = 4;
 						
 						
-						for($i = 0 ;$i < 4; $i++) {
+						for($i = 0 ;$i < $count; $i++) {
 							$data[] = "<br />    " ;
 							if (empty($_POST['main-name'][$i])) {
 								$error[] = ($i+1)."行目の列名を入力してください &nbsp;";
@@ -127,7 +127,7 @@
 								$data[] = ''; //
 							}
 
-							if ($i < 3) {
+							if ($i < $count-1) {
 								$data[] = " ,";
 							}
 							else{
