@@ -24,7 +24,15 @@
 							
 						}
 
-						$count = 4;
+						$raw = file_get_contents('php://createbun.js'); // POSTされた生のデータを受け取る
+						$data = json_decode($raw); // json形式をphp変数に変換
+						
+						$res = $data; // やりたい処理
+						
+						// echoすると返せる
+						echo json_encode($res); // json形式にして返す
+
+						$count = $res;
 						
 						
 						for($i = 0 ;$i < $count; $i++) {

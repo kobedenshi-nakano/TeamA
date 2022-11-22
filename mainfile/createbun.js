@@ -4,7 +4,16 @@ let view_count = document.querySelectorAll("div[id]").length;
 $(function() {
  $('button#add').click(function(){
 
-  num = num + 1 ;
+  fetch('creatbun.php', { // 第1引数に送り先
+    method: 'POST', // メソッド指定
+    headers: { 'Content-Type': 'application/json' }, // jsonを指定
+    body: JSON.stringify( num = num + 1 ) // json形式に変換して添付
+})
+.then(response => response.json()) // 返ってきたレスポンスをjsonで受け取って次のthenへ渡す
+.then(res => {
+    console.log(res); // 返ってきたデータ
+});
+ 
   view_count = view_count + 1 ;
 
   let tr_form = '' + 
