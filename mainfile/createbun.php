@@ -11,6 +11,7 @@
 	
 
 <?php
+				   $_tokun= $_POST['name1'];
 					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						
 						$data = array();
@@ -23,16 +24,7 @@
 							$data[] = "create table ".$_POST['test']." ("; //テーブル名
 							
 						}
-
-						$raw = file_get_contents('php://createbun.js'); // POSTされた生のデータを受け取る
-						$data = json_decode($raw); // json形式をphp変数に変換
-						
-						$res = $data; // やりたい処理
-						
-						// echoすると返せる
-						echo json_encode($res); // json形式にして返す
-
-						$count = $res;
+						$count =$_tokun;
 						
 						
 						for($i = 0 ;$i < $count; $i++) {
@@ -274,7 +266,7 @@
 			
 					</ul>
 						
-						<br><input type="submit" class="generatebtn" value="生成">
+						<br><input type="submit" class="generatebtn"  value="生成">
 					</div>
                 </nav>
 			</form>
@@ -297,6 +289,6 @@
       require_once __DIR__ .'./footer.php';
 ?>
  <script src="createbun.js"></script>
-	<script src="Copy.js"></script>
+	<!--<script src="Copy.js"></script>-->
 </body>
 </html>
