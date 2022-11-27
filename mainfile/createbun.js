@@ -2,19 +2,21 @@ let num = 1;
 let view_count = document.querySelectorAll("div[id]").length;
 
 $(function() {
- num++;
- $('button#add').click(function(){
  
-  num=num+1;
-  $.ajax({
-    type: 'POST',
-    url: 'createbun.php',
-    data: {
-      'name1' : value1,
-      
-    },
-    
-  });
+ $('button#add').click(function(){
+  var data=num+1;
+  fetch('createbun.php', { // 第1引数に送り先
+    method: 'POST', // メソッド指定
+    headers: { 'Content-Type': 'application/json' }, // jsonを指定
+    body: JSON.stringify(data) // json形式に変換して添付
+})
+    .then(response => response.json()) // 返ってきたレスポンスをjsonで受け取って次のthenへ渡す
+    .then(res => {
+        console.log(res); // やりたい処理
+    })
+    .catch(error => {
+        console.log(error); // エラー表示
+    });
  
   view_count = view_count + 1 ;
 

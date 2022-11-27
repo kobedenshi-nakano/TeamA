@@ -11,7 +11,13 @@
 	
 
 <?php
-				   $_tokun= $_POST['name1'];
+				   $raw = file_get_contents('C:/xampp/htdocs/TeamA/mainfile/createbun.js'); // POSTされた生のデータを受け取る
+				   $data = json_decode($raw); // json形式をphp変数に変換
+				   
+				   $res = $data; // やりたい処理
+				   
+				   // echoすると返せる
+				   echo json_encode($res); // json形式にして返す
 					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						
 						$data = array();
@@ -24,7 +30,7 @@
 							$data[] = "create table ".$_POST['test']." ("; //テーブル名
 							
 						}
-						$count =$_tokun;
+						$count =$res;
 						
 						
 						for($i = 0 ;$i < $count; $i++) {
