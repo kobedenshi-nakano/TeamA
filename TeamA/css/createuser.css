@@ -1,0 +1,34 @@
+@charset "utf-8";
+.formnav {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.formnav li {
+	flex: 0 0 100px;	
+}
+.formnav li p {
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	text-align: center;
+	line-height: 100%;
+	color: #000000;
+}
+.grantA{
+	border-radius: 30px;
+	background-color: gainsboro;
+}
+.grantA:hover {
+	background-color: orange;
+	border-radius: 30px;
+}
+.grantB{
+	border-radius: 30px;
+	background-color: gainsboro;
+}
+.grantB:hover {
+	background-color: orange;
+	border-radius: 30px;
+}

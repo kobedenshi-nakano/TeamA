@@ -1,0 +1,29 @@
+#ASarea{
+      display: flex; 
+    
+}
+
+#ASarea input{
+    display: flex;
+    width: 100px; 
+}
+#join{
+    display: flex;
+}
+#where{
+    display: flex;
+}
+#colom_area{
+    display: flex;
+}
+#colom_area input{
+    display: flex;
+    width: 100px; 
+}
+
+#where select{
+    display: flex;
+}
+.option-margin{
+    margin:7px 10px 0 0;
+}

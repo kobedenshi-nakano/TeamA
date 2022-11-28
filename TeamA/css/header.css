@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+html {
+	font-size: 16px;
+}
+
+html * {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: sans-serif;
+}
+/* ヘッダー */
+header {
+	background: gainsboro;
+}
+header a{
+	text-decoration: none;
+}
+.header-container {
+	padding: 30px 20px 10px 20px;
+}
+h1{
+    color: #000000;
+	text-align: center;
+}
+
+input {
+	display: block;
+	margin-top: 10px;
+  }
+  

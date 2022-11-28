@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+.column2 {
+	margin: 0 20px 0 20px;
+	padding: 30px 0 30px 0;
+	flex:1 1 auto;
+}
+
+/* 2コラム目 */
+
+nav {
+	font-size: 0.78rem;
+}
+.nav-container {
+	padding: 0 20px 0 20px;
+}
+
+
+.news-contents {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.news-contents li {
+	overflow: hidden;
+	margin: 0 0 10px 0;
+	padding: auto;
+	border: none;
+}
+
+.news-contents li p {
+	margin: 0;
+}
+
+.kekka-container{
+	margin:auto;
+	padding: auto;
+
+}
+.kekka-container li{
+	overflow: hidden;
+	margin: 0 0 10px 0;
+	padding: 10px 10px 200px 0;
+	list-style: none;
+	border: 5px solid #dadada;
+}
+.globalnav {
+	display: flex;
+	justify-content:space-around;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.globalnav li {
+	flex: 0 0 100px;	
+}
+.globalnav li p {
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	text-align: center;
+	line-height: 100%;
+	color: #000000;
+}
+
+/*テーブル名やデータベース名*/
+.table{
+	display: flex;
+}
+/*エラーテーブル*/
+.error_list {
+	padding: 10px 30px;
+	color: #ff2e5a;
+	font-size: 86%;
+	text-align: left;
+	border: 1px solid #ff2e5a;
+	border-radius: 5px;
+}
+
+input {
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 10px;
+  }
+.generatebtn{
+	border-radius: 30px;
+}
+#button{
+	border-radius: 30px;
+}

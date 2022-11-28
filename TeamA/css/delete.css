@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.formnav1 {
+	margin: 0;
+	padding:0;
+}	
+.addtable{ 
+   margin: 0 50px 5px 0;
+   float: left;
+}
+#koumoku{
+    margin: 0 250px 5px 0;
+    float: left;
+}
+#colname1{
+	margin:0;
+	float: left;
+}
+#mainkey1{
+	margin: 0 5px 10px 0;
+	float: left;
+}
