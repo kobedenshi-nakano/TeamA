@@ -2,20 +2,11 @@ let num = 1;
 let view_count = document.querySelectorAll("div[id]").length;
 
 $(function() {
- num++;
+ 
  $('button#add').click(function(){
- 
-  num=num+1;
-  $.ajax({
-    type: 'POST',
-    url: 'createbun.php',
-    data: {
-      'name1' : value1,
-      
-    },
-    
-  });
- 
+
+ num=num+1;
+document.getElementById("hoge").value=num;
   view_count = view_count + 1 ;
 
   let tr_form = '' + 
@@ -69,7 +60,8 @@ $(function() {
     '</tr>';
 
    $(tr_form).appendTo($('table > tbody'));
+   console.log(tr_form); 
  });
- 
+
 });
 

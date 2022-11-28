@@ -11,11 +11,12 @@
 	
 
 <?php
-				   $_tokun= $_POST['name1'];
+			
 					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						
 						$data = array();
 						$error = array();
+						
 
 						if (empty($_POST['test'])) {
 							$error[] = "テーブル名は必ず入力してください";
@@ -24,7 +25,12 @@
 							$data[] = "create table ".$_POST['test']." ("; //テーブル名
 							
 						}
-						$count =$_tokun;
+					if(!empty($_POST["hoge"])){
+						$count =$_POST["hoge"];
+					}
+					else{
+						$count=1;
+					}
 						
 						
 						for($i = 0 ;$i < $count; $i++) {
@@ -167,7 +173,7 @@
 
 		<div class="column2">
 				<ul class="news-contents">
-			<form method="post" action="">
+			
 				<br><br>
             <!--項目表示-->
 			    <nav>
@@ -179,7 +185,9 @@
 				</ul>
 				<?php endif; ?>
 				
-				<div class="nav-container">
+			<div class="nav-container">
+				<form name="hidden_data" method="POST">
+					<input type="hidden" name="hoge" id="hoge" value="">
 				 <div class="table">
 					<p>テーブル名</p>&nbsp;&nbsp;&nbsp;
 					<input type="text" name="test" size="10" maxlength="10">
