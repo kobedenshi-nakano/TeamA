@@ -26,7 +26,7 @@ function dbconnect(){
 function getAllBlog(){
         $dbh = $this->dbconnect();
         //sqlの準備
-        $sql = 'SELECT * FROM blog';
+        $sql = 'SELECT * FROM memory';
         //sqlの実行
         $stmt = $dbh -> query($sql);
         //sqlの結果を受け取る
