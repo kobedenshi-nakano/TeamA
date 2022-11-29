@@ -234,6 +234,7 @@
 			</li>
 		</div>
 		<button id="button">Copy!</button>
+		<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
 <script>
 		const btn = document.getElementById("button"); // button要素取得
 		const txt = document.getElementById("copy-text").textContent; // テキスト取得
