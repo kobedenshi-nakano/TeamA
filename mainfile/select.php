@@ -284,30 +284,24 @@ if(!empty($_POST['group'])){
 						<div id=ASarea>
 							<input type="text" name="ASsearch_0"  placeholder="別名">
 						</div>
-						<input type="button" value="フォーム追加" onclick="addAS()" class="addAS">
-				
+						<input type="button" value="フォーム追加" onclick="addAS()" class="addAS">				
 						<!-- as句入力ここまで -->
 
 						<!-- join句入力 -->
-						<br>
-						join句の指定
 						<div id="join">
+						join句の指定:
 							<input type="text" name="join_colom" size="20" maxlength="20" placeholder="結合されるカラム">
 							<input type="text" name="join_table" size="20" placeholder="結合したいテーブル">
-						</div>
-						
+						</div>	
 						<!--join句ここまで -->
-
-						<!-- where句入力 -->
-						<br>
-					<div>
-						
-					</div>
+					<!-- where句入力 -->
+					<div id="wherebtn">
 						where句の指定
 						<input type="button" value="and or" onclick="addAndOr()" class="addandor">
 						<input type="button" value="between" onclick="addbetween()" class="addbetween">
 						<input type="button" value="In" onclick="addIn()" id="addin" class="addIn">
 						<input type="button" value="like" onclick="addlike()" class="addlike">
+					</div>
 						<div class="input-form" id="where">
 							<span padding-right:10px>
 
