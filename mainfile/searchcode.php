@@ -17,7 +17,7 @@
 			]);
 	
 		$blog = $_POST;
-		$sql ="select * from memory where category like '".$blog["category_bun"]."'" ;
+		$sql ="select * from memory where code like '%".$blog["category_code"]."%'" ;
 		$sth = $dbh->prepare($sql);
 		$sth->execute();
 		$result = $sth->fetchAll();
@@ -56,7 +56,6 @@
 			<li>
 	<?php foreach($goal as $colum): ?>
         <tr>
-			<td><?php echo $colum['id']?></td>
             <td><?php echo $colum['data']?></td>
 			<td><?php echo $colum['code']?></td>
         </tr>
