@@ -91,7 +91,10 @@ input {
    border-radius: 30px;
    border-color: darkgrey;
 }
-
+.addForm{
+	border-radius: 30px;
+   border-color: darkgrey;
+}
 #button{
 	border-radius: 30px;
 	border-color: darkgrey;

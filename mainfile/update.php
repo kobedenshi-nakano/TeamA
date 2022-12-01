@@ -79,44 +79,24 @@
 			<ul class="formnav">
 		        <form method="post" action="">
 				    <li>テーブル名:<input type="text" name="table" size="10" maxlength="10"></li>
-					<!--
-					<input type="text" id="sampleUserInput" placeholder="更新する列">
-					<input type="button" value="追加" onclick="AddStringToTextarea();">
-					<textarea cols="30" rows="6" id="sampleInputedList" readonly>
-						
-					</textarea>
-						-->
-				<li>columnとvalue:(文字型の場合は""を付ける)</li>
+					<li>columnとvalue:(文字型の場合は""を付ける)</li>
 					<div id="form_area">
-						
 						<input type="text" name="inputform_0" placeholder="列の名前">
 						<input type="text" name="inputformnext_0" placeholder="更新する列の値">
-  						<!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
-					
 					</div>
-						<input type="button" value="フォーム追加" onclick="addForm()">
+						<input type="button" value="フォーム追加" onclick="addForm()" class="addForm">
 				
 			        <li>where句の指定:<input type="text" name="where" size="20" maxlength="20" placeholder="最初の列名のみ適用"></li>
 					<li>order by句の指定:<select name='order'>
 											<option value='none' >--</option>
                             				<option value='ASC' >昇順</option>
 											<option value='DESC' >降順</option>
-										</select><li>
+										</select>
+					</li>
 					<li>limit句:<input type="text" name="limit"  size="10" maxlength="10" placeholder="半角のみ"></li>	
 			        <li><input type="submit" class="generatebtn" value="生成"></li>
 		        </form>
-				<!--<input type="button" value="行を追加" id="coladd" onclick="coladd()">
-        
-					<table id="table" border="1">
-   					 <tr>
-        				<td>
-            				SAMPLE FOR TABLE-ROWADD
-       					 </td>
-        				<td>
-           					 SAMPLE FOR TABLE-ROWDELETE
-        				</td>
-    				 </tr>
-					</table>-->
+				
 			</ul>
 			<div class="kekka-container">
 			
@@ -133,7 +113,7 @@
 				?>
 				</li>
   				<button id="button">COPY!</button>
-				<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
+				<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ" class="quikSave">
 		        
 		    </div>
 		</ul>
