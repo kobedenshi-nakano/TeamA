@@ -1,6 +1,13 @@
 #ASarea{
-      display: flex; 
-    
+      display: flex;     
+}
+
+.addselect{
+    border-radius: 30px;
+}
+
+.addAS{
+    border-radius: 30px;
 }
 
 #ASarea input{
@@ -13,6 +20,21 @@
 #where{
     display: flex;
 }
+
+.addandor{
+    border-radius: 30px;
+}
+.addbetween{
+    border-radius: 30px;
+}
+.addIn{
+    border-radius: 30px;
+}
+
+.addlike{
+    border-radius: 30px;
+}
+
 #colom_area{
     display: flex;
 }

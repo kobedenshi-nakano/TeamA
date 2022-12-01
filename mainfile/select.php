@@ -263,7 +263,7 @@ if(!empty($_POST['group'])){
                                 <input type="text" name="colom_name_0" placeholder="カラム名"></li>
   						        <!--<button id="0" onclick="deleteBtn(this)">削除</button>-->
 					            </div>
-						        <input type="button" value="フォーム追加" onclick="addselect()">
+						        <input type="button" value="フォーム追加" onclick="addselect()" class="addselect">
                                 </tbody>
                             </tr>
 							
@@ -283,7 +283,7 @@ if(!empty($_POST['group'])){
 						<div id=ASarea>
 							<input type="text" name="ASsearch_0"  placeholder="別名">
 						</div>
-						<input type="button" value="フォーム追加" onclick="addAS()">
+						<input type="button" value="フォーム追加" onclick="addAS()" class="addAS">
 				
 						<!-- as句入力ここまで -->
 
@@ -303,10 +303,10 @@ if(!empty($_POST['group'])){
 						
 					</div>
 						where句の指定
-						<input type="button" value="and or" onclick="addAndOr()">
-						<input type="button" value="between" onclick="addbetween()">
-						<input type="button" value="In" onclick="addIn()" id="addin">
-						<input type="button" value="like" onclick="addlike()">
+						<input type="button" value="and or" onclick="addAndOr()" class="addandor">
+						<input type="button" value="between" onclick="addbetween()" class="addbetween">
+						<input type="button" value="In" onclick="addIn()" id="addin" class="addIn">
+						<input type="button" value="like" onclick="addlike()" class="addlike">
 						<div class="input-form" id="where">
 							<span padding-right:10px>
 
@@ -314,10 +314,7 @@ if(!empty($_POST['group'])){
 					    </div>
 						<!-- where句ここまで-->
 				
-						
-
-							<li>group by句の指定:<input type="text" name="group"  size="10" maxlength="10" placeholder="半角のみ"></li>	
-
+					<!--<li>group by句の指定:<input type="text" name="group"  size="10" maxlength="10" placeholder="半角のみ"></li>	-->
 				
 			        <li><input type="submit" class="generatebtn" value="生成"></li>
                     </table>
@@ -341,7 +338,7 @@ if(!empty($_POST['group'])){
                     ?>
 				</li>
 				<button id="button">COPY!</button>
-				<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
+				<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ" class="quikSave">
 		    </div>
 		</ul>
 	</div>

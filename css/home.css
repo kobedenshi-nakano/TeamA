@@ -85,6 +85,11 @@ input {
 .generatebtn{
 	border-radius: 30px;
 }
+
+.quikSave{
+   border-radius: 30px;
+}
+
 #button{
 	border-radius: 30px;
 }
