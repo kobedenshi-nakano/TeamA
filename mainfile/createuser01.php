@@ -86,7 +86,7 @@
                     ?>
 					</li>
                     <button id="button">COPY!</button>
-                    <input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
+                    <input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ" class="quikSave">
                 </div>
         <script>
 		const btn = document.getElementById("button"); // button要素取得
