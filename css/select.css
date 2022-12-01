@@ -7,6 +7,8 @@
     border-color: darkgrey;
     padding: 0;
     margin: 5px 0 10px 0;
+    font-size: 0.8rem;
+    width:100px;
 }
 
 .addAS{
@@ -14,6 +16,8 @@
     border-color: darkgrey;
     padding: 0;
     margin: 5px 0 10px 0;
+    font-size: 0.8rem;
+    width:100px;
 }
 
 #ASarea input{
@@ -41,19 +45,23 @@
 .addandor{
     border-radius: 30px;
     border-color: darkgrey;
+    width:70px;
 }
 .addbetween{
     border-radius: 30px;
     border-color: darkgrey;
+    width:80px;
 }
 .addIn{
     border-radius: 30px;
     border-color: darkgrey;
+    width:50px;
 }
 
 .addlike{
     border-radius: 30px;
     border-color: darkgrey;
+    width:50px;
 }
 
 #colom_area{
