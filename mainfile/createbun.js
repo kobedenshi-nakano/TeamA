@@ -26,6 +26,13 @@ document.getElementById("hoge").value=num;
      '</select>' + 
     '</td>' + 
     '<td><input type="text" name="Type-numerical[]"size="3" maxlength="3"></td>' + 
+    '<td>' + 
+    '<div id="view_1"></div>' + 
+    '<select name="Type-auto[]">' + 
+     '<option value="" selected>いらない</option>' + 
+     '<option value=" AUTO_INCREMENT">いる</option>' + 
+    '</select>' + 
+   '</td>' + 
     '<td><input type="text" name="start[]" size="5" maxlength="10"></td>' + 
     '<td>' + 
      '<div id="view_1"></div>' + 

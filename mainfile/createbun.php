@@ -69,6 +69,9 @@
 							if (empty($_POST['start'][$i])) {
 								$data[] = "";
 							}
+							else if ($_POST['Type'][$i] == ' INTEGER' && $_POST['Type-auto'][$i] == ' AUTO_INCREMENT') {
+								$data[] = '';
+							}
 							else if (is_numeric($_POST['start'][$i]) == 1) { //数字か文字列かを識別する関数
 								$data[] = " default ".$_POST['start'][$i]; //初期値
 							}
@@ -80,15 +83,24 @@
 							if ($_POST['重複'][$i] == ' 未入力(重複)') {
 								$error[] = ($i+1)."行目の重複への処理を入力してください";
 							}
+							else if ($_POST['Type'][$i] == ' INTEGER' && $_POST['Type-auto'][$i] == ' AUTO_INCREMENT') {
+								$data[] = '';
+							}
 							else if($_POST['重複'][$i]== ' UNIQUE'){
 								if($_POST['main-key'][$i] == ' PRIMARY KEY'){
 									$error[]= ($i+1)."行目の重複欄もしくは主キー欄を選びなおしてください。";
 								}
 							}
+							else {
+
+							}
 
 
 							if (empty($_POST['else-rule'][$i])) {
 								$data[] = "";
+							}
+							else if ($_POST['Type'][$i] == ' INTEGER' && $_POST['Type-auto'][$i] == ' AUTO_INCREMENT') {
+								$data[] = '';
 							}
 							else{
 								$data[] = " check ( ".$_POST['else-rule'][$i]." )"; //check型
@@ -99,6 +111,9 @@
 							if ($_POST['yes-no-null'][$i] == ' 未入力(null)') {
 								$error[] = ($i+1)."行目のNull値への対応を決めてください";
 							}
+							else if ($_POST['Type'][$i] == ' INTEGER' && $_POST['Type-auto'][$i] == ' AUTO_INCREMENT') {
+								$data[] = '';
+							}
 							else{
 								$data[] = $_POST['yes-no-null'][$i]; //Null値
 							}
@@ -107,20 +122,37 @@
 							if ($_POST['main-key'][$i] == ' 未入力(主キー)') {
 								$error[] = ($i+1)."行目の主キーの有無を決めてください";
 							}
+							else if ($_POST['Type'][$i] == ' INTEGER' && $_POST['Type-auto'][$i] == ' AUTO_INCREMENT') {
+								$data[] = ' PRIMARY KEY';
+							}
 							else{
 								$data[] = $_POST['main-key'][$i]; //主キー
 								
+							}
+
+							if ($_POST['Type-auto'][$i] == ' 未入力(数値自動入力)') {
+								$error[] = ($i+1)."行目の数値を自動で入力するかどうかを決めてください";
+							}
+							else if($_POST['Type'][$i] == ' INTEGER'){
+								$data[] = $_POST['Type-auto'][$i]; //主キー
+								
+							}
+							else{
+								$data[] = ''; //
 							}
 
 							
 							if ($_POST['forign-key'][$i] == ' 未入力(外部キー)') {
 								$error[] = ($i+1)."行目の外部キーの有無を決めてください";
 							}
+							else if ($_POST['Type'][$i] == ' INTEGER' && $_POST['Type-auto'][$i] == ' AUTO_INCREMENT') {
+								$data[] = '';
+							}
 							else{
 								$data[] = $_POST['forign-key'][$i]; //外部キー制約
 							}
 
-							if ($_POST['forign-key'][$i] == ' REFERENCES') {
+							if (!($_POST['Type'][$i] == ' INTEGER' && $_POST['Type-auto'][$i] == ' AUTO_INCREMENT') && $_POST['forign-key'][$i] == ' REFERENCES') {
 								if (empty($_POST['forign-name'][$i])) {
 									$error[] = ($i+1)."行目の外部キーとして扱う値を入力してください";
 								}
@@ -162,14 +194,12 @@
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
-				<li><a href="newpost.php">新着</a></li>
 				<li><a href="select.php">select</a></li>
 				<li><a href="update.php">update</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
 				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php" style="color:red">create table</a></li>
-				<li><a href="search.php">検索</a></li>
 			</ul>
 </div>
 
@@ -200,7 +230,8 @@
 					<tr>
 						<th class="main-name">列名</th>
 						<th class="Type">列の型名</th>
-						<th class="Type-numerical">型の桁など</th>
+						<th class="Type-numerical">文字数</th>
+						<th class="Type-auto">数値自動入力</th>
 						<th class="start">初期値</th>
 						<th class="重複">重複</th>
 						<th class="else-rule">その他ルール</th>
@@ -227,6 +258,13 @@
 							</select>
 						</td>
 						<td><input type="text" name="Type-numerical[0]" size="3" maxlength="3"></td>
+						<td>
+						<div id="view_1"></div>
+							<select name="Type-auto[0]" >
+								<option value="" selected>いらない</option>
+								<option value=" AUTO_INCREMENT">いる</option>
+							</select>
+						</td>
 						<td><input type="text" name="start[0]" size="5" maxlength="10"></td>
 						<td>
 						<div id="view_1"></div>
