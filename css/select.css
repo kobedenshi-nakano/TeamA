@@ -4,10 +4,16 @@
 
 .addselect{
     border-radius: 30px;
+    border-color: darkgrey;
+    padding: 0;
+    margin: 5px 0 10px 0;
 }
 
 .addAS{
     border-radius: 30px;
+    border-color: darkgrey;
+    padding: 0;
+    margin: 5px 0 10px 0;
 }
 
 #ASarea input{
@@ -23,16 +29,20 @@
 
 .addandor{
     border-radius: 30px;
+    border-color: darkgrey;
 }
 .addbetween{
     border-radius: 30px;
+    border-color: darkgrey;
 }
 .addIn{
     border-radius: 30px;
+    border-color: darkgrey;
 }
 
 .addlike{
     border-radius: 30px;
+    border-color: darkgrey;
 }
 
 #colom_area{

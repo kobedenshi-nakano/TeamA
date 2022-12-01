@@ -84,12 +84,15 @@ input {
   }
 .generatebtn{
 	border-radius: 30px;
+	border-color: darkgrey;
 }
 
 .quikSave{
    border-radius: 30px;
+   border-color: darkgrey;
 }
 
 #button{
 	border-radius: 30px;
+	border-color: darkgrey;
 }
