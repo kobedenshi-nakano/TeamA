@@ -35,8 +35,8 @@
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
-                <li><a href="newpost.php">新着</a></li>
-				<li><a href="select.php" style="color:red">select</a></li>
+                <li><a href="newpost.php"style="color:red">新着</a></li>
+				<li><a href="select.php" >select</a></li>
                 <li><a href="update.php">update</a></li>
 				<li><a href="delete.php">delete</a></li>
 				<li><a href="insert.php">insert</a></li>

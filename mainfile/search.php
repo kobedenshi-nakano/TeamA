@@ -18,7 +18,7 @@
 				<li><a href="insert.php">insert</a></li>
 				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php">create table</a></li>
-                <li><a href="search.php">検索</a></li>
+                <li><a href="search.php"style="color:red">検索</a></li>
 			</ul>
 </div>
 
@@ -34,10 +34,15 @@
             <option value="5">creatuser</option>
             <option value="6">creattable</option>
         </select>
-		<input type="submit" value="送信">
-    </div>
+		<input type="submit" value="検索">
+</div>
 
-	<div class = "">
+<div class="category_code"> 
+        <p>検索したい文字の指定</p>
+		<form action="searchcode.php" method="POST">
+	<input type="text" name="category_code" >
+		<input type="submit" value="検索">
+</div>
 
 	</div>
 
