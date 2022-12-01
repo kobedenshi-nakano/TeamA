@@ -159,12 +159,14 @@
 	<div class="main-contents-container">
 		<div class="column1">
 			<ul class="subnav">
+				<li><a href="newpost.php">新着</a></li>
 				<li><a href="select.php">select</a></li>
 				<li><a href="update.php">update</a></li>
 				<li><a href="delete.php" style="color:red">delete</a></li>
 				<li><a href="insert.php">insert</a></li>
 				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php">create table</a></li>
+				<li><a href="search.php">検索</a></li>
 			</ul>
         </div>
 
@@ -234,7 +236,7 @@
 			</li>
 		</div>
 		<button id="button">Copy!</button>
-		<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ" class="quikSave">
+		<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
 <script>
 		const btn = document.getElementById("button"); // button要素取得
 		const txt = document.getElementById("copy-text").textContent; // テキスト取得
