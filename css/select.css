@@ -21,10 +21,21 @@
     width: 100px; 
 }
 #join{
-    display: flex;
+    /*border: 1px solid;
+	border-color: #808080;*/
 }
+#wherebtn{
+    margin:0;
+    padding:0;
+    /*display: flex;*/
+    /*border: 1px solid;
+	border-color: #808080;*/
+}
+
 #where{
     display: flex;
+   /* border: 1px solid;
+	border-color: #808080;*/
 }
 
 .addandor{
