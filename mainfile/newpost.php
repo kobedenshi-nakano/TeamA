@@ -16,7 +16,7 @@
 			]);
 	
 		$blog = $_POST;
-		$sql ="select * from memory" ;
+		$sql ="select * from memory order by id desc" ;
 		$sth = $dbh->prepare($sql);
 		$sth->execute();
 		$result = $sth->fetchAll();
