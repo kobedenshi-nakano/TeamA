@@ -79,9 +79,16 @@ nav {
 
 input {
 	display: inline-block;
-	margin-top: 10px;
-	margin-right: 10px;
+	margin-top: 5px;
+	margin-right: 5px;
   }
+
+select {
+		display: inline-block;
+		margin-top: 5px;
+		margin-right: 5px;
+	}
+
 .generatebtn{
 	border-radius: 30px;
 	border-color: darkgrey;
