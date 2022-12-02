@@ -199,7 +199,7 @@
 				<li>
                 <p id="colname1"><input type="text" name="col_name10" placeholder="columnを入力"></p>
 				<p id="mainkey1"><input type="text" name="value10" placeholder="valueを入力"></p>
-				<p><input type="checkbox" name="check1"></p>
+				<p><input type="checkbox" name="check1" title="コードを生成するには必ずチェックしてください"></p>
 				</li>
 				</div>
 				<input type="button" value="フォーム追加" onclick="addForm1()" class="addForm1">
@@ -208,7 +208,7 @@
 				<li>
 				<p id="colname1"><input type="text" name="col_name20" placeholder="columnを入力"></p>
 				<p id="mainkey1"><input type="text" name="value20" placeholder="valueを入力"></p>
-				<p><input type="checkbox" name="check2"></p>
+				<p><input type="checkbox" name="check2" title="コードを生成するには必ずチェックしてください"></p>
 				</li>
 				</div>
 				<input type="button" value="フォーム追加" onclick="addForm2()" class="addForm1"><br>
