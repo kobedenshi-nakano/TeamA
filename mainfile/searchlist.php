@@ -121,8 +121,6 @@
 		<li>
 			<?php foreach($goal as $colum): ?>
 			<div id="text">
-			<?php echo $colum['id']?>
-            <?php echo $colum['data']?>
 			<?php echo $colum['code']?>
 			</div>
 			<button id="button">COPY!</button>
