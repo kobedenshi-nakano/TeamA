@@ -22,17 +22,12 @@
 }
 .grantA{
 	border-radius: 30px;
-	background-color: gainsboro;
+	border-color: darkgrey;
+	width:100px;
 }
-.grantA:hover {
-	background-color: orange;
-	border-radius: 30px;
-}
+
 .grantB{
 	border-radius: 30px;
-	background-color: gainsboro;
-}
-.grantB:hover {
-	background-color: orange;
-	border-radius: 30px;
+	border-color: darkgrey;
+	width:100px;
 }
