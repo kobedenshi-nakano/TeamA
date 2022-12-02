@@ -8,15 +8,30 @@
    margin: 0 50px 5px 0;
    float: left;
 }
+.addForm1{
+	border-radius: 30px;
+	border-color: darkgrey;
+	width:100px;
+	margin:0 0 10px 0;
+	/*border: 1px solid;
+	border-color: #808080;*/
+}
 #koumoku{
     margin: 0 250px 5px 0;
     float: left;
+	/*border: 1px solid;
+	border-color: #808080;*/
 }
 #colname1{
 	margin:0;
 	float: left;
+	/*border: 1px solid;
+	border-color: #808080;*/
 }
 #mainkey1{
 	margin: 0 5px 10px 0;
 	float: left;
+}
+.form-space{
+	margin:0 5px 10px 0;
 }
