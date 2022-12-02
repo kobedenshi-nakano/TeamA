@@ -102,7 +102,7 @@
                                 <input type="text" name="colom_name_0" placeholder="カラム名"></li>
 						        <input type="text" name="value_name_0" placeholder="値を入力(value)">
 					            </div>
-						        <input type="button" value="フォーム追加" onclick="addcolom()">
+						        <input type="button" value="フォーム追加" onclick="addcolom()" class="addForm">
                                 </tbody>
                             </tr>
                             
@@ -128,7 +128,7 @@
                     ?>
 				</li>
                 <button id="button">COPY!</button>
-                <input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
+                <input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ" class="quikSave">
 		    </div>
         <script>
         const btn = document.getElementById("button"); // button要素取得

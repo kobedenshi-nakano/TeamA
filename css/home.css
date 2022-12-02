@@ -92,13 +92,18 @@ select {
 .generatebtn{
 	border-radius: 30px;
 	border-color: darkgrey;
+	width:50px;
 }
 
 .quikSave{
    border-radius: 30px;
    border-color: darkgrey;
 }
-
+.addForm{
+	border-radius: 30px;
+   border-color: darkgrey;
+   width:100px;
+}
 #button{
 	border-radius: 30px;
 	border-color: darkgrey;

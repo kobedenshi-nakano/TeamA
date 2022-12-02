@@ -198,7 +198,7 @@
 				<p><input type="checkbox" name="check1"></p>
 				</li>
 				</div>
-				<input type="button" value="フォーム追加" onclick="addForm1()">
+				<input type="button" value="フォーム追加" onclick="addForm1()" class="addForm">
 				<li>テーブル内の値を細かく削除</li>
 				<div id="formadd2">
 				<li>
@@ -207,7 +207,7 @@
 				<p><input type="checkbox" name="check2"></p>
 				</li>
 				</div>
-				<input type="button" value="フォーム追加" onclick="addForm2()"><br>
+				<input type="button" value="フォーム追加" onclick="addForm2()" class="addForm"><br>
 				<input type="submit" class="generatebtn" value="生成">
 				</form>
 			</ul>
@@ -236,7 +236,7 @@
 			</li>
 		</div>
 		<button id="button">Copy!</button>
-		<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
+		<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ" class="quikSave">
 <script>
 		const btn = document.getElementById("button"); // button要素取得
 		const txt = document.getElementById("copy-text").textContent; // テキスト取得
