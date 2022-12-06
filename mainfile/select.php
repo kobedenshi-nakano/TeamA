@@ -187,39 +187,10 @@ if(!empty($_POST['select'])){
 	}
 }
 
-/*
-else if(isset($_POST['colom_name_1'])&&!($_POST['group_0']==="none")){
-			if(isset($_POST['colom_name_2'])&&!($_POST['group_0']==="none")){
-				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0']."), ".$_POST['group_0']." (".$_POST['colom_name_1']."), ".$_POST['group_0']." (".$_POST['colom_name_2'].") from ".$_POST['select'].";";
-			}
-			else{
-				$naiyou[]="select ".$_POST['group_0']." (".$_POST['colom_name_0']."),".$_POST['group_0']." (".$_POST['colom_name_1'].") from ".$_POST['select'].";";
-			}
-}else{
-	$naiyou[]="select ".$_POST['colom_name_0']." from ".$_POST['select'].";";
-	if(!($_POST['group_0']==="none")){
-		$naiyou[]= "select ".$_POST['group_0']." (".$_POST['colom_name_0'].") "." from ".$_POST['select'].";";
-	}
-}
-
-
-if(!empty($_POST['where_0']) || !empty($_POST['search_0'])){
-	$naiyou[]=" where ".$_POST['where_0']."=".$_POST['search_0'];
-}
-
-
-if(!empty($_POST['group'])){
-	$naiyou[]=" group by ".$_POST['group'];
-}
-*/
-
-
-
 ?>
 
 <?php
     require_once __DIR__ .'./header.php';
-	/*require_once __DIR__ .'./subnav.php';*/
 ?>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/subnav.css">
@@ -269,16 +240,6 @@ if(!empty($_POST['group'])){
 						        <input type="button" value="フォーム追加" onclick="addselect()" class="addselect">
                                 </tbody>
                             </tr>
-							
-							<!--<li>集合関数の指定:<select name='group_0'>
-								<option value='none' >--</option>
-                            	<option value='SUM' >総和</option>
-								<option value='MAX' >最大値</option>
-								<option value="MIN">最小値</option>
-								<option value="AVG">平均値</option>
-								<option value="COUNT">カウント</option>
-					            </select>
-							<li>-->
 						
 						<!-- as句入力 -->
 						<br>
@@ -310,8 +271,6 @@ if(!empty($_POST['group'])){
 							</span>
 					    </div>
 						<!-- where句ここまで-->
-				
-					<!--<li>group by句の指定:<input type="text" name="group"  size="10" maxlength="10" placeholder="半角のみ"></li>	-->
 				
 			        <li><input type="submit" class="generatebtn" value="生成"></li>
                     </table>
@@ -366,15 +325,6 @@ if(!empty($_POST['group'])){
 function addAS() {//AS句追加処理
 
 if(i<=2){
-	/*
-   var d = document;
-   var link = d.createElement('link').getElementsByTagName('input');
-      link.href = '../css/select.css';
-	  link.rel = 'stylesheet';
-	  link.type = 'text/css';
-   var parent = document.getElementById('ASarea');
-       parent.appendChild(link);
-*/
 
    var input_data = document.createElement('input');
  	   input_data.type = 'text';
@@ -404,15 +354,6 @@ if(i==2){
 var k = 1 ;
 function addselect() {//カラム追加処理
 if(k<=2){
-	/*
-   var d = document;
-   var link = d.createElement('link').getElementsByTagName('input');
-      link.href = '../css/select.css';
-	  link.rel = 'stylesheet';
-	  link.type = 'text/css';
-   var parent = document.getElementById('ASarea');
-       parent.appendChild(link);
-*/
 
    var input_data = document.createElement('input');
  	   input_data.type = 'text';

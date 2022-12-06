@@ -67,7 +67,6 @@
 ?>
 <?php
       require_once __DIR__ .'./header.php';
-	  /*require_once __DIR__ .'./subnav.php';*/
 ?>
 <script>
 				var j=1;

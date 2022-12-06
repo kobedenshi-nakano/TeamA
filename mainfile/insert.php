@@ -48,7 +48,6 @@
 
 <?php
     require_once __DIR__ .'./header.php';
-	/*require_once __DIR__ .'./subnav.php';*/
 ?>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/subnav.css">
@@ -85,15 +84,6 @@
                     <form method="post" action="">
                     
                     <li>追加するテーブル名:<input type="text" name="tbl_name" size="10" maxlength="10"></li>
-
-                    <!--
-                            <select name="tbl_name">
-                                <option value="none">---</option>
-
-                                <option value=' create role'>create文で生成したテーブル名1</option>
-                            
-                            </select></li>
-                        -->
                         
                         <table>
                             <tr>
