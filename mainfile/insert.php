@@ -65,6 +65,7 @@
 				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php">create table</a></li>
                 <li><a href="search.php">検索</a></li>
+                <li><a href="savehistory.php">履歴</a></li>
 			</ul>
 </div>
 

@@ -42,7 +42,7 @@
 			if(empty($_POST['table'])){
 				$error[]="テーブル名が入力されていません。";
 			}else{
-				$naiyou1[]="Delete from ".$_POST['table']." ";
+				$naiyou1[]="Delete from '".$_POST['table']."' ";
 			}
 			if(empty($_POST['col_name20'])){
 				$error[]="列名を入力してください";
@@ -86,19 +86,17 @@
 					if(j<2){
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
-  						input_data.name = 'col_name2' + j;
-  						input_data.placeholder = 'columnを入力' + j;
+  						input_data.name = 'col_name2' + i;
+  						input_data.placeholder = 'columnを入力' + i;
   						input_data.innerHTML="&nbsp;";
-						input_data.classList.add("form-space");
   					var parent = document.getElementById('formadd2');
   						parent.appendChild(input_data);
 
   					var input_data = document.createElement('input');
   						input_data.type = 'text';
-  						input_data.name = 'value2' + j;
-  						input_data.placeholder = 'valueを入力' + j;
+  						input_data.name = 'value2' + i;
+  						input_data.placeholder = 'valueを入力' + i;
   						input_data.innerHTML="&nbsp;";
-						  input_data.classList.add("form-space");
   					var parent = document.getElementById('formadd2');
   						parent.appendChild(input_data);
 
@@ -131,7 +129,6 @@
   						input_data.name = 'col_name1' + i;
   						input_data.placeholder = 'columnを入力' + i;
   						input_data.innerHTML="&nbsp;";
-						  input_data.classList.add("form-space");
   					var parent = document.getElementById('formadd');
   						parent.appendChild(input_data);
 
@@ -140,7 +137,6 @@
   						input_data.name = 'value1' + i;
   						input_data.placeholder = 'valueを入力' + i;
   						input_data.innerHTML="&nbsp;";
-						  input_data.classList.add("form-space");
   					var parent = document.getElementById('formadd');
   						parent.appendChild(input_data);
 
@@ -171,6 +167,7 @@
 				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php">create table</a></li>
 				<li><a href="search.php">検索</a></li>
+				<li><a href="savehistory.php">履歴</a></li>
 			</ul>
         </div>
 
@@ -202,7 +199,7 @@
 				<p><input type="checkbox" name="check1"></p>
 				</li>
 				</div>
-				<input type="button" value="フォーム追加" onclick="addForm1()" class="addForm1">
+				<input type="button" value="フォーム追加" onclick="addForm1()" class="addForm">
 				<li>テーブル内の値を細かく削除</li>
 				<div id="formadd2">
 				<li>
@@ -211,7 +208,7 @@
 				<p><input type="checkbox" name="check2"></p>
 				</li>
 				</div>
-				<input type="button" value="フォーム追加" onclick="addForm2()" class="addForm1"><br>
+				<input type="button" value="フォーム追加" onclick="addForm2()" class="addForm"><br>
 				<input type="submit" class="generatebtn" value="生成">
 				</form>
 			</ul>
