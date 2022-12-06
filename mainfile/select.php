@@ -236,6 +236,7 @@ if(!empty($_POST['group'])){
 				<li><a href="insert.php">insert</a></li>
 				<li><a href="createuser01.php">create user</a></li>
 				<li><a href="createbun.php">create table</a></li>
+				<li><a href="search.php">検索</a></li>
 			</ul>
 </div>
 
