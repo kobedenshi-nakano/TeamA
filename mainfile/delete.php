@@ -188,14 +188,14 @@
 				<input type="text" name="table" size="10" maxlength="10">
 				<!--文字列型を入れるときクォーテーションを入れる案内を書く-->		
 				</p>
-				<p>全データを削除する<input type="checkbox" name="truncate"></p>
+				<p>全データを削除する<input type="checkbox" name="truncate" class="checkdata" title="テーブルにある全データを削除する際はチェックしてください"></p>
 			    <li>columnとvalue:(文字型の場合は""を付ける)</li>
 				<li><p id="koumoku">主キーでの削除</p><p>選択</p></li>
 				<div id="formadd">
 				<li>
                 <p id="colname1"><input type="text" name="col_name10" placeholder="columnを入力"></p>
 				<p id="mainkey1"><input type="text" name="value10" placeholder="valueを入力"></p>
-				<p><input type="checkbox" name="check1" title="コードを生成するには必ずチェックしてください"></p>
+				<p><input type="checkbox" name="check1" class="checkdata" title="コードを生成するには必ずチェックしてください"></p>
 				</li>
 				</div>
 				<input type="button" value="フォーム追加" onclick="addForm1()" class="addForm">
@@ -204,7 +204,7 @@
 				<li>
 				<p id="colname1"><input type="text" name="col_name20" placeholder="columnを入力"></p>
 				<p id="mainkey1"><input type="text" name="value20" placeholder="valueを入力"></p>
-				<p><input type="checkbox" name="check2" title="コードを生成するには必ずチェックしてください"></p>
+				<p><input type="checkbox" name="check2" class="checkdata" title="コードを生成するには必ずチェックしてください"></p>
 				</li>
 				</div>
 				<input type="button" value="フォーム追加" onclick="addForm2()" class="addForm"><br>
