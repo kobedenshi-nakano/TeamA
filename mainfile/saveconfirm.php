@@ -1,8 +1,10 @@
 <?php require_once __DIR__ .'/header.php'; ?>
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/saveconfirm.css">
+<?php require_once __DIR__ .'/subnav.php'; ?>
 <a href="./savehistory.php">保存履歴画面へ</a>
-
+<br>
+<br>
    <form action="codepost.php" method="POST">
       <li>カテゴリ：
         <select name="category">
@@ -22,10 +24,4 @@
         <br>
         <input type="submit" value="送信">
    </form>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <?php require_once __DIR__ .'/footer.php'; ?>
