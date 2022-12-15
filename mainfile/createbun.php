@@ -324,7 +324,7 @@
 
 			<div class="kekka-container">
 				<p>出力結果</p>
-		        <li>
+		        <li id="text">
 				<!--出力結果-->
 				<?php if(isset($data) ): ?>
 				<?php foreach( $data as $value ): ?>
@@ -336,7 +336,22 @@
 				<button id="button">COPY!</button>
 				<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ">
 		    </div>
+			<script>
+		const btn = document.getElementById("button"); // button要素取得
+		const txt = document.getElementById("text").textContent; // テキスト取得
 
+		btn.addEventListener("click", () => { // ボタンをクリックしたら
+ 		 navigator.clipboard
+   		 .writeText(txt) // テキストをクリップボードに書き込み（＝コピー）
+    	.then(
+      	(success) => console.log('テキストのコピーに成功'),
+      	(error) => console.log('テキストのコピーに失敗')
+    	);
+
+	btn.innerHTML = "OK!"; // ボタンの文字変更
+  	setTimeout(() => (btn.innerHTML = "COPY!"), 1000); // ボタンの文字を戻す
+		});
+	</script>
 <?php
       require_once __DIR__ .'./footer.php';
 ?>
