@@ -110,3 +110,6 @@ select{
 	border-radius: 10px;
    border:1px solid darkgray;
 }
+#form_area{
+	width: 300px;
+}
