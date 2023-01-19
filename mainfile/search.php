@@ -39,7 +39,7 @@
             <option value=6>creattable</option>
         </select>
 		<input type="submit" name = "submit1" value="検索">
-    	<p>検索したい文字の指定</p>
+    	<p>検索したい文字の指定※シングルコーテーション1つは無効になります</p>
 		<input type="text" name="category_code" >
 		<input type="submit" name = "submit2" value="検索">
 </div>
