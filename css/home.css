@@ -81,6 +81,7 @@ input{
 	margin-right: 5px;
     border-radius: 10px;
     border:1px solid darkgray;
+    padding-left:10px;
 }
 
 select{
