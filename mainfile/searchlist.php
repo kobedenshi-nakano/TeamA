@@ -119,37 +119,64 @@
 
 		<div class="kekka-container">
 			<p>出力結果</p>
-		<li>
-			<?php foreach($goal as $colum): ?>
+	
+		<li id="target">
+		<?php foreach($goal as $colum): ?>
+		
 			<div id="text">
 			<?php echo $colum['code']?>
 			</div>
+	
+		
 			<button id="button">COPY!</button>
 			<hr>
+		
         <?php endforeach ;?>
+		
 		</li>
+	
 		</div>
 				
 				<input type="button" id="save" name="qsave" onclick="window.open('./saveconfirm.php')" value="保存確認画面へ" class="quikSave">
 		</div>
-		</ul>
+
 	</div>
 <?php
     require_once __DIR__ .'./footer.php';
 ?>
 <script type="text/javascript">
-	const btn = document.getElementById("button"); // button要素取得
-		const txt = document.getElementById("text").textContent; // テキスト取得
+		let elements = document.querySelectorAll('#target div');
 
-		btn.addEventListener("click", () => { // ボタンをクリックしたら
- 		 navigator.clipboard
-   		 .writeText(txt) // テキストをクリップボードに書き込み（＝コピー）
-    	.then(
-      	(success) => console.log('テキストのコピーに成功'),
-      	(error) => console.log('テキストのコピーに失敗')
-    	);
+		for (const [i, e] of elements.entries()) {
+    	e.id = `text${i}`;
+		}
 
-	    btn.innerHTML = "OK!"; // ボタンの文字変更
-  	    setTimeout(() => (btn.innerHTML = "COPY!"), 1000); // ボタンの文字を戻す
-		});
+		console.log(elements);
+		// li#id-0 li#id-1 li#id-2
+
+		let element = document.querySelectorAll('#target button');
+
+		for (const [i, f] of element.entries()) {
+    	f.id = `button${i}`;
+		}
+
+		console.log(element);
+
+		for(let j=0; j<elements.length; j++) {
+    const btn = document.getElementById("button" + j); // button要素取得
+    const txt = document.getElementById("text" + j).textContent; // テキスト取得
+
+        btn.addEventListener("click", () => { // ボタンをクリックしたら
+         navigator.clipboard
+         .writeText(txt) // テキストをクリップボードに書き込み（＝コピー）
+        .then(
+        (success) => console.log('テキストのコピーに成功'),
+        (error) => console.log('テキストのコピーに失敗')
+        );
+
+        btn.innerHTML = "OK!"; // ボタンの文字変更
+        setTimeout(() => (btn.innerHTML = "COPY!"), 1000); // ボタンの文字を戻す
+        });
+    }
+		
 </script>
